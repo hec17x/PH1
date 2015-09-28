@@ -1,3 +1,74 @@
+@charset "utf-8";
+
+/*------------------------------------------------------CAbecera de la paginaa*/
+header
+{
+
+    border: outset 5px black;
+    background-color:rgb(0,255,255);
+    height:auto;
+    width: auto;
+    margin-top: 000px;    
+    margin-left: 00px;  
+    color:white;    
+    border-radius: 25px;
+}
+
+h1{
+    color: black;
+    margin-left: 50px; 
+}
+
+li {
+    color: rgb(72,72,72)  ;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+a{
+    color:black;
+}
+
+
+
+/*-----------------------------------------------Aqui comiennza el cuerpo*/
+body{
+    background-color: white;
+}
+h3{
+    color:blue;
+    font-weight: bold;
+    margin-left: 50px;
+}
+label {
+	color: green ;
+    font-weight: bold;
+    margin-left: 50px;
+}
+input{
+    margin-left: 50px;
+}
+p{
+    margin-left: 40px;
+    font-size: 14px;
+}
+/*------------------------------------------------Pie de pagina*/
+pfinal {
+    color: black ;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+#Piedepagina{
+
+    border: outset 5px black;
+    background-color: rgb(0,255,255);
+    height:auto;
+    width: auto;
+    margin-top: 80px;    
+    margin-left: 00px;   
+border-radius: 25px;
+}
+
 html
 {
 	font-family: Arial, Helvetica, Verdana;

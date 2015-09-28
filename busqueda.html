@@ -7,6 +7,10 @@
 <meta name="author" content="Héctor - Roberto "/>
 <meta name="keywords" content="HTML5, web" />
 <meta name="description" content="PI - BUSQUEDA" />
+
+<link rel="stylesheet" type="text/css" href="css/home.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+
 <title>PI - BUSQUEDA DE FOTOS</title>
 </head>
 <!-- El cuerpo -->
@@ -119,8 +123,12 @@
 					<br>
 					<label for="R_pais"><b>Pais:</b></label>
 					<br>
-					<input id="R_pais" name="Pais" required="required" type="text" placeholder="Pais"/>
-					<br>
+                    <select id="R_pais" name="R_Nacimiento_Mes">
+                            <option value="España">España</option>
+                            <option value="Egipto">Egipto</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Portugal">Portugal</option>
+                        </select>					<br>
 					<br>
 				</form>
 				<a href="resultado.html"><input type="submit" value="Buscar"/> </a>

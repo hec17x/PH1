@@ -25,7 +25,7 @@ header
     border: solid 0px black;
     border-radius: 25px;
     padding: 0.5%;
-    background: rgba(72, 72, 72, 0.6);
+    background: rgba(72, 72, 72, 0.7);
 }
 
 header a, h1
@@ -41,12 +41,16 @@ html
 	
 }
 
+img{
+    margin-left: 40px;    
+}
+
 input{
     margin-left: 50px;
 }
 
 label {
-	color: green ;
+	color: blue;
     font-weight: bold;
     margin-left: 50px;
 }
@@ -71,11 +75,15 @@ p{
     font-size: 14px;
 }
 
+select{
+    margin-left: 50px;
+}
+
 footer{
 
 	border: solid 0px black;
     color:white;    
     border-radius: 25px;
     padding: 0.5%;
-   background: rgba(72, 72, 72, 0.6);
+   background: rgba(72, 72, 72, 0.7);
 }

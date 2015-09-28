@@ -1,85 +1,72 @@
+@charset "utf-8";
 
-<!DOCTYPE html>
-<html lang="es">
+/*------------------------------------------------------CAbecera de la paginaa*/
+header
+{
 
-<!-- La cabecera -->
-	
-<meta charset="UTF-8" />
-<meta name="generator" content="Sublime-Text" />
-<meta name="author" content="Héctor - Roberto "/>
-<meta name="keywords" content="HTML5, web" />
-<meta name="description" content="PI - HOME" />
-<title>PI - HOME</title>
-<link rel="stylesheet"  href="style.css" media="all" />
+    border: outset 5px black;
+    background-color:rgb(0,255,255);
+    height:auto;
+    width: auto;
+    margin-top: 000px;    
+    margin-left: 00px;  
+    color:white;    
+    border-radius: 25px;
+}
 
+h1{
+    color: black;
+    margin-left: 50px; 
+}
 
-
-<!-- El cuerpo -->
-<body>
-	<header>
-	<a href="index.html"><h1>PI - PICTURES & IMAGES</h1></a>
-	<nav>
-        <ul class="menu">  
-            <li><a href="busqueda.html">Busqueda Avanzada</a></li>         
-        </ul>    
-	</nav> 
-	</header>
-
-			<h3>LOGIN</h3>
-			<form>
-  				<label for="L_Usuario"><b>Usuario:</b></label>
-  				<br>
-  				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario">
-  				<br>
-  				<label for="L_Contraseña"><b>Contraseña:</b></label>
-  				<br>
-  				<input id="L_Contraseña" type="text" name="Constraseña" placeholder="Contraseña">
-  				<br>
-  				<br>
-  				<input type="submit" value="Enviar">
-  				<br>
-  				<br>
-  				<p>¿Aun no estas regitrado? <a href="registro.html">Registrate</a></p> 
-			</form>
-
-		
-	<a href="detalle.html">	<img src="images/6e609595.jpg" width="300" alt="foto"></a> 
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		
-	
-	<a href="detalle.html">	<img src="images/CK2252.jpg" width="300" alt="foto"></a>
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-
-	<a href="detalle.html">	<img src="images/CK1741.jpg" width="300" alt="foto"></a>
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		
-		
-	<a href="detalle.html">	<img src="images/IMG_3556.jpg" width="300" alt="foto"></a>
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		
-	<a href="detalle.html">	<img src="images/129H.jpg" width="300" alt="foto"></a>
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-	
-
-	<div id="Piedepagina">
-	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
-	</div>
-	
-</body>
+li {
+    color: rgb(72,72,72)  ;
+    font-weight: bold;
+    margin-left: 40px;
+    }
+a{
+    color:black;
+}
 
 
 
-</html>
+/*-----------------------------------------------Aqui comiennza el cuerpo*/
+body{
+    background-color: white;
+}
+h3{
+    color:blue;
+    font-weight: bold;
+    margin-left: 50px;
+}
+label {
+	color: green ;
+    font-weight: bold;
+    margin-left: 50px;
+}
+input{
+    margin-left: 50px;
+}
+p{
+    margin-left: 40px;
+    font-size: 14px;
+}
+/*------------------------------------------------Pie de pagina*/
+
+
+#Piedepagina{
+
+color: black ;
+    font-weight: bold;
+    margin-left: 50px;
+    border: outset 5px black;
+    background-color: rgb(0,255,255);
+    height:auto;
+    width: auto;
+    margin-top: 80px;    
+    margin-left: 00px;   
+border-radius: 25px;
+}
 
 html
 {

@@ -17,7 +17,7 @@ body{
 
 footer{
 
-    border: solid 0px black;
+    border: solid 1px black;
     border-radius: 25px;
     padding: 0.5%;
     background: rgba(72, 72, 72, 0.7);
@@ -41,7 +41,7 @@ h3{
 header
 {
 
-    border: solid 0px black;
+    border: solid 1px black;
     border-radius: 25px;
     padding: 0.5%;
     background: rgba(72, 72, 72, 0.7);

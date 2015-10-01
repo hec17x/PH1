@@ -1,0 +1,11 @@
+Jueves 24 de Septiembre
+
+Atributo width high
+Porque no se pone porcentaje en html5, solo pixels? Preguntar mañana.
+
+LISTO -> Poner todo con label
+LISTO -> Lista desplegable con paises, lista con tres paises por defecto.
+LISTO -> falta el id de R_sexo, el for se corresponde con el id.
+
+
+Jueves 01 de Septiembre

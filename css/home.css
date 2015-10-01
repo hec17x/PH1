@@ -1,0 +1,94 @@
+@charset "utf-8";
+a{
+    color:black;
+}
+
+body{
+    background: rgba(72, 72, 72, 0.2);
+    border-radius: 25px;
+    padding: 1%;
+}
+
+#busqueda
+{
+   margin-bottom: 2%;
+  padding: 1%;
+}
+
+footer{
+
+    border: solid 0px black;
+    border-radius: 25px;
+    padding: 0.5%;
+    background: rgba(72, 72, 72, 0.7);
+    font-weight: bold;
+}
+
+footer p{
+    color:white; 
+
+}
+
+h1{
+    color: black;
+}
+
+h3{
+    color: rgba(50, 50, 50, 1);
+    font-weight: bold;
+}
+
+header
+{
+
+    border: solid 0px black;
+    border-radius: 25px;
+    padding: 0.5%;
+    background: rgba(72, 72, 72, 0.7);
+}
+
+header a, h1
+{
+	 color: rgba(255, 255, 255, 1);    
+}
+
+header nav, li
+{
+    list-style-type: none;
+    background: rgba(72, 72, 72, 0.5);
+}
+
+html
+{
+	font-family: Arial, Helvetica, Verdana;
+	background-image: url("../images/background.png");
+	background-repeat: repeat;
+	
+}
+
+
+label {
+	color: rgba(50, 50, 50, 1);
+    font-weight: bold;
+}
+
+li {
+    color: rgba(50, 50, 50, 1);
+    font-weight: bold;
+    }
+
+#login
+{
+	background: rgba(72, 72, 72, 0.6);
+	margin-top:2%;
+	margin-bottom:2%;
+	padding: 1%;
+	border-radius: 25px;
+}
+
+p{
+    font-size: 14px;
+    color: rgba(50, 50, 50, 1);
+}
+
+

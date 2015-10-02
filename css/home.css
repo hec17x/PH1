@@ -7,6 +7,7 @@ body{
     background: rgba(72, 72, 72, 0.2);
     border-radius: 25px;
     padding: 1%;
+
 }
 
 #busqueda
@@ -38,34 +39,61 @@ h3{
     font-weight: bold;
 }
 
-header
+
+#cabecera
 {
 
-    border: solid 1px black;
-    border-radius: 25px;
-    padding: 0.5%;
-    background: rgba(72, 72, 72, 0.7);
+    background:rgba(40, 53, 147, 1);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    box-shadow: 0px 10px 5px -5px rgba(0,0,0,0.75);
 }
 
-header a, h1
+#cabecera nav, li
 {
-	 color: rgba(255, 255, 255, 1);    
+    list-style-type: none; 
 }
 
-header nav, li
+#cabecera img
 {
-    list-style-type: none;
-    background: rgba(72, 72, 72, 0.5);
+    margin-top:2%;
+    margin-left: 1%;
+}
+
+#cabecera nav a
+{
+     color: rgba(255, 255, 255, 1);    
+     text-decoration:none; 
+     list-style-type: none; 
+      
+     position: fixed;
+     right: 2%;
+     top: 3%;
+     padding: 1%;
+    transition-property: background;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+#cabecera nav a:hover
+{
+     background: rgba(57, 73, 171, 1);
 }
 
 html
 {
-	font-family: Arial, Helvetica, Verdana;
+	font-family: 'Roboto', sans-serif;
 	background-image: url("../images/background.png");
 	background-repeat: repeat;
 	
 }
 
+input
+{
+    width: auto;
+}
 
 label {
 	color: rgba(50, 50, 50, 1);
@@ -80,10 +108,10 @@ li {
 #login
 {
 	background: rgba(72, 72, 72, 0.6);
-	margin-top:2%;
-	margin-bottom:2%;
 	padding: 1%;
 	border-radius: 25px;
+    margin: 0 auto;
+    width: 20%;
 }
 
 p{

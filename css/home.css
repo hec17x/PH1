@@ -233,6 +233,9 @@ form h3
 form label
 {
   color: black;
+  width: 200%;
+  position: absolute;
+  top: 0%;
 }
 
 form p

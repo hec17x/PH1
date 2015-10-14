@@ -22,24 +22,29 @@ title="Estilo para impresión" />
 <body>
 
 <header id="cab_principal">
-    <a href="index.html"><img src="images/logo1.png" width="300" alt="foto"></a>
+    <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
     <nav>
         <ul class="menu">  
-            <li><a href="index.html">ATRAS</a></li>         
+            <li><a href="index.html">Atras</a></li>         
         </ul>    
     </nav> 
     </header>
 <section id="content-busqueda">
 <h3>Criterios de busqueda:</h3> 
 	
-	<div id="formulario">
+	       
 			 <form action="resultado.html" method="post">
-			 		<label for="B_titulo" > <b>Titulo:</b> </label>
-					
-					<input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
-					
-						<label for="B_Dia"><b>Fecha de publicación:</b></label>
-					
+                <div id="formulario">
+                <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
+               
+                <span class="bar"></span>
+			 	<label for="B_titulo" > Titulo: </label>
+				</div>
+				 <div id="busqueda">
+	               <br>
+						
+					<label for="B_Dia">Fecha de publicación:</label>
+                    <br>
 						<select id="B_Dia" name="B_Dia">
                              <option value="" disabled selected>Dia</option>
     						<option value="1">1</option>
@@ -127,9 +132,13 @@ title="Estilo para impresión" />
     						<option value="2014">2014</option>
     						<option value="2015">2015</option>
   						</select>
-					<br>
-					<br>
-					<label for="R_pais"><b>Pais:</b></label>
+
+                        
+                    </div>
+                    <br>
+					 <div id="busqueda">
+
+					<label for="R_pais">Pais:</label>
 					<br>
                     <select id="R_pais" name="R_Nacimiento_Mes">
                         <option value="" disabled selected>Pais</option>
@@ -138,10 +147,10 @@ title="Estilo para impresión" />
                             <option value="Congo">Congo</option>
                             <option value="Portugal">Portugal</option>
                         </select>					
-                        <br>
-					<br>
-				
+                  </div>
+				<div id="formulario">
 				<a href="resultado.html"><input type="submit" value="Buscar"/> </a>
+                </div>
                 </form>
 	</div>
 </section>

@@ -1,52 +1,32 @@
 @charset "utf-8";
 
-@media screen and (min-width: 700px) {
 a{
     color:black;
 }
 
-#content-index {
 
-    margin-bottom: 50%;
-
+#busqueda label
+{
+  color:rgba(40, 53, 147, 1); 
+  font-size:110%;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+ 
 }
 
-
-#busqueda
+#busqueda select
 {
 
+  margin-top:  2%;
+  margin-bottom: 2%;
+  width: 32%;
 }
 
-footer{
-    width: 100%;
-    position: absolute;
-    left: 0%;
-    bottom: 0;
-    background: rgba(0, 0, 0, 1);
-   }
 
-
-footer p{
-    text-align: center;
-    color:white; 
-    font-weight: lighter;
-    font-size: 80%;
-
-}
-
-h1{
-    color: black;
-}
-
-h3{
-    color: rgba(50, 50, 50, 1);
-    font-weight: bold;
-}
-
-section h2, h3
-{
-  font-weight: lighter;
-}
 
 #cab_principal
 {
@@ -98,6 +78,46 @@ section h2, h3
 }
 
 
+#content-index {
+
+    margin-bottom: 50%;
+
+}
+
+
+#content-busqueda
+{
+  margin: 8% auto;
+}
+
+
+#detalle_foto
+{
+   position: relative;
+    margin: 0 auto;
+  text-align: center;
+   max-width: 100%;
+ 
+}
+
+
+footer{
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    bottom: 0;
+    background: rgba(0, 0, 0, 1);
+   }
+
+
+footer p{
+    text-align: center;
+    color:white; 
+    font-weight: lighter;
+    font-size: 80%;
+
+}
+
 form {
     min-width: 15%;
     max-width: 30%;
@@ -120,6 +140,19 @@ form:hover
 
 }
 
+
+form h2
+{
+    font-weight: normal;  
+    text-align: center;
+}
+
+form h3
+{
+    text-align: center;
+
+}
+
 form img
 {
   margin: auto 10%;
@@ -128,10 +161,13 @@ form img
 
 }
 
-form h3
-{
-    text-align: center;
 
+
+
+form p
+{
+     font-size: 100%;
+     margin-bottom: -5%;
 }
 
 
@@ -177,7 +213,7 @@ form h3
 #formulario input[type="submit"]
 {
     background: rgba(40, 53, 147, 1);
-   margin: -1% auto;
+   margin: 5% auto;
    min-width: 50%;
    max-width: 100%;
     color: white;
@@ -222,7 +258,6 @@ form h3
 
 
 
-/* active state */
 #formulario input:focus ~ label, input:valid ~ label    {
 
 
@@ -230,19 +265,6 @@ form h3
   color:rgba(83, 109, 254, 1);
 }
 
-form label
-{
-  color: black;
-  width: 200%;
-  position: absolute;
-  top: 0%;
-}
-
-form p
-{
-     font-size: 100%;
-     margin-bottom: -5%;
-}
 
 #formulario p
 {
@@ -269,21 +291,13 @@ form p
   width:100%; 
 }
 
-/* active state */
+
 #formulario input:focus {
 
   border-bottom:1px solid rgba(83, 109, 254, 1);
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
-}
-
-
-
-form h2
-{
-    font-weight: normal;  
-    text-align: center;
 }
 
 #galeria_index 
@@ -354,20 +368,28 @@ form h2
 }
 
 
+h1{
+    color: black;
+}
 
+h3{
+    color: rgba(50, 50, 50, 1);
+    font-weight: bold;
+}
 
 html
 {
-	font-family: 'Roboto', sans-serif;
-	background-image: url("../images/background.png");
-	background-repeat: repeat;
-	position:relative;
+  font-family: 'Roboto', sans-serif;
+  background-image: url("../images/background.png");
+  background-repeat: repeat;
+  position:relative;
 min-height:100%
 }
 
 
+
 label {
-	color: rgba(50, 50, 50, 1);
+  color: rgba(50, 50, 50, 1);
     font-weight: lighter;
 }
 
@@ -376,6 +398,7 @@ li {
     font-weight: normal;
     }
 
-
-
+section h2, h3
+{
+  font-weight: lighter;
 }

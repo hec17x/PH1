@@ -7,8 +7,8 @@ a{
 
 #busqueda label
 {
-  color:black; 
-  font-size:110%;
+  color:rgba(40, 53, 147, 1); 
+  font-size:120%;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -23,14 +23,14 @@ a{
 
   margin-top:  2%;
   margin-bottom: 2%;
-  width: 32%;
+  width: 60%;
 }
 
 
 
 #cab_principal
 {
-    background: grey;
+    background: rgba(0, 0, 0, 1);
     position: fixed;
     top: 0;
     z-index: 100;
@@ -49,16 +49,14 @@ a{
 {
    margin: 20px;
   float: left;
-  min-width: 15%;
-  max-width: 20%;
+  min-width: 35%;
+  max-width: 40%;
   display: block;
-   -webkit-filter: grayscale(100%) brightness(-25%) contrast(250%);
-
 }
 
 #cab_principal nav a
 {
-     color: rgba(0, 0, 0, 1);    
+     color: rgba(255, 255, 255, 1);    
      text-decoration:none; 
      list-style-type: none; 
      position: absolute;
@@ -68,7 +66,7 @@ a{
      padding: 1%;
      margin: 0 auto;
      display: inline-block;
-     font-size: 100%;
+     font-size: 120%;
     transition-property: background;
     transition-duration: 0.5s;
     transition-timing-function: linear;
@@ -76,8 +74,7 @@ a{
 
 #cab_principal nav a:hover
 {
-     background: black;
-     color: white;
+     background: #424242;
 }
 
 
@@ -109,7 +106,7 @@ footer{
     position: absolute;
     left: 0%;
     bottom: 0;
-    background: grey;
+    background: rgba(0, 0, 0, 1);
    }
 
 
@@ -117,16 +114,15 @@ footer p{
     text-align: center;
     color:white; 
     font-weight: lighter;
-    font-size: 80%;
-    color: black;
+    font-size: 100%;
 
 }
 
 form {
-    min-width: 15%;
-    max-width: 30%;
+    min-width: 45%;
+    max-width: 50%;
     margin: 8% auto;
-      background: grey;
+    background: #fafafa;
     padding: 2% 3%;
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
@@ -160,8 +156,8 @@ form h3
 form img
 {
   margin: auto 10%;
-  min-width: 50%;
-  max-width: 75%;
+  min-width: 75%;
+  max-width: 90%;
 
 }
 
@@ -170,7 +166,7 @@ form img
 
 form p
 {
-     font-size: 100%;
+     font-size: 120%;
      margin-bottom: -5%;
 }
 
@@ -178,27 +174,25 @@ form p
 #formulario
 {
   position:relative; 
-  min-width: 50%;
+  min-width: 70%;
   max-width: 100%;
-  background: grey;
 }
 
 
 #formulario input
 {
-  font-size: 100%;
   color: #636363;
-    background: grey;
+  background: #fafafa;
  
   padding:10px 10px 10px 5px;
   margin-top: 12%;
   display:block;
   width:95%;
-  font-size: 100%;
+  font-size: 120%;
   border:none;
   border-radius: 0;
   font-weight: lighter;
-  border-bottom:1px solid black;
+  border-bottom:1px solid rgba(40, 53, 147, 1);
   transition-property: background;
   transition-duration: 1s;
   transition-timing-function: linear;
@@ -217,12 +211,12 @@ form p
 
 #formulario input[type="submit"]
 {
-    background: black;
+    background: rgba(40, 53, 147, 1);
    margin: 5% auto;
-   min-width: 50%;
+   min-width: 70%;
    max-width: 100%;
     color: white;
-  box-shadow: black 0px 1px 1px 0px;
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 1px 0px;
       -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -233,9 +227,9 @@ form p
 #formulario input[type="submit"]:hover
 {
   
-    background: black;
-    box-shadow: black 0px 5px 5px 0px;
-   min-width: 50%;
+    background: rgba(83, 109, 254, 1);
+    box-shadow: rgba(0,0,0,0.5) 0px 5px 5px 0px;
+   min-width: 70%;
    max-width: 100%;
      transition-property: background;
     transition-duration: 0.4s;
@@ -249,8 +243,8 @@ form p
 
 #formulario label{
   
-  color:black; 
-  font-size:110%;
+  color:rgba(40, 53, 147, 1); 
+  font-size:120%;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -266,23 +260,23 @@ form p
 #formulario input:focus ~ label, input:valid ~ label    {
 
 
-  font-size:110%;
-  color:black;
+  font-size:120%;
+  color:rgba(83, 109, 254, 1);
 }
 
 
 #formulario p
 {
     text-align: center;
-    color: black;
-    font-size: 100%;
+    color: rgba(40, 53, 147, 1);
+    font-size: 120%;
     margin-top: -1%;
     margin-bottom: 5%;
 }
 #formulario a
 {
 
-    font-size: 100%;
+    font-size: 120%;
 
     text-decoration: none;
 
@@ -299,12 +293,10 @@ form p
 
 #formulario input:focus {
 
-  border-bottom:1px solid black;
+  border-bottom:1px solid rgba(83, 109, 254, 1);
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
-  font-weight: bold;
-  color: black;
 }
 
 #galeria_index 
@@ -313,14 +305,10 @@ form p
     overflow: hidden;
   position: relative;
     float: left;
-     width: 25%;
+     width: 35%;
      line-height: 0;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-filter: grayscale(100%);
--webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
--ms-filter: grayscale(100%);
--o-filter: grayscale(100%);
+
 }
 
 
@@ -329,7 +317,6 @@ filter: grayscale(100%);
   display: none;
   position: absolute;
   width: 100%;
-
 
 }
 
@@ -340,8 +327,6 @@ filter: grayscale(100%);
     -webkit-transition: transform 0.1s ease;
     -moz-transition: transform 0.1s ease;
     -o-transition: transform 0.1s ease;
-
-
 }
 
 #galeria_index:hover img
@@ -366,7 +351,7 @@ filter: grayscale(100%);
 {
 
     color: rgba(255, 255, 255, 1);
-    font-size: 80%;
+    font-size: 100%;
     text-align: center;
     font-weight: lighter;
 }
@@ -397,8 +382,7 @@ html
   background-image: url("../images/background.png");
   background-repeat: repeat;
   position:relative;
-min-height:100%;
-  background: none;
+min-height:100%
 }
 
 

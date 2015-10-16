@@ -14,7 +14,10 @@
 <link rel="alternate stylesheet" type="text/css" href="css/big.css"
  title="Estilo de tamaño grande" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
->
+
+<script src="javascript/scriptRegistro.js"></script>
+
+
 <title>PI - REGISTRO</title>
 </head>
 <!-- El cuerpo -->
@@ -33,26 +36,26 @@
 
 <h2> Registro:</h2> 
 			<div>
-				<form class="Registro" action="#" method="post">
+				<form class="Registro" action="#" method="post" onsubmit="return validaRegistro()">
                     <p>Rellene los siguientes campos:</p>
                     <div id="formulario">					
-					<input id="R_usuario" name="Nombre de usuario" required="required" type="text" placeholder="Nombre de usuario"/>
+					<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>
                     <span class="bar"></span>
 					<label for="R_usuario" > Usuario: </label>
                     </div>
                     <div id="formulario">
-					<input id="R_contraseña" name="Contraseña" required="required" type="password" placeholder="Contraseña"/>
+					<input id="R_contraseña" name="Contraseña" type="password" placeholder="Contraseña"/>
                     <span class="bar"></span>
                     <label for="R_contraseña" > Contraseña: </label>
 					</div>
                     <div id="formulario">
-					<input id="R_rep_contraseña" name="Contraseña" required="required" type="password" placeholder="Contraseña"/>
+					<input id="R_rep_contraseña" name="Contraseña" type="password" placeholder="Contraseña"/>
                     <span class="bar"></span>
 					<label for="R_rep_contraseña" > Repetir contraseña: </label>
                     </div>
                     <div id="formulario">
 					
-					<input id="R_email" name="Email" required="required" type="text" placeholder="Email"/>
+					<input id="R_email" name="Email" type="text" placeholder="Email"/>
 					<span class="bar"></span>
                     <label for="R_email"> Email:</label>
                     </div>
@@ -160,7 +163,7 @@
 					</div>
 					
 					<div id="formulario">
-					<input id="R_ciudad" name="Ciudad" required="required" type="text" placeholder="Ciudad"/>
+					<input id="R_ciudad" name="Ciudad"  type="text" placeholder="Ciudad"/>
                     <span class="bar"></span>
 					<label for="R_ciudad"> Ciudad:</label>
                     </div>

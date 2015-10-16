@@ -15,7 +15,7 @@
  title="Estilo de tamaño grande" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
-
+<script src="javascript/script.js"></script>
 
 <title>PI - HOME</title>
 </head>
@@ -35,17 +35,17 @@
 
 	<section id="content-index">
 			
-			<form>
+			<form id="miForm" action="" method="get" onsubmit="return valida()">
 				<img src="images/logo2.png"  alt="foto">
 				<p>Ingresa tu cuenta aqui</p>
 				<div id="formulario">
-				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" required>
+				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
 				
      			<span class="bar"></span>
   				<label for="L_Usuario">Usuario</label>
   				</div>
   				<div id="formulario">
-  				<input id="L_Contraseña" type="password" name="Constraseña" placeholder="Contraseña" required>
+  				<input id="L_Contraseña" type="password" name="Constraseña" placeholder="Contraseña" >
   				
      			<span class="bar"></span>
   				<label for="L_Contraseña">Contraseña</label>

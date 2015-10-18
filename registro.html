@@ -36,7 +36,7 @@
 
 <h2> Registro:</h2> 
 			<div>
-				<form class="Registro" action="#" method="post" onsubmit="return validaRegistro()">
+				<form class="Registro" action="#" method="post" onsubmit="return validaRegistro()" novalidate="true">
                     <p>Rellene los siguientes campos:</p>
                     <div id="formulario">					
 					<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>
@@ -74,7 +74,7 @@
 
 					<label for="R_Nacimiento">Fecha de Nacimiento:</label>
 					<br>
-                    <input type="date"  name="Fecha Nacimiento" id="R_Nacimiento" novalidate="true"/>
+                    <input type="date"  name="Fecha Nacimiento" id="R_Nacimiento"/>
 					</div>
 					
 					<div id="formulario">

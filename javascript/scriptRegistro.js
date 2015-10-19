@@ -1,19 +1,19 @@
 //Funciones validar Registro completo
 
 
-function validaRegistro(){
+function validaRegistro(f){
 
 	//recogemos todos los datos
-	var usuario = document.getElementById("R_usuario").value;
-	var contraseña = document.getElementById("R_contraseña").value;
-	var rep_contraseña = document.getElementById("R_rep_contraseña").value;
-	var email1 = document.getElementById("R_email").value;
-	var sexo = document.getElementById("R_sexo").value;
+	var usuario = f.elements["R_usuario"].value;
+	var contraseña = f.elements["R_contraseña"].value;
+	var rep_contraseña = f.elements["R_rep_contraseña"].value;
+	var email1 = f.elements["R_email"].value;
+	var sexo = f.elements["R_sexo"].value;
 
-	var fecha = document.getElementById("R_Nacimiento").value;
+	var fecha = f.elements["R_Nacimiento"].value;
 
-	var ciudad = document.getElementById("R_ciudad").value;
-	var pais = document.getElementById("R_pais").value;
+	var ciudad = f.elements["R_ciudad"].value;
+	var pais = f.elements["R_pais"].value;
 	//variables auxiliares:
 	var contUsu = 0;
 	var numMayus = 0;

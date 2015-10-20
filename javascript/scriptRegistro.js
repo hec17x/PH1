@@ -172,11 +172,40 @@ function validaRegistro(f){
 
 
 
+//VALIDAR EMAIL SIN EXPRESIONES REGULARES
+
+
+function validateMail(idMail){	
+	 
+	var contenido = document.getElementById(idMail).value;
+ 	var conte = contenido.split("@");
+
+ 	if(!conte[1] || conte[0] == ""){
+ 		//email incorrecto
+ 		return (false);
+ 	}
+ 	else{
+ 		var cont = conte[1].split(".");
+ 		if(!cont[1]){
+ 			//mail incorrecto
+ 			return (false);
+ 		}
+ 		else{
+ 			if(cont[1].length<2 || cont[1].length >4)
+ 				return (false);
+ 			else
+ 				return (true);
+ 		}
+ 	}
+
+ }
+
 
 
 //FUNCION VALIDAR EMAIL APARTE PARA MENOR COMPLEJIDAD
+// ESTA FUNCION CONTIENE UN EXPRESION REGULAR, PARA P5 NO USAR EXPRESIONES REGULARES
 
-function validateMail(idMail){	
+function validateEmail(idMail){	
 	
 	//Creamos un objeto 
 	object=document.getElementById(idMail);

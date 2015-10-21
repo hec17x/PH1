@@ -5,8 +5,8 @@ function validaRegistro(f){
 
 	//recogemos todos los datos
 	var usuario = f.elements["R_usuario"].value;
-	var contraseña = f.elements["R_contraseña"].value;
-	var rep_contraseña = f.elements["R_rep_contraseña"].value;
+	var contrasenya = f.elements["R_contrasenya"].value;
+	var rep_contrasenya = f.elements["R_rep_contrasenya"].value;
 	var email1 = f.elements["R_email"].value;
 	var sexo = f.elements["R_sexo"].value;
 
@@ -20,7 +20,7 @@ function validaRegistro(f){
 	var numMin = 0;
 	var numNum = 0;
 	var aux = 1;
-	var validaContraseña = false;
+	var validaContrasenya = false;
 
 	//VERIFICAMOS USUARIO ****************************************************
 
@@ -55,25 +55,25 @@ function validaRegistro(f){
 	y el subrayado; al menos debe contener una letra en mayúsculas, una letra en minúsculas
 	y un número; longitud mínima 6 caracteres y máxima 15.*/
 
-	if(contraseña=="" || contraseña==" "){
+	if(contrasenya=="" || contrasenya==" "){
 
 		alert("Introduzca una contraseña");
 		return (false);
 	}
-	else if( (contraseña.length>5) && (contraseña.length<16) ){
+	else if( (contrasenya.length>5) && (contrasenya.length<16) ){
 
-		for(i=0; i<contraseña.length; i++){
+		for(i=0; i<contrasenya.length; i++){
 			
-		        if('A' <= contraseña[i] && contraseña[i] <= 'Z'){ // check if you have an uppercase
+		        if('A' <= contrasenya[i] && contrasenya[i] <= 'Z'){ // si tienes mayuscula
 		            
 		            numMayus++;
 				}
-				else if( 'a' <= contraseña[i] && contraseña[i] <= 'z'){ // check if you have a lowercase
-					
+				else if( 'a' <= contrasenya[i] && contrasenya[i] <= 'z'){ // si tienes minuscula
+
 					numMin++;
 				}
-				else if('0' <= contraseña[i] && contraseña[i] <= '9'){ // check if you have a numeric
-		            
+				else if('0' <= contrasenya[i] && contrasenya[i] <= '9'){ // si tiene sun numero
+
 		            numNum++;
 				}
 				else{
@@ -90,12 +90,12 @@ function validaRegistro(f){
 
 		if( (numMayus>0) && (numMin>0) && (numNum>0) ){
 		
-			validaContraseña = true;
+			validaContrasenya = true;
 		}	
 
 		//si entra en este, la contraseña no es valida por esos motivos
 
-		if(validaContraseña == false){
+		if(validaContrasenya == false){
 		
 			alert("La contraseña debe contener al menos una letra mayuscula, una letra minuscula y un numero");
 			return(false);
@@ -111,7 +111,7 @@ function validaRegistro(f){
 
 	//VERIFICAMOS REP_CONTRASEÑA *******************************************************************
 
-	if(contraseña != rep_contraseña){
+	if(contrasenya != rep_contrasenya){
 
 		alert("Las contraseñas no coinciden");
 		return(false);
@@ -204,7 +204,7 @@ function validateMail(idMail){
 
 //FUNCION VALIDAR EMAIL APARTE PARA MENOR COMPLEJIDAD
 // ESTA FUNCION CONTIENE UN EXPRESION REGULAR, PARA P5 NO USAR EXPRESIONES REGULARES
-
+/*
 function validateEmail(idMail){	
 	
 	//Creamos un objeto 
@@ -221,4 +221,4 @@ function validateEmail(idMail){
 	}
 	//Mail incorrecto
 	return (false);
-}
+}*/

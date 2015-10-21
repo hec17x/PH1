@@ -1,25 +1,25 @@
-function valida(){
+function valida(f){
 
 
-	var user= document.getElementById("L_Usuario").value;
-	var pass = document.getElementById("L_Contraseña").value;
+	var usuario = f.elements["L_Usuario"].value;
+	var contrasenya = f.elements["L_Contrasenya"].value;
 	var esvalido=1;
 	var esvalidopass=1;
 	var l=0;
 	//var msg = "Error"\n;
 
-	if(user===null || user==="" || user===" "){
+	if(usuario===null || usuario==="" || usuario===" "){
 		alert("¡Tienes que escribir tu numbre de Usuario!");
 		return (false);
 	}
 
 	else{
 
-		for(l=0;l<user.length;l++){
+		for(l=0;l<usuario.length;l++){
 			
-		        if( ( 'A' <= user[l] && user[l] <= 'Z' ) ||
-		        	( 'a' <= user[l] && user[l] <= 'z' ) ||
-		        	( '0' <= user[l] && user[l] <= '9' ) ) {	
+		        if( ( 'A' <= usuario[l] && usuario[l] <= 'Z' ) ||
+		        	( 'a' <= usuario[l] && usuario[l] <= 'z' ) ||
+		        	( '0' <= usuario[l] && usuario[l] <= '9' ) ) {	
 		        	//if vasio sin sentensias
 		        }
 		       
@@ -36,23 +36,23 @@ function valida(){
 
 	}
 
-	if(pass===null || pass==="" || pass===" "){
+	if(contrasenya===null || contrasenya==="" || contrasenya===" "){
 		alert("¡Tienes que escribir tu Contraseña!");
 		return (false);	
 	}
 
 	else{
 
-		for(l=0;l<pass.length;l++){
+		for(l=0;l<contrasenya.length;l++){
 		
 		
-	        	if( ( 'A' <= pass[l] && pass[l] <= 'Z' ) ||
-	        		( 'a' <= pass[l] && pass[l] <= 'z' ) ||
-	        		( '0' <= pass[l] && pass[l] <= '9' ) ) {
+	        	if( ( 'A' <= contrasenya[l] && contrasenya[l] <= 'Z' ) ||
+	        		( 'a' <= contrasenya[l] && contrasenya[l] <= 'z' ) ||
+	        		( '0' <= contrasenya[l] && contrasenya[l] <= '9' ) ) {
 	        		//if sin sentensiasss
 				}
 				else{
-					esvalidopass=0; //Si no tienes letra o numero , tienes un un carasfeteryhi erroneo
+					esvalidopass=0; //Si no tienes letra o numero , tienes un un carasfeter erroneo
 				}
 				
 		}

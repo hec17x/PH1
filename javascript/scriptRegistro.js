@@ -27,7 +27,7 @@ function validaRegistro(f){
 	//VERIFICAMOS USUARIO ****************************************************************************************************
 	if(usuario=="" || usuario==" " || usuario ==null){
 
-		alert("Introduzca un nombre");
+		alert("Introduzca un usuario.");
 		return(false);
 	}
 	else {
@@ -55,6 +55,10 @@ function validaRegistro(f){
 
 		if(validarPass == false){
 			alert("La contraseña introducida es incorrecta.");
+			
+			contrasenya = document.getElementById("R_contrasenya").value = '';
+			contrasenya = document.getElementById("R_contrasenya").focus();
+
 			return (false);
 		}
 	}
@@ -63,8 +67,11 @@ function validaRegistro(f){
 	//VERIFICAMOS REP_CONTRASEÑA *******************************************************************
 
 	if(contrasenya != rep_contrasenya){
-
 		alert("Las contraseñas no coinciden");
+		
+		rep_contrasenya = document.getElementById("R_rep_contrasenya").value = '';
+		rep_contrasenya = document.getElementById("R_rep_contrasenya").focus();
+			
 		return(false);
 	}
 
@@ -135,8 +142,8 @@ function validateUsuario(idUsu){
 	object= document.getElementById(idUsu);
 	valueForm=object.value;
  
-	// Patron para el correo
-	var patron=/^[a-zA-Z0-9_-]{3,15}$/;
+	// Patron para el usuario
+	var patron=/^[a-zA-Z0-9]{3,15}$/;
 	
 	if(valueForm.search(patron)==0){
 
@@ -153,9 +160,10 @@ function validatePassword(idPass){
 	object= document.getElementById(idPass);
 	valueForm=object.value;
  
-	// Patron para el correo
-	var patron=/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,15}.+$)/;
-	
+	// Patron para la contraseña
+	//var patron=/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,15}.+$)/;
+	var patron = /(^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_]{6,15}$)/
+
 	if(valueForm.search(patron)==0){
 
 		//Contraseña correcta
@@ -173,8 +181,9 @@ function validateEmail(idMail){
 	valueForm=object.value;
  
 	// Patron para el correo
-	var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-	
+	//var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+	var patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
 	if(valueForm.search(patron)==0){
 
 		//Mail correcto

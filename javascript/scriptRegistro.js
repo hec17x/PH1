@@ -22,8 +22,10 @@ function validaRegistro(f){
 	var aux = 1;
 	var validaContrasenya = false;
 
+
+
 	//VERIFICAMOS USUARIO ****************************************************************************************************
-	if(usuario=="" || usuario==" "){
+	if(usuario=="" || usuario==" " || usuario ==null){
 
 		alert("Introduzca un nombre");
 		return(false);
@@ -32,10 +34,12 @@ function validaRegistro(f){
 		var validarUsu = validateUsuario("R_usuario");
 		
 		if(validarUsu == false){
-			alert("El usuario introcido es incorrecto");
+			alert("El usuario introducido es incorrecto");
 			return (false);
 		}
 	}
+
+
 	//VERIFICAMOS CONTRASEÑA *************************************************************************************************
 	/*contraseña: sólo puede contener letras del alfabeto inglés (en mayúsculas y minúsculas), números
 	y el subrayado; al menos debe contener una letra en mayúsculas, una letra en minúsculas
@@ -46,53 +50,14 @@ function validaRegistro(f){
 		alert("Introduzca una contraseña");
 		return (false);
 	}
-	else if( (contrasenya.length>5) && (contrasenya.length<16) ){
+	else {
+		var validarPass = validatePassword("R_contrasenya");
 
-		for(i=0; i<contrasenya.length; i++){
-			
-		        if('A' <= contrasenya[i] && contrasenya[i] <= 'Z'){ // si tienes mayuscula
-		            
-		            numMayus++;
-				}
-				else if( 'a' <= contrasenya[i] && contrasenya[i] <= 'z'){ // si tienes minuscula
-
-					numMin++;
-				}
-				else if('0' <= contrasenya[i] && contrasenya[i] <= '9'){ // si tiene sun numero
-
-		            numNum++;
-				}
-				else{
-					aux = 0;
-				}			
-		}		
-
-		if( aux == 0 ){
-			alert("Carácter del Alfabeto Inglés no Encontrado Password");
-			return(false);
+		if(validarPass == false){
+			alert("La contraseña introducida es incorrecta.");
+			return (false);
 		}
-		
-		//Si entra aqui, la contraseña seria correctisima.
-
-		if( (numMayus>0) && (numMin>0) && (numNum>0) ){
-		
-			validaContrasenya = true;
-		}	
-
-		//si entra en este, la contraseña no es valida por esos motivos
-
-		if(validaContrasenya == false){
-		
-			alert("La contraseña debe contener al menos una letra mayuscula, una letra minuscula y un numero");
-			return(false);
-		}
-	
 	}
-	else{
-		alert("La contraseña debe tener un mínimo de 6 carácteres y un máximo de 15");
-		return(false);
-	}
-	
 
 
 	//VERIFICAMOS REP_CONTRASEÑA *******************************************************************
@@ -103,22 +68,28 @@ function validaRegistro(f){
 		return(false);
 	}
 
+
+
 	//Verificamos el EMAIL **************************************************************************************
 	/*no puede estar vacío, hay que comprobar que cumple el patrón de una
 	dirección de email (no permitir dominios principales de menos de 2 caracteres y más de 4
 	caracteres).*/
+	if(email1=="" || email1==" "){
 
-	var validar = validateMail("R_email");
+		alert("Introduzca su Email");
+		return(false);
+	}
+	else{
+		var validar = validateEmail("R_email");
 
-	if(validar ==false){
-		alert("El email introcido no es correcto");
-		return (false);
+		if(validar ==false){
+			alert("El email introcido es incorrecto");
+			return (false);
+		}
 	}
 	
 	
-	
 	//VERIFICAMOS EL SEXO INTRODUCIDO*********************************************************************
-	
 	if(sexo == "") {
 
 		alert("Seleccione su sexo");
@@ -129,7 +100,7 @@ function validaRegistro(f){
 	//VERIFICAMOS FECHA DE NACIMIENTO***********************************************************************
 
 	if(fecha == null || fecha == ""){
-		alert("Introduzca una fecha correcta");
+		alert("La fecha introducida es incorrecta.");
 		return (false);
 	}
 
@@ -158,9 +129,9 @@ function validaRegistro(f){
 
 
 
-// ESTA FUNCION CONTIENE UN EXPRESION REGULAR, PARA P5 NO USAR EXPRESIONES REGULARES
+// FUNCIONES CON EXPRESIONES REGULARES ********************
 function validateUsuario(idUsu){
-
+	
 	object= document.getElementById(idUsu);
 	valueForm=object.value;
  
@@ -177,6 +148,23 @@ function validateUsuario(idUsu){
 	return (false);
 }
 
+function validatePassword(idPass){
+
+	object= document.getElementById(idPass);
+	valueForm=object.value;
+ 
+	// Patron para el correo
+	var patron=/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,15}.+$)/;
+	
+	if(valueForm.search(patron)==0){
+
+		//Contraseña correcta
+		return (true);
+	}
+	//Contraseña incorrecta
+
+	return (false);
+}
 
 function validateEmail(idMail){	
 	

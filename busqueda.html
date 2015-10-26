@@ -7,6 +7,15 @@
 <meta name="author" content="Héctor - Roberto "/>
 <meta name="keywords" content="HTML5, web" />
 <meta name="description" content="PI - BUSQUEDA" />
+
+<link rel="stylesheet" type="text/css" href="css/home.css" title="Estilo principal" />
+<link rel="alternate stylesheet" type="text/css" href="css/contrast.css"
+ title="Estilo de  escala de grises" />
+<link rel="alternate stylesheet" type="text/css" href="css/big.css"
+ title="Estilo de tamaño grande" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+
 <title>PI - BUSQUEDA DE FOTOS</title>
 </head>
 <!-- El cuerpo -->
@@ -15,23 +24,32 @@
 
 <body>
 
-<header>
-<a href="index.html"><h1>PI - PICTURES & IMAGES</h1></a>
-</header>
-
-<h2> Busqueda:</h2>
+<header id="cab_principal">
+    <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
+    <nav>
+        <ul class="menu">  
+            <li><a href="index.html">Atras</a></li>         
+        </ul>    
+    </nav> 
+    </header>
+<section id="content-busqueda">
 <h3>Criterios de busqueda:</h3> 
 	
-	<div >
-			 <form class="Busqueda" action="resultado.html" method="post">
-			 		<label for="B_titulo" > <b>Titulo:</b> </label>
-					<br>
-					<input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
-					<br>
-					<br>
-						<label for="B_Dia"><b>Fecha de publicación:</b></label>
-					<br>
+	       
+			 <form action="resultado.html" method="post">
+                <div id="formulario">
+                <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
+               
+                <span class="bar"></span>
+			 	<label for="B_titulo" > Titulo: </label>
+				</div>
+				 <div id="busqueda">
+	               <br>
+						
+					<label for="B_Dia">Fecha de publicación:</label>
+                    <br>
 						<select id="B_Dia" name="B_Dia">
+                             <option value="" disabled selected>Dia</option>
     						<option value="1">1</option>
     						<option value="2">2</option>
     						<option value="3">3</option>
@@ -64,6 +82,7 @@
     						<option value="30">30</option>
   						</select>
   						<select name="B_Mes">
+                            <option value="" disabled selected>Mes</option>
     						<option value="1">1</option>
     						<option value="2">2</option>
     						<option value="3">3</option>
@@ -78,6 +97,7 @@
     						<option value="12">12</option>
   						</select>
   						<select name="B_Año">
+                            <option value="" disabled selected>Año</option>
     						<option value="1980">1980</option>
     						<option value="1981">1981</option>
     						<option value="1982">1982</option>
@@ -115,17 +135,28 @@
     						<option value="2014">2014</option>
     						<option value="2015">2015</option>
   						</select>
-					<br>
-					<br>
-					<label for="R_pais"><b>Pais:</b></label>
-					<br>
-					<input id="R_pais" name="Pais" required="required" type="text" placeholder="Pais"/>
-					<br>
-					<br>
-				</form>
-				<a href="resultado.html"><input type="submit" value="Buscar"/> </a>
-	</div>
 
+                        
+                    </div>
+                    <br>
+					 <div id="busqueda">
+
+					<label for="R_pais">Pais:</label>
+					<br>
+                    <select id="R_pais" name="R_Nacimiento_Mes">
+                        <option value="" disabled selected>Pais</option>
+                            <option value="España">España</option>
+                            <option value="Egipto">Egipto</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Portugal">Portugal</option>
+                        </select>					
+                  </div>
+				<div id="formulario">
+				<a href="resultado.html"><input type="submit" value="Buscar"/> </a>
+                </div>
+                </form>
+	</div>
+</section>
 <footer>
     <p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
 </footer>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <!-- La cabecera -->
@@ -8,15 +7,25 @@
 <meta name="author" content="Héctor - Roberto "/>
 <meta name="keywords" content="HTML5, web" />
 <meta name="description" content="PI - HOME" />
+
+<link rel="stylesheet" type="text/css" href="css/home.css" title="Estilo principal" />
+<link rel="alternate stylesheet" type="text/css" href="css/contrast.css"
+ title="Estilo de  escala de grises" />
+<link rel="alternate stylesheet" type="text/css" href="css/big.css"
+ title="Estilo de tamaño grande" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+<script src="javascript/script.js"></script>
+
 <title>PI - HOME</title>
 </head>
 <!-- El cuerpo -->
 
 
 <body>
-
-	<header>
-	<a href="index.html"><h1>PI - PICTURES & IMAGES</h1></a>
+	<br>
+	<header id="cab_principal">
+	<a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
 	<nav>
         <ul class="menu">  
             <li><a href="busqueda.html">Busqueda Avanzada</a></li>         
@@ -24,52 +33,106 @@
 	</nav> 
 	</header>
 
-			<h3>LOGIN</h3>
-			<form>
-  				<label for="L_Usuario"><b>Usuario:</b></label>
+	<section id="content-index">
+			
+			<form id="miForm" action="" method="get" onsubmit="return valida(this)">
+				<img src="images/logo2.png"  alt="foto">
+				<p>Ingresa tu cuenta aqui</p>
+				<div id="formulario">
+				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
+				
+     			<span class="bar"></span>
+  				<label for="L_Usuario">Usuario</label>
+  				</div>
+  				<div id="formulario">
+  				<input id="L_Contrasenya" type="password" name="Constraseña" placeholder="Contraseña" >
+  				
+     			<span class="bar"></span>
+  				<label for="L_Contraseña">Contraseña</label>
+  				</div>
   				<br>
-  				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario">
   				<br>
-  				<label for="L_Contraseña"><b>Contraseña:</b></label>
-  				<br>
-  				<input id="L_Contraseña" type="text" name="Constraseña" placeholder="Contraseña">
-  				<br>
-  				<br>
+  				<div id="formulario">
   				<input type="submit" value="Enviar">
   				<br>
   				<br>
-  				<p>¿Aun no estas regitrado? <a href="registro.html">Registrate</a></p> 
+  				<p>¿Eres nuevo en Pictures & Images? <a href="registro.html">Registrate</a></p> 
+
+  				</div>
 			</form>
 
-		
-	<a href="detalle.html">	<img src="images/6e609595.jpg" width="300" alt="foto"></a> 
+	<h2>Últimas actualizaciones:</h2>
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/129H.jpg"   alt="foto"></a>
+	<div id="info">
 		<p>TITULO: test </p>
 		<p>FECHA: 00-00-0000</p>
 		<p>PAIS: test</p>
-		
-	
-	<a href="detalle.html">	<img src="images/CK2252.jpg" width="300" alt="foto"></a>
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
+	</div>
+	</div>
 
-	<a href="detalle.html">	<img src="images/CK1741.jpg" width="300" alt="foto"></a>
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/CK2252.jpg"  alt="foto"></a>
+	<div id="info">
 		<p>TITULO: test </p>
 		<p>FECHA: 00-00-0000</p>
 		<p>PAIS: test</p>
-		
-		
-	<a href="detalle.html">	<img src="images/IMG_3556.jpg" width="300" alt="foto"></a>
+		</div>
+	</div>
+	<div id="galeria_index">
+	<a href="detalle.html">	<img src="images/CK1741.jpg"  alt="foto"></a>
+	<div id="info">
 		<p>TITULO: test </p>
 		<p>FECHA: 00-00-0000</p>
 		<p>PAIS: test</p>
-		
-	<a href="detalle.html">	<img src="images/129H.jpg" width="300" alt="foto"></a>
+	</div>
+	</div>
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/IMG_3556.jpg"  alt="foto"></a>
+	<div id="info">
 		<p>TITULO: test </p>
 		<p>FECHA: 00-00-0000</p>
 		<p>PAIS: test</p>
+	</div>
+	</div>
 	
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/6e609595.jpg"  alt="foto"></a>
+	<div id="info">
+		<p>TITULO: test </p>
+		<p>FECHA: 00-00-0000</p>
+		<p>PAIS: test</p>
+		</div> 
+	</div>
 
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/05502b_o.jpg"  alt="foto"></a>
+	<div id="info">
+		<p>TITULO: test </p>
+		<p>FECHA: 00-00-0000</p>
+		<p>PAIS: test</p>
+		</div> 
+	</div>
+
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/IMG_3822.jpg"  alt="foto"></a>
+	<div id="info">
+		<p>TITULO: test </p>
+		<p>FECHA: 00-00-0000</p>
+		<p>PAIS: test</p>
+		</div> 
+	</div>
+
+	<div id="galeria_index">
+	<a href="detalle.html">	<img  src="images/KgqDYXR.jpg"  alt="foto"></a>
+	<div id="info">
+		<p>TITULO: test </p>
+		<p>FECHA: 00-00-0000</p>
+		<p>PAIS: test</p>
+		</div> 
+	</div>
+
+	</section>
 	<footer>
 	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
 	</footer>

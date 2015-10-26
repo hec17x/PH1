@@ -7,6 +7,17 @@
 <meta name="author" content="Héctor - Roberto "/>
 <meta name="keywords" content="HTML5, web" />
 <meta name="description" content="PI - REGISTRO" />
+
+<link rel="stylesheet" type="text/css" href="css/home.css" title="Estilo principal" />
+<link rel="alternate stylesheet" type="text/css" href="css/contrast.css"
+ title="Estilo de  escala de grises" />
+<link rel="alternate stylesheet" type="text/css" href="css/big.css"
+ title="Estilo de tamaño grande" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+
+<script src="javascript/scriptRegistro.js"></script>
+
+
 <title>PI - REGISTRO</title>
 </head>
 <!-- El cuerpo -->
@@ -14,160 +25,87 @@
 
 <body>
 
-<header>
-<a href="index.html"><h1>PI - PICTURES & IMAGES</h1></a>
-</header>
-
+<header id="cab_principal">
+    <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
+    <nav>
+        <ul class="menu">  
+            <li><a href="index.html">Atras</a></li>         
+        </ul>    
+    </nav> 
+    </header>
 
 <h2> Registro:</h2> 
 			<div>
-				<form class="Registro" action="#" method="post">
-					<label for="R_usuario" > <b>Usuario:</b> </label>
-					<br>
-					<input id="R_usuario" name="Nombre de usuario" required="required" type="text" placeholder="Nombre de usuario"/>
-					<br>
-					<br>
-
-					<label for="R_contraseña" > <b>Contraseña:</b> </label>
-					<br>
-					<input id="R_contraseña" name="Contraseña" required="required" type="password" placeholder="Contraseña"/>
-					<br>
-					<br>
-
-					<label for="R_rep_contraseña" > <b>Repetir contraseña:</b> </label>
-					<br>
-					<input id="R_rep_contraseña" name="Contraseña" required="required" type="password" placeholder="Contraseña"/>
-					<br>
-					<br>
-
-					<label for="R_email"><b> Email:</b></label>
-					<br>
-					<input id="R_email" name="Email" required="required" type="text" placeholder="Email"/>
-					<br>
-					<br>
-
-					<label for="R_sexo"><b> Sexo:</b></label>
-					<br>
+				<form class="Registro" action="#" method="post" onsubmit="return validaRegistro(this)" novalidate="true">
+                    <p>Rellene los siguientes campos:</p>
+                    <div id="formulario">					
+					<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>
+                    <span class="bar"></span>
+					<label for="R_usuario" > Usuario: </label>
+                    </div>
+                    <div id="formulario">
+					<input id="R_contrasenya" name="Contraseña" type="password" placeholder="Contraseña"/>
+                    <span class="bar"></span>
+                    <label for="R_contraseña" > Contraseña: </label>
+					</div>
+                    <div id="formulario">
+					<input id="R_rep_contrasenya" name="Contraseña" type="password" placeholder="Contraseña"/>
+                    <span class="bar"></span>
+					<label for="R_rep_contraseña" > Repetir contraseña: </label>
+                    </div>
+                    <div id="formulario">
+					
+					<input id="R_email" name="Email" type="text" placeholder="Email"/>
+					<span class="bar"></span>
+                    <label for="R_email"> Email:</label>
+                    </div>
+                    <br>
+                    <div id="busqueda">
+					<label for="R_sexo"> Sexo:</label>
+                    <br>
 						<select id="R_sexo" name="R_sexo">
+                            <option value="" disabled selected>Sexo</option>
     						<option value="Masculino">Masculino</option>
     						<option value="Femenino">Femenino</option>
   						</select>
-					<br>
-					<br>
-
-					<label for="R_Nacimiento"><b> Fecha de Nacimiento:</b></label>
-					<br>
-						<select id="R_Nacimiento" name="R_Nacimiento_Dia">
-    						<option value="1">1</option>
-    						<option value="2">2</option>
-    						<option value="3">3</option>
-    						<option value="4">4</option>
-    						<option value="5">5</option>
-    						<option value="6">6</option>
-    						<option value="7">7</option>
-    						<option value="8">8</option>
-    						<option value="9">9</option>
-    						<option value="10">10</option>
-    						<option value="11">11</option>
-    						<option value="12">12</option>
-    						<option value="13">13</option>
-    						<option value="14">14</option>
-    						<option value="15">15</option>
-    						<option value="16">16</option>
-    						<option value="17">17</option>
-    						<option value="18">18</option>
-    						<option value="19">19</option>
-    						<option value="20">20</option>
-    						<option value="21">21</option>
-    						<option value="22">22</option>
-    						<option value="23">23</option>
-    						<option value="24">24</option>
-    						<option value="25">25</option>
-    						<option value="26">26</option>
-    						<option value="27">27</option>
-    						<option value="28">28</option>
-    						<option value="29">29</option>
-    						<option value="30">30</option>
-  						</select>
-  						<select id="R_Nacimiento" name="R_Nacimiento_Mes">
-    						<option value="1">1</option>
-    						<option value="2">2</option>
-    						<option value="3">3</option>
-    						<option value="4">4</option>
-    						<option value="5">5</option>
-    						<option value="6">6</option>
-    						<option value="7">7</option>
-    						<option value="8">8</option>
-    						<option value="9">9</option>
-    						<option value="10">10</option>
-    						<option value="11">11</option>
-    						<option value="12">12</option>
-  						</select>
-  						<select id="R_Nacimiento" name="R_Nacimiento_Año">
-    						<option value="1980">1980</option>
-    						<option value="1981">1981</option>
-    						<option value="1982">1982</option>
-    						<option value="1983">1983</option>
-    						<option value="1984">1984</option>
-    						<option value="1985">1985</option>
-    						<option value="1986">1986</option>
-    						<option value="1987">1987</option>
-    						<option value="1988">1988</option>
-    						<option value="1989">1989</option>
-    						<option value="1990">1990</option>
-    						<option value="1991">1991</option>
-    						<option value="1992">1992</option>
-    						<option value="1993">1993</option>
-    						<option value="1994">1994</option>
-    						<option value="1995">1995</option>
-    						<option value="1996">1996</option>
-    						<option value="1997">1997</option>
-    						<option value="1998">1998</option>
-    						<option value="1999">1999</option>
-    						<option value="2000">2000</option>
-    						<option value="2001">2001</option>
-    						<option value="2002">2002</option>
-    						<option value="2003">2003</option>
-    						<option value="2004">2004</option>
-    						<option value="2005">2005</option>
-    						<option value="2006">2006</option>
-    						<option value="2007">2007</option>
-    						<option value="2008">2008</option>
-    						<option value="2009">2009</option>
-    						<option value="2010">2010</option>
-    						<option value="2011">2011</option>
-    						<option value="2012">2012</option>
-    						<option value="2013">2013</option>
-    						<option value="2014">2014</option>
-    						<option value="2015">2015</option>
-  						</select>
-					<br>
+					</div>
                     <br>
+                    <div id="busqueda">
 
-					<label for="R_ciudad"><b> Ciudad:</b></label>
+					<label for="R_Nacimiento">Fecha de Nacimiento:</label>
 					<br>
-					<input id="R_ciudad" name="Ciudad" required="required" type="text" placeholder="Ciudad"/>
-					<br>
-					<br>
-
-					<label for="R_pais"><b>Pais:</b></label>
+                    <input type="date"  name="Fecha Nacimiento" id="R_Nacimiento"/>
+					</div>
+					
+					<div id="formulario">
+					<input id="R_ciudad" name="Ciudad"  type="text" placeholder="Ciudad"/>
+                    <span class="bar"></span>
+					<label for="R_ciudad"> Ciudad:</label>
+                    </div>
+                    <br>
+                    <div id="busqueda">
+					<label for="R_pais">Pais:</label>
 					<br>
 					<select id="R_pais" name="R_Nacimiento_Mes">
+                        <option value="" disabled selected>Pais</option>
                             <option value="España">España</option>
                             <option value="Egipto">Egipto</option>
                             <option value="Congo">Congo</option>
                             <option value="Portugal">Portugal</option>
                         </select>
-					<br>
+					</div>
                     <br>
-                    
-					<label for="R_imagen"><b> Imagen:</b></label>
+                    <div id="busqueda">
+					<label for="R_imagen"> Imagen:</label>
 					<br>
 					<input id="R_imagen" name="imagen" type="file" />
 					
-					<br>
-					<br>
+					</div>
+                    <br>
+                    <div id="formulario">
 					<input type="submit" value="Registrate" /> 
+                    </div>
+                    <br>
 			</form>
 			</div>
 

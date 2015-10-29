@@ -302,11 +302,11 @@ form p
 
 #galeria_index 
 {
-    margin: 0 auto;
+    margin: 0  auto;
     overflow: hidden;
   position: relative;
     float: left;
-     width: 25%;
+     width: 19.5%;
      line-height: 0;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 

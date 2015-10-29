@@ -4,16 +4,16 @@
 function validaRegistro(f){
 
 	//recogemos todos los datos
-	var usuario = f.elements["R_usuario"].value;
-	var contrasenya = f.elements["R_contrasenya"].value;
-	var rep_contrasenya = f.elements["R_rep_contrasenya"].value;
-	var email1 = f.elements["R_email"].value;
-	var sexo = f.elements["R_sexo"].value;
+	var usuario = document.getElementById("R_usuario").value;
+	var contrasenya = document.getElementById("R_contrasenya").value;
+	var rep_contrasenya = document.getElementById("R_rep_contrasenya").value;
+	var email1 = document.getElementById("R_email").value;
+	var sexo = document.getElementById("R_sexo").value;
 
-	var fecha = f.elements["R_Nacimiento"].value;
+	var fecha = document.getElementById("R_Nacimiento").value;
 
-	var ciudad = f.elements["R_ciudad"].value;
-	var pais = f.elements["R_pais"].value;
+	var ciudad = document.getElementById("R_ciudad").value;
+	var pais = document.getElementById("R_pais").value;
 	//variables auxiliares:
 	var contUsu = 0;
 	var numMayus = 0;
@@ -22,35 +22,40 @@ function validaRegistro(f){
 	var aux = 1;
 	var validaContrasenya = false;
 
-	//VERIFICAMOS USUARIO ****************************************************
 
-	if(usuario=="" || usuario==" "){
 
-		alert("Introduzca un nombre");
-		return(false);
-	}
-	else if( (usuario.length<3) || (usuario.length>15) ){
+	//VERIFICAMOS USUARIO ****************************************************************************************************
+	if(usuario=="" || usuario==" " || usuario ==null){
 
-		alert("El nombre debe tener entre 3 y 15 caracteres.");
+		alert("Introduzca un usuario.");
+		/*document.getElementById("user").innerHTML='<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error">Introduzca un usuario</p>\n\
+					<label for="R_usuario" > Usuario: </label>';*/
 		return(false);
 	}
 	else {
+		var validarUsu = validateUsuario("R_usuario");
 		
-		for(i=0;i<usuario.length;i++){
-		
-	        if( ( 'A' <= usuario[i] && usuario[i] <= 'Z') ||
-	        	( 'a' <= usuario[i] && usuario[i] <= 'z' ) ||
-	        	( '0' <= usuario[i] && usuario[i] <= '9' ) ) {
-	            	//if sin condicion
-				}
-				else{
-					alert("Has usado un espacio o un carácter erroneo en Usuario, reemplázelo.");
-					return(false);
-				}
-					
+		if(validarUsu == false){
+			alert("Usuario incorrecto.");
+			/*document.getElementById("user").innerHTML='<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error">Usuario incorrecto</p>\n\
+					<label for="R_usuario" > Usuario: </label>';*/
+			return (false);
 		}
+		/**else
+		{
+			var error = document.getElementById("error");	
+
+			var padre = error.parentNode;
+			padre.removeChild(error);
+		}**/
 	}
-	//VERIFICAMOS CONTRASEÑA **************************************************	
+
+
+	//VERIFICAMOS CONTRASEÑA *************************************************************************************************
 	/*contraseña: sólo puede contener letras del alfabeto inglés (en mayúsculas y minúsculas), números
 	y el subrayado; al menos debe contener una letra en mayúsculas, una letra en minúsculas
 	y un número; longitud mínima 6 caracteres y máxima 15.*/
@@ -58,81 +63,61 @@ function validaRegistro(f){
 	if(contrasenya=="" || contrasenya==" "){
 
 		alert("Introduzca una contraseña");
+
+	/**	document.getElementById("formulario").innerHTML='<input id="R_contrasenya" name="Contraseña" type="password" placeholder="Contraseña"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error1">Introduzca una contraseña</p>\n\
+                    <label for="R_contrasenya" > Contraseña: </label>';**/
+
 		return (false);
 	}
-	else if( (contrasenya.length>5) && (contrasenya.length<16) ){
+	else {
+		var validarPass = validatePassword("R_contrasenya");
 
-		for(i=0; i<contrasenya.length; i++){
+		if(validarPass == false){
+			alert("La contraseña introducida es incorrecta.");
 			
-		        if('A' <= contrasenya[i] && contrasenya[i] <= 'Z'){ // si tienes mayuscula
-		            
-		            numMayus++;
-				}
-				else if( 'a' <= contrasenya[i] && contrasenya[i] <= 'z'){ // si tienes minuscula
+			contrasenya = document.getElementById("R_contrasenya").value = '';
+			contrasenya = document.getElementById("R_contrasenya").focus();
 
-					numMin++;
-				}
-				else if('0' <= contrasenya[i] && contrasenya[i] <= '9'){ // si tiene sun numero
-
-		            numNum++;
-				}
-				else{
-					aux = 0;
-				}			
-		}		
-
-		if( aux == 0 ){
-			alert("Carácter del Alfabeto Inglés no Encontrado Password");
-			return(false);
+			return (false);
 		}
-		
-		//Si entra aqui, la contraseña seria correctisima.
-
-		if( (numMayus>0) && (numMin>0) && (numNum>0) ){
-		
-			validaContrasenya = true;
-		}	
-
-		//si entra en este, la contraseña no es valida por esos motivos
-
-		if(validaContrasenya == false){
-		
-			alert("La contraseña debe contener al menos una letra mayuscula, una letra minuscula y un numero");
-			return(false);
-		}
-	
 	}
-	else{
-		alert("La contraseña debe tener un mínimo de 6 carácteres y un máximo de 15");
-		return(false);
-	}
-	
 
 
 	//VERIFICAMOS REP_CONTRASEÑA *******************************************************************
 
 	if(contrasenya != rep_contrasenya){
-
 		alert("Las contraseñas no coinciden");
+		
+		rep_contrasenya = document.getElementById("R_rep_contrasenya").value = '';
+		rep_contrasenya = document.getElementById("R_rep_contrasenya").focus();
+			
 		return(false);
 	}
+
+
 
 	//Verificamos el EMAIL **************************************************************************************
 	/*no puede estar vacío, hay que comprobar que cumple el patrón de una
 	dirección de email (no permitir dominios principales de menos de 2 caracteres y más de 4
 	caracteres).*/
+	if(email1=="" || email1==" "){
 
-	var validar = validateMail("R_email");
+		alert("Introduzca su Email");
+		return(false);
+	}
+	else{
+		var validar = validateEmail("R_email");
 
-	if(validar ==false){
-		alert("El email introcido no es correcto");
-		return (false);
+		if(validar ==false){
+			alert("El email introcido es incorrecto");
+			return (false);
+		}
 	}
 	
 	
-	
 	//VERIFICAMOS EL SEXO INTRODUCIDO*********************************************************************
-	
 	if(sexo == "") {
 
 		alert("Seleccione su sexo");
@@ -143,7 +128,7 @@ function validaRegistro(f){
 	//VERIFICAMOS FECHA DE NACIMIENTO***********************************************************************
 
 	if(fecha == null || fecha == ""){
-		alert("Introduzca una fecha correcta");
+		alert("La fecha introducida es incorrecta.");
 		return (false);
 	}
 
@@ -172,48 +157,55 @@ function validaRegistro(f){
 
 
 
-//VALIDAR EMAIL SIN EXPRESIONES REGULARES
+// FUNCIONES CON EXPRESIONES REGULARES ********************
+function validateUsuario(idUsu){
+	
+	object= document.getElementById(idUsu);
+	valueForm=object.value;
+ 
+	// Patron para el usuario
+	var patron=/^[a-zA-Z0-9]{3,15}$/;
+	
+	if(valueForm.search(patron)==0){
 
+		//Usuario correcto
 
-function validateMail(idMail){	
-	 
-	var contenido = document.getElementById(idMail).value;
- 	var conte = contenido.split("@");
+		return (true);
+	}
+	//Usuario incorrecto
 
- 	if(!conte[1] || conte[0] == ""){
- 		//email incorrecto
- 		return (false);
- 	}
- 	else{
- 		var cont = conte[1].split(".");
- 		if(!cont[1]){
- 			//mail incorrecto
- 			return (false);
- 		}
- 		else{
- 			if(cont[1].length<2 || cont[1].length >4)
- 				return (false);
- 			else
- 				return (true);
- 		}
- 	}
+	return (false);
+}
 
- }
+function validatePassword(idPass){
 
+	object= document.getElementById(idPass);
+	valueForm=object.value;
+ 
+	// Patron para la contraseña
+	//var patron=/(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){6,15}.+$)/;
+	var patron = /(^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9_]{6,15}$)/
 
+	if(valueForm.search(patron)==0){
 
-//FUNCION VALIDAR EMAIL APARTE PARA MENOR COMPLEJIDAD
-// ESTA FUNCION CONTIENE UN EXPRESION REGULAR, PARA P5 NO USAR EXPRESIONES REGULARES
-/*
+		//Contraseña correcta
+		return (true);
+	}
+	//Contraseña incorrecta
+
+	return (false);
+}
+
 function validateEmail(idMail){	
 	
 	//Creamos un objeto 
-	object=document.getElementById(idMail);
+	object= document.getElementById(idMail);
 	valueForm=object.value;
  
 	// Patron para el correo
-	var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-	
+	//var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+	var patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
 	if(valueForm.search(patron)==0){
 
 		//Mail correcto
@@ -221,4 +213,4 @@ function validateEmail(idMail){
 	}
 	//Mail incorrecto
 	return (false);
-}*/
+}

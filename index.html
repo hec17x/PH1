@@ -16,13 +16,14 @@
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
 <script src="javascript/script.js"></script>
+<script src="javascript/scriptOrdenacion.js"></script>
 
 <title>PI - HOME</title>
 </head>
 <!-- El cuerpo -->
 
 
-<body>
+<body onload="iniciar()">
 	<br>
 	<header id="cab_principal">
 	<a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
@@ -39,10 +40,12 @@
 				<img src="images/logo2.png"  alt="foto">
 				<p>Ingresa tu cuenta aqui</p>
 				<div id="formulario">
+					<div id="user">
 				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
 				
      			<span class="bar"></span>
   				<label for="L_Usuario">Usuario</label>
+  					</div>
   				</div>
   				<div id="formulario">
   				<input id="L_Contrasenya" type="password" name="Constraseña" placeholder="Contraseña" >
@@ -62,76 +65,23 @@
 			</form>
 
 	<h2>Últimas actualizaciones:</h2>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/129H.jpg"   alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
+	<div>
+			<select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
+                <option value="" disabled selected>Ordenar por</option>
+                <option value="Fecha">Fecha</option>
+                <option value="Titulo">Titulo</option>
+                <option value="Pais">Pais</option>
+            </select>
+			<select id="Tordenacion" name="Tordenacion" onchange="ordenar()">
+                <option value="Ascendente" disabled selected>Tipo de ordenacion</option>
+                <option value="Ascendente">Ascendente</option>
+                <option value="Descendente">Descendente</option>
+            </select>
+					
 	</div>
-	</div>
+	<div id="fotos">
 
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/CK2252.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div>
 	</div>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img src="images/CK1741.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-	</div>
-	</div>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/IMG_3556.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-	</div>
-	</div>
-	
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/6e609595.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/05502b_o.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/IMG_3822.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/KgqDYXR.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
 	</section>
 	<footer>
 	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>

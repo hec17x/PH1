@@ -28,15 +28,30 @@ function validaRegistro(f){
 	if(usuario=="" || usuario==" " || usuario ==null){
 
 		alert("Introduzca un usuario.");
+		/*document.getElementById("user").innerHTML='<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error">Introduzca un usuario</p>\n\
+					<label for="R_usuario" > Usuario: </label>';*/
 		return(false);
 	}
 	else {
 		var validarUsu = validateUsuario("R_usuario");
 		
 		if(validarUsu == false){
-			alert("El usuario introducido es incorrecto");
+			alert("Usuario incorrecto.");
+			/*document.getElementById("user").innerHTML='<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error">Usuario incorrecto</p>\n\
+					<label for="R_usuario" > Usuario: </label>';*/
 			return (false);
 		}
+		/**else
+		{
+			var error = document.getElementById("error");	
+
+			var padre = error.parentNode;
+			padre.removeChild(error);
+		}**/
 	}
 
 
@@ -48,6 +63,12 @@ function validaRegistro(f){
 	if(contrasenya=="" || contrasenya==" "){
 
 		alert("Introduzca una contraseña");
+
+	/**	document.getElementById("formulario").innerHTML='<input id="R_contrasenya" name="Contraseña" type="password" placeholder="Contraseña"/>\n\
+                    <span class="bar"></span>\n\
+                    <p id="error1">Introduzca una contraseña</p>\n\
+                    <label for="R_contrasenya" > Contraseña: </label>';**/
+
 		return (false);
 	}
 	else {
@@ -148,6 +169,7 @@ function validateUsuario(idUsu){
 	if(valueForm.search(patron)==0){
 
 		//Usuario correcto
+
 		return (true);
 	}
 	//Usuario incorrecto

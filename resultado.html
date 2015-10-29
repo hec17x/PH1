@@ -15,12 +15,15 @@
  title="Estilo de tamaño grande" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
+<script src="javascript/scriptOrdenacion.js"></script>
+
+
 <title>PI - RESULTADO DE BUSQUEDA</title>
 </head>
 <!-- El cuerpo -->
 
 
-<body>
+<body onload="iniciar()">
 
 
 <header id="cab_principal">
@@ -35,74 +38,22 @@
 <h2> Resultado de busqueda</h2>
 <h3>Criterios de busqueda:</h3> 
 	<p>TITULO: test   FECHA: 00-00-0000   PAIS: test</p>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/129H.jpg"   alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
+	<div>
+			<select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
+                <option value="" disabled selected>Ordenar por</option>
+                <option value="Fecha">Fecha</option>
+                <option value="Titulo">Titulo</option>
+                <option value="Pais">Pais</option>
+            </select>
+			<select id="Tordenacion" name="Tordenacion" onchange="ordenar()">
+                <option value="Ascendente" disabled selected>Tipo de ordenacion</option>
+                <option value="Ascendente">Ascendente</option>
+                <option value="Descendente">Descendente</option>
+            </select>
+					
 	</div>
-	</div>
+	<div id="fotos">
 
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/CK2252.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div>
-	</div>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img src="images/CK1741.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-	</div>
-	</div>
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/IMG_3556.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-	</div>
-	</div>
-	
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/6e609595.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/05502b_o.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/IMG_3822.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
-	</div>
-
-	<div id="galeria_index">
-	<a href="detalle.html">	<img  src="images/KgqDYXR.jpg"  alt="foto"></a>
-	<div id="info">
-		<p>TITULO: test </p>
-		<p>FECHA: 00-00-0000</p>
-		<p>PAIS: test</p>
-		</div> 
 	</div>
 </section>
 <footer>

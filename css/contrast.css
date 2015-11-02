@@ -212,7 +212,9 @@ form p
 }
 
 
-#formulario input:focus::-webkit-input-placeholder { color:transparent; }
+#formulario input:focus::-webkit-input-placeholder { 
+  color:transparent; 
+}
 
 
 #formulario input[type="submit"]
@@ -316,11 +318,11 @@ form p
      width: 25%;
      line-height: 0;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-filter: grayscale(100%);
+/*filter: grayscale(100%);
 -webkit-filter: grayscale(100%);
 -moz-filter: grayscale(100%);
 -ms-filter: grayscale(100%);
--o-filter: grayscale(100%);
+-o-filter: grayscale(100%);*/
 }
 
 

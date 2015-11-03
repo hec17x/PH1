@@ -63,7 +63,7 @@ function iniciar()
 	imgArray.datos[6].imagen = new Image();
 	imgArray.datos[6].imagen.src = 'images/IMG_3822.jpg';
 	imgArray.datos[6].titulo= "Iphone 5";
-	imgArray.datos[6].fecha = new Date("Febrary 6, 2013");
+	imgArray.datos[6].fecha = new Date("February 6, 2013");
 	imgArray.datos[6].pais = "Italia";
 	imgArray.datos[6].ordenado = null;
 

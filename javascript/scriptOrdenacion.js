@@ -81,7 +81,7 @@ var imagen='';
 	{
 	
 		imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar()">\n\
+		<div id="galeria_index" onclick="redireccionar('+i+')">\n\
 		<img src=' + imgArray.datos[i].imagen.src + ' alt='+ imgArray.datos[i].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[i].titulo+' </p>\n\
@@ -91,8 +91,11 @@ var imagen='';
 		</div>'
 		;	
 	}
+if(document.getElementById("fotos")!=null)
+{
 
 	document.getElementById("fotos").innerHTML = imagen;
+}
 }
 
 function ordenar()
@@ -153,10 +156,8 @@ function ordenar()
 				}
 			}
 
-
-
 			imagen+='\n\
-		<div id="galeria_index"  onclick="redireccionar()">\n\
+		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -192,7 +193,7 @@ function ordenar()
 		if(imgArray.datos[aux].imagen!=null)
 		{
 			imagen+='\n\
-		<div id="galeria_index"  onclick="redireccionar()">\n\
+		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -225,7 +226,7 @@ function ordenar()
 
 	
 			imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar()">\n\
+		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -243,10 +244,43 @@ function ordenar()
 
 }
 
-function redireccionar()
+function redireccionar(x)
 {
-	location.href="detalle.html";
+	location.href="detalle.html?id="+x;
 }
+
+function cargar()
+{
+	iniciar();
+	 var loc = document.location.href;
+   var getString = loc.split('?')[1];
+   var GET = getString.split('&');
+   var get = {};//this object will be filled with the key-value pairs and returned.
+
+   for(var i = 0, l = GET.length; i < l; i++){
+      var tmp = GET[i].split('=');
+      get[tmp[0]] = unescape(decodeURI(tmp[1]));
+   }
+   var imagen='';
+   imagen+='<img src=' + 	imgArray.datos[get[tmp[0]]].imagen.src  + ' alt='+imgArray.datos[get[tmp[0]]].titulo+'>\n\
+   ';
+	document.getElementById("detalle_foto").innerHTML = imagen;
+   var info='';
+			info+='\n\
+		<div id="dfoto" ">\n\
+				<p>TITULO: '+imgArray.datos[get[tmp[0]]].titulo+' </p>\n\
+					<p>FECHA: '+imgArray.datos[get[tmp[0]]].fecha.toDateString()+'</p>\n\
+					<p>PAIS: '+imgArray.datos[get[tmp[0]]].pais+'</p>\n\
+					'
+		
+			;	
+		
+		
+		
+		document.getElementById("dfoto").innerHTML = info;
+  
+}
+
 
 
 

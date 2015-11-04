@@ -17,14 +17,14 @@
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
 <script src="javascript/cookies.js"></script>
-
+<script src="javascript/scriptOrdenacion.js"></script>
 
 <title>PI - DETALLES DE FOTO</title>
 </head>
 <!-- El cuerpo -->
 
 
-<body onload="readStyle();" onunload="saveStyle();">
+<body onload="readStyle(); cargar();" onunload="saveStyle();">
 
 <header id="cab_principal">
     <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
@@ -47,14 +47,11 @@
 	<br>
 	<br>
 	<div id="detalle_foto">
-	<img src="images/6e609595.jpg" width="600">
+	
 </div>
-		<p>TITULO:</p>
-		<p>FECHA DE PUBLICACIÓN:</p>
-		<p>PAIS:</p>
-		<p>ALBUM:</p>
-		<p>USUARIO:</p>
-
+<div id="dfoto">
+		</div>
+<div>
 	<footer>
 	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
 	</footer>

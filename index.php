@@ -31,24 +31,26 @@
 	<br>
 	<header id="cab_principal">
 	<a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
-  <br>
-  <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
-  <br>
-  <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo alternativo</a></li>
-
+  
 	<nav>
-        <ul class="menu">  
+        <ul class="menu">
+            <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
+            <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo alternativo</a></li>
             <li><a href="busqueda.php">Busqueda Avanzada</a></li>      
+            
         </ul>    
 	</nav> 
 	</header>
 
 	<section id="content-index">
-			
-			<form id="miForm" action="" method="get" onsubmit="return valida(this)">
-				<img src="images/logo2.png"  alt="foto">
-				<p>Ingresa tu cuenta aqui</p>
+		
+			<form id="miForm" action="" method="get" onsubmit="return valida(this)" onclick="Desplegar()">
+				  <div id="Flogin">
+        <img src="images/logo2.png"  alt="foto">
+		  	<h2><b>Login</b></h2>
+        <div id="datosPer">
 				<div id="formulario">
+
 					<div id="user">
 				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
 				
@@ -69,9 +71,11 @@
   				<br>
   				<br>
   				<p>¿Eres nuevo en Pictures & Images? <a href="registro.php">Registrate</a></p> 
-
+          </div>
   				</div>
+          </div>
 			</form>
+    
 
 	<h2>Últimas actualizaciones:</h2>
 	<div>

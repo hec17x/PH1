@@ -5,6 +5,23 @@ a{
 }
 
 
+#datosPer 
+{
+     margin-top: -90%;
+    min-height: 0%;
+    max-height: 0%;
+    visibility: hidden;
+    opacity: 0; 
+}
+
+
+
+#miForm h2
+{
+  text-align: center;
+}
+
+
 #busqueda label
 {
   color:rgba(40, 53, 147, 1); 
@@ -39,9 +56,19 @@ a{
  
 }
 
-#cab_principal nav, li
+#cab_principal ul
 {
-    list-style-type: none; 
+    list-style-type: none;
+        position: absolute;
+    top: 10%;
+    right: 0%;
+    padding: 0; 
+    
+}
+
+#cab_principal li
+{
+    display: inline;
     
 }
 
@@ -58,14 +85,9 @@ a{
 {
      color: rgba(255, 255, 255, 1);    
      text-decoration:none; 
-     list-style-type: none; 
-     position: absolute;
-     float: right;
-     right: 2%;
-     top: 15%;
+     list-style-type: none;
      padding: 1%;
      margin: 0 auto;
-     display: inline-block;
      font-size: 100%;
     transition-property: background;
     transition-duration: 0.5s;
@@ -176,6 +198,7 @@ form p
   position:relative; 
   min-width: 50%;
   max-width: 100%;
+  
 }
 
 
@@ -183,7 +206,7 @@ form p
 {
   font-size: 100%;
   color: #636363;
-  background: #fafafa;
+  background:transparent;
  
   padding:10px 10px 10px 5px;
   margin-top: 12%;

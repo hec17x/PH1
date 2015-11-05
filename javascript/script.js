@@ -67,3 +67,15 @@ function valida(f){
 	return (true);
 }
 
+function Desplegar()
+{
+
+	
+	document.getElementById("datosPer").style.visibility="visible";
+	document.getElementById("datosPer").style.opacity="1";
+	document.getElementById("datosPer").style.marginTop="0%";
+	
+	document.getElementById("datosPer").style.height="auto";
+	document.getElementById("datosPer").style.transition= "all 1s ease";
+}
+

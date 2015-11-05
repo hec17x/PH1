@@ -30,7 +30,7 @@
 
 	<br>
 	<header id="cab_principal">
-	<a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
+	<a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
   <br>
   <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
   <br>
@@ -38,7 +38,7 @@
 
 	<nav>
         <ul class="menu">  
-            <li><a href="busqueda.html">Busqueda Avanzada</a></li>      
+            <li><a href="busqueda.php">Busqueda Avanzada</a></li>      
         </ul>    
 	</nav> 
 	</header>
@@ -68,7 +68,7 @@
   				<input type="submit" value="Enviar">
   				<br>
   				<br>
-  				<p>¿Eres nuevo en Pictures & Images? <a href="registro.html">Registrate</a></p> 
+  				<p>¿Eres nuevo en Pictures & Images? <a href="registro.php">Registrate</a></p> 
 
   				</div>
 			</form>

@@ -27,7 +27,7 @@
 <body onload="readStyle();" onunload="saveStyle();">
 
 <header id="cab_principal">
-    <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
+    <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
     <br>
     <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
     <br>
@@ -35,7 +35,7 @@
     
     <nav>
         <ul class="menu">  
-            <li><a href="index.html">Atras</a></li>         
+            <li><a href="index.php">Atras</a></li>         
         </ul>    
     </nav> 
     </header>
@@ -43,7 +43,7 @@
 <h3>Criterios de busqueda:</h3> 
 	
 	       
-			 <form action="resultado.html" method="post">
+			 <form action="resultado.php" method="post">
                 <div id="formulario">
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
@@ -159,7 +159,7 @@
                         </select>					
                   </div>
 				<div id="formulario">
-				<a href="resultado.html"><input type="submit" value="Buscar"/> </a>
+				<a href="resultado.php"><input type="submit" value="Buscar"/> </a>
                 </div>
                 </form>
 	</div>

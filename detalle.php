@@ -27,7 +27,7 @@
 <body onload="readStyle(); cargar();" onunload="saveStyle();">
 
 <header id="cab_principal">
-    <a href="index.html"><img src="images/logo1.png"  alt="foto"></a>
+    <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
   	<br>
   	<li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
   	<br>
@@ -35,7 +35,7 @@
     
     <nav>
         <ul class="menu">  
-            <li><a href="index.html">Atras</a></li>         
+            <li><a href="index.php">Atras</a></li>         
         </ul>    
     </nav> 
     </header>

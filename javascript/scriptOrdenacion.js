@@ -246,7 +246,7 @@ function ordenar()
 
 function redireccionar(x)
 {
-	location.href="detalle.html?id="+x;
+	location.href="detalle.php?id="+x;
 }
 
 function cargar()

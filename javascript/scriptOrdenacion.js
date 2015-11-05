@@ -214,7 +214,7 @@ function ordenar()
 		{
 			for(var x in imgArray.datos)
 			{
-				//alert(imgArray.datos[x].ordenado+" "+ordenPais[j]+" "+imgArray.datos[x].pais);
+	
 				if(imgArray.datos[x].ordenado!="fecha"&&ordenFecha[j]==imgArray.datos[x].fecha&&Boolean(test)==false)
 				{
 					aux=x
@@ -255,8 +255,7 @@ function cargar()
 	 var loc = document.location.href;
    var getString = loc.split('?')[1];
    var GET = getString.split('&');
-   var get = {};//this object will be filled with the key-value pairs and returned.
-
+   var get = {};
    for(var i = 0, l = GET.length; i < l; i++){
       var tmp = GET[i].split('=');
       get[tmp[0]] = unescape(decodeURI(tmp[1]));

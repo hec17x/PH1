@@ -45,14 +45,14 @@ function readCookie(name) {
     while (c.charAt(0)==' ') c = c.substring(1,c.length);
     if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
   }
-  return null;
+  return principal; //si no encuentra un estilo devuelve principal por defecto
 }
  
 function readStyle() {
   var cookie = readCookie("style");
   var title;
   if(cookie == null){
-      title = "principal";    //Muy importante, cambiar!!    
+      title = "principal";   
   } else {
       title = cookie ? cookie : getPreferredStyleSheet();
   }
@@ -61,5 +61,5 @@ function readStyle() {
  
 function saveStyle() {
   var title = getActiveStyleSheet();
-  createCookie("style", title, 365);
+  createCookie("style", title, 365); // el estilo se guarda durant 365 dias
 }

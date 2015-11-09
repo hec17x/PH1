@@ -28,78 +28,74 @@
 <!--<body onload="iniciar()";>-->
 
 
-	<br>
-	<header id="cab_principal">
-	<a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
-  
-	<nav>
-        <ul class="menu">
-            <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
-            <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo alternativo</a></li>
+  <br>
+  <header id="cab_principal">
+  <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
+  <br>
+  <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
+  <br>
+  <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo alternativo</a></li>
+
+  <nav>
+        <ul class="menu">  
             <li><a href="busqueda.php">Busqueda Avanzada</a></li>      
-            
         </ul>    
-	</nav> 
-	</header>
+  </nav> 
+  </header>
 
-	<section id="content-index">
-		
-			<form id="miForm" action="" method="get" onsubmit="return valida(this)" onclick="Desplegar()">
-				  <div id="Flogin">
+  <section id="content-index">
+      
+      <form id="miForm" action="" method="get" onsubmit="return valida(this)">
         <img src="images/logo2.png"  alt="foto">
-		  	<h2><b>Login</b></h2>
-        <div id="datosPer">
-				<div id="formulario">
-
-					<div id="user">
-				<input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
-				
-     			<span class="bar"></span>
-  				<label for="L_Usuario">Usuario</label>
-  					</div>
-  				</div>
-  				<div id="formulario">
-  				<input id="L_Contrasenya" type="password" name="Constraseña" placeholder="Contraseña" >
-  				
-     			<span class="bar"></span>
-  				<label for="L_Contraseña">Contraseña</label>
-  				</div>
-  				<br>
-  				<br>
-  				<div id="formulario">
-  				<input type="submit" value="Enviar">
-  				<br>
-  				<br>
-  				<p>¿Eres nuevo en Pictures & Images? <a href="registro.php">Registrate</a></p> 
+        <p>Ingresa tu cuenta aqui</p>
+        <div id="formulario">
+          <div id="user">
+        <input id="L_Usuario"type="text" name="Usuario" placeholder="Usuario" >
+        
+          <span class="bar"></span>
+          <label for="L_Usuario">Usuario</label>
+            </div>
           </div>
-  				</div>
+          <div id="formulario">
+          <input id="L_Contrasenya" type="password" name="Constraseña" placeholder="Contraseña" >
+          
+          <span class="bar"></span>
+          <label for="L_Contraseña">Contraseña</label>
           </div>
-			</form>
-    
+          <br>
+          <br>
+          <div id="formulario">
+          <input type="submit" value="Enviar">
+          <br>
+          <br>
+          <p>¿Eres nuevo en Pictures & Images? <a href="registro.php">Registrate</a></p> 
 
-	<h2>Últimas actualizaciones:</h2>
-	<div>
-			<select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
+          </div>
+      </form>
+
+  <h2>Últimas actualizaciones:</h2>
+  <div>
+      <select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
                 <option value="" disabled selected>Ordenar por</option>
                 <option value="Fecha">Fecha</option>
                 <option value="Titulo">Titulo</option>
                 <option value="Pais">Pais</option>
             </select>
-			<select id="Tordenacion" name="Tordenacion" onchange="ordenar()">
+      <select id="Tordenacion" name="Tordenacion" onchange="ordenar()">
                 <option value="Ascendente" disabled selected>Tipo de ordenacion</option>
                 <option value="Ascendente">Ascendente</option>
                 <option value="Descendente">Descendente</option>
             </select>
-					
-	</div>
-	<div id="fotos">
+          
+  </div>
+  <div id="fotos">
 
-	</div>
-	</section>
-	<footer>
-	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
-	</footer>
-	
+  </div>
+  </section>
+  <footer>
+  <p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
+  </footer>
+  
 </body>
 
 

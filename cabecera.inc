@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- La cabecera -->
+
 <head>
 <meta charset="UTF-8" />
 <meta name="generator" content="Sublime-Text" />
@@ -21,8 +22,9 @@
 
 <title>PI - HOME</title>
 </head>
-<footer>
-	<p>Esta página ha sido creada para la asignatura Programación Hipermedia I.<p>
-</footer>
+<!-- El cuerpo -->
 
-</html>
+
+<body onload="iniciar(); readStyle(); cargar();" onunload="saveStyle();">
+<!--<body onload="iniciar()";>-->
+<br>

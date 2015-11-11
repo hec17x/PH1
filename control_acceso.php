@@ -7,7 +7,7 @@
    $userR="Roberto";
    $passR="Roberto1";
  
-   if (($user == $userH OR $user == $userR) AND ($password == $passH OR $password ==$passR)){
+   if ((($user == $userH) AND ($password == $passH)) OR (($user == $userR) AND ($password ==$passR))){
       echo "Bienvenido ".$user;
       echo '<script language="javascript">
 		function redireccionarPagina() {

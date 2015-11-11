@@ -6,7 +6,7 @@ a{
 
 sidebar
 {
-       position: fixed;
+       position: relative;
     height: 100%;
     width: 20%;
     top: 0;
@@ -20,7 +20,7 @@ sidebar
   position: fixed;
   height: 100%;
    width: 20%;
-    top: 0;
+    top: 14%;
     left: 0;
 }
 

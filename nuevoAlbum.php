@@ -1,6 +1,8 @@
   <?php 
     include('cabecera.inc');
-    include('inicio.inc');
+    include('inicio.inc');       
+    include('sidebar.inc');     
+
   ?>
 
 <section id="content-busqueda">

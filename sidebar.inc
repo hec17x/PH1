@@ -7,11 +7,15 @@
 	 	<div id="lat">
 	 		<img id="logo" src="images/logo1.png"  alt="foto">
 	 		<img id="avatar" src="images/avatar.jpg" >
+	 		<?php
+	 			echo "<h2>".$_GET['user']."</h2>";
+	 		?>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Datos</a></li>
+            <li><a href="#">Albumés</a></li>
+            <li><a href="#">Crear álbum</a></li>
+            <li><a href="#">Añadir foto</a></li>
+             <li><a href="index.php">Salir</a></li>
         </ul>
     	</div>
     </div>

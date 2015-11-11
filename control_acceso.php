@@ -11,7 +11,7 @@
       echo "Bienvenido ".$user;
       echo '<script language="javascript">
 		function redireccionarPagina() {
-  			window.location = "perfil.php";
+  			window.location = "perfil.php?user='.$user.'";
 			}
 			setTimeout("redireccionarPagina()", 1500);
 		

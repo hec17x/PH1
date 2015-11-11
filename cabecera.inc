@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 
 <script src="javascript/script.js"></script>
+<script src="javascript/scriptRegistro.js"></script>
 <script src="javascript/scriptOrdenacion.js"></script>
 <script src="javascript/cookies.js"></script>
 

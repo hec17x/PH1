@@ -1,5 +1,31 @@
 //Funciones validar Registro completo
 
+//Valida en busqueda.php que se rellene el formulario completo para mostrarlo en resultado.php
+function validaBusqueda(f){
+
+	var titulo = document.getElementById("B_titulo").value;
+	var fechadia =document.getElementById("B_Dia").value;
+	var fechames = document.getElementById("B_Mes").value;
+	var fechaaño = document.getElementById("B_Año").value;
+	var pais = document.getElementById("R_pais").value;
+
+	if(titulo=="" || titulo==" " || titulo ==null){
+
+		alert("Introduzca un titulo.");
+		return(false);
+	}
+
+	if(fechadia=="" || fechames=="" || fechaaño==""){
+		alert("Introduzca una fecha correcta.");
+		return(false);
+	}
+	if(pais == ""){
+		alert("Introduzca un pais");
+		return (false);
+	}
+
+}
+
 
 function validaRegistro(f){
 
@@ -150,8 +176,8 @@ function validaRegistro(f){
 
 	//Eliminar estas dos linear cuando acabemos!!!!!*******
 	//son para realizar varais cmprobaciones a la vez
-	alert("Todo Funca bien ");
-	return (false);
+	//alert("Todo Funca bien ");
+	//return (false);
 	//*****************************************************
 }
 

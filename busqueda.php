@@ -4,10 +4,15 @@
   ?>
   
 <section id="content-busqueda">
-<h3>Criterios de busqueda:</h3> 
+
 	
 	       
-			 <form action="resultado.php" method="post">
+			 <form action="resultado.php" method="get" onsubmit="return validaBusqueda(this)" novalidate="true">
+
+                <div id= "formulario">
+                    <h3>Criterios de busqueda:</h3> 
+                </div>
+
                 <div id="formulario">
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
@@ -17,7 +22,7 @@
 				 <div id="busqueda">
 	               <br>
 						
-					<label for="B_Dia">Fecha de publicación:</label>
+					<label for="B_Fecha">Fecha de publicación:</label>
                     <br>
 						<select id="B_Dia" name="B_Dia">
                              <option value="" disabled selected>Dia</option>
@@ -52,7 +57,7 @@
     						<option value="29">29</option>
     						<option value="30">30</option>
   						</select>
-  						<select name="B_Mes">
+  						<select id="B_Mes" name="B_Mes">
                             <option value="" disabled selected>Mes</option>
     						<option value="1">1</option>
     						<option value="2">2</option>
@@ -67,7 +72,7 @@
     						<option value="11">11</option>
     						<option value="12">12</option>
   						</select>
-  						<select name="B_Año">
+  						<select name="B_Año" id="B_Año">
                             <option value="" disabled selected>Año</option>
     						<option value="1980">1980</option>
     						<option value="1981">1981</option>
@@ -114,7 +119,7 @@
 
 					<label for="R_pais">Pais:</label>
 					<br>
-                    <select id="R_pais" name="R_Nacimiento_Mes">
+                    <select id="R_pais" name="R_pais">
                         <option value="" disabled selected>Pais</option>
                             <option value="España">España</option>
                             <option value="Egipto">Egipto</option>
@@ -123,7 +128,7 @@
                         </select>					
                   </div>
 				<div id="formulario">
-				<a href="resultado.php"><input type="submit" value="Buscar"/> </a>
+				<input type="submit" value="Buscar"/> </a>
                 </div>
                 </form>
 	</div>

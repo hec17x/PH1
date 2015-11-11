@@ -256,6 +256,8 @@ function cargar()
    var getString = loc.split('?')[1];
    var GET = getString.split('&');
    var get = {};
+
+   
    for(var i = 0, l = GET.length; i < l; i++){
       var tmp = GET[i].split('=');
       get[tmp[0]] = unescape(decodeURI(tmp[1]));
@@ -270,6 +272,7 @@ function cargar()
 				<p>TITULO: '+imgArray.datos[get[tmp[0]]].titulo+' </p>\n\
 					<p>FECHA: '+imgArray.datos[get[tmp[0]]].fecha.toDateString()+'</p>\n\
 					<p>PAIS: '+imgArray.datos[get[tmp[0]]].pais+'</p>\n\
+					<p>ID: '+get[tmp[0]]+'</p>\n\
 					'
 		
 			;	

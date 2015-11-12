@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+ h3
+{
+
+      font-weight: lighter;
+    text-align: center;
+    margin-top: 20%;
+    width: 100%;
+    height: 100%;
+    font-size: -webkit-xxx-large;
+
+
+    -webkit-animation: aparecer 1.5s ease; /* Safari 4+ */
+  -moz-animation:   aparecer 1.5s ease; /* Fx 5+ */
+  -o-animation:     aparecer 1.5s ease; /* Opera 12+ */
+  animation:        aparecer 1.5s ease; /* IE 10+, Fx 29+ */
+}
+}
+
+@-webkit-keyframes aparecer {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes aparecer {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes aparecer {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes aparecer{
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+html
+{
+  font-family: 'Roboto', sans-serif;
+  position:relative;
+min-height:100%;
+opacity: 1;
+  animation: h3 1s ease forwards;
+}
+/**html:hover
+{
+	opacity: 1;
+	   -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}**/

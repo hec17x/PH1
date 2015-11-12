@@ -4,7 +4,8 @@
 
   ?>
 
-<section id="content-busqueda">
+
+      <section id="content-datos">
 
 	
 	       

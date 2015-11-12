@@ -1,6 +1,5 @@
   <?php 
-    include('cabecera.inc');
-    include('inicio.inc');       
+    include('cabecera.inc');  
     include('sidebar.inc');     
 
   ?>

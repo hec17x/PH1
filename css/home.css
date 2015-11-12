@@ -20,8 +20,83 @@ sidebar
   position: fixed;
   height: 100%;
    width: 20%;
-    top: 14%;
+    top: 0%;
     left: 0;
+}
+
+#albumes
+{
+  display: inline-block;
+ width: 24%;
+
+}
+#albumes img
+{
+
+    width: 50%;
+    float: left;
+      margin: 0 auto auto 25%;
+    border: 2px solid #9E9E9E;
+    background: grey;
+}
+
+#albumes p
+{
+  display: block;
+  text-align: center;
+}
+#contactos 
+{
+  display: inline-block;
+ width: 19%;
+}
+#contactos p
+{
+  display: block;
+  text-align: center;
+}
+
+#contactos img
+{
+border-radius: 50%;
+    width: 50%;
+    float: left;
+      margin: 0 auto auto 25%;
+    border: 2px solid #9E9E9E;
+  }
+
+#con_nom 
+{
+  text-align: center;
+}
+
+
+#datos
+{
+  min-width: 15%;
+      margin: auto auto auto 2%;
+    max-width: 70%;
+    background: #fafafa;
+    padding: 2% 3%;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+      -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+#datos h3
+{
+  margin-top: 4%;
+}
+
+#content-datos
+{
+
+        position: relative;
+    left: 20%;
+    margin: auto ;
+    margin-bottom: 10%;
 }
 
 #latBg
@@ -50,7 +125,7 @@ sidebar
     border-radius: 50%;
     width: 25%;
     float: left;
-  
+    margin-top: 2%;
     border: 2px solid #9E9E9E;
 }
 
@@ -74,7 +149,7 @@ background: rgb(34,34,34); /* for IE */
 #lat h2
 {
       text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
      color: rgba(255, 255, 255, 1);
    font-weight: lighter;
      margin-bottom: 20%;
@@ -209,6 +284,12 @@ background: rgb(34,34,34); /* for IE */
    max-width: 100%;
  
 }
+
+#fotos
+{
+  margin-bottom: 37%;
+}
+
 
 
 footer{
@@ -421,6 +502,7 @@ form p
      width: 25%;
      line-height: 0;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+
 
 }
 

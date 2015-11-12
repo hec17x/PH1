@@ -10,9 +10,10 @@
 	 			echo "<h2>".$_GET['user']."</h2>";
 	 		?>
         <ul>
-            <li><a href="#">Datos</a></li>
+            <li><a href="datos.php">Datos</a></li>
             <li><a href="#">Álbumes</a></li>
-            <li><a href="nuevoAlbum.php">Crear álbum</a></li>
+            <?php
+           	echo "<li><a href='nuevoAlbum.php?user=".$_GET['user']."'>Crear álbum</a></li>";?>
             <li><a href="#">Añadir foto</a></li>
              <li><a href="index.php">Salir</a></li>
         </ul>

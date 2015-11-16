@@ -1,4 +1,4 @@
-<div id="login-lateral">   
+﻿<div id="login-lateral">   
       <form id="miForm" action="control_acceso.php" method="get" onsubmit="return valida(this)">
        <p>Ingresa tu cuenta aqui</p>
 
@@ -17,7 +17,6 @@
           <label for="L_Contraseña">Contraseña</label>
           </div>
 
-       
           <div>
           <input type="checkbox" name="recordar"> Recordarme en este equipo</td>
           </div>

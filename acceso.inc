@@ -17,6 +17,12 @@
           <span class="bar"></span>
           <label for="L_Contraseña">Contraseña</label>
           </div>
+
+          <br>
+          <div>
+          <input type="checkbox" name="recordar"> Recordarme en este equipo</td>
+          </div>
+
           <br>
           <br>
           <div id="formulario">

@@ -5,9 +5,16 @@
     include('acceso.inc');
   ?>
   
+  <div id="login-abrir">
+      
+       <p id="login-abrir-nombre "onclick="action()">Login</p>
+       <img id="login-abrir-delante" src="images/delante.png"  onclick="action()"alt="foto">
+       <img id="login-abrir-atras" src="images/atras.png"  onclick="action()"alt="foto">
+  </div>
+
+  <div id="selector-ordenacion">
 
   <h2>Últimas actualizaciones:</h2>
-  <div>
       <select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
                 <option value="" disabled selected>Ordenar por</option>
                 <option value="Fecha">Fecha</option>
@@ -21,7 +28,7 @@
             </select>
           
   </div>
-  <div id="fotos">
+ <div id="fotos">
 
   </div>
  </section>

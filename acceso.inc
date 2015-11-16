@@ -1,8 +1,7 @@
-<section id="content-index">
-      
+<div id="login-lateral">   
       <form id="miForm" action="control_acceso.php" method="get" onsubmit="return valida(this)">
-        <img src="images/logo2.png"  alt="foto">
-        <p>Ingresa tu cuenta aqui</p>
+       <p>Ingresa tu cuenta aqui</p>
+
         <div id="formulario">
           <div id="user">
         <input id="L_Usuario"type="text" name="usuario" placeholder="Usuario" metho="post" >
@@ -17,6 +16,12 @@
           <span class="bar"></span>
           <label for="L_Contraseña">Contraseña</label>
           </div>
+
+       
+          <div>
+          <input type="checkbox" name="recordar"> Recordarme en este equipo</td>
+          </div>
+
           <br>
           <br>
           <div id="formulario">
@@ -27,3 +32,7 @@
 
           </div>
       </form>
+
+    </div>
+    
+<section id="content-index">

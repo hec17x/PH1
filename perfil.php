@@ -1,11 +1,13 @@
 <?php 
+session_start();
+
 	include('cabecera.inc');
 	include('sidebar.inc'); 	
   ?>
   
   <section id="content-datos">
 	<div id="datos">
-		
+
 		<h2>Tu galería:</h2>
 		<h3>Últimas fotos subidas:</h3>
 		 <div id="fotos">

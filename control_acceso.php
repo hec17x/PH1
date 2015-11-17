@@ -15,6 +15,10 @@
 <body onload="this.style.opacity=1">
 <?php
 
+session_start();
+session_name("WebsiteID");
+
+
    $user = $_GET['usuario'];
    $password = $_GET['password'];
 
@@ -25,19 +29,22 @@
  
    if ((($user == $userH) AND ($password == $passH)) OR (($user == $userR) AND ($password ==$passR))){
 
+     /* $_SESSION['user'] = $user;
+      $_SESSION['pass'] = $password;**/
+     
 
       if(isset($_GET['recordar'])){ //esta pulsado el chcekbox
 
             //aqui creamos la cookiee si no existe
             if(isset($_COOKIE['user'])){
-                setcookie('user',$user,time()+60);
-                setcookie('fecha',time(),time()+60);
+               setcookie('user',$user,time()+60);
+                setcookie('fecha',date("r"),time()+60);
                 setcookie('pass',$password,time()+60);
               }
             //aqui modificamos la cookie ya existente
             else{
               setcookie('user',$user,time()+60);
-              setcookie('fecha',time(),time()+60);
+              setcookie('fecha',date("r"),time()+60);
               setcookie('pass',$password,time()+60);
             }
 
@@ -47,7 +54,7 @@
         echo '<script language="javascript">
         
         function redireccionarPagina() {
-              window.location = "perfil.php?user='.$user.'";
+              window.location = "perfil.php";
         }
         
         setTimeout("redireccionarPagina()", 1500);

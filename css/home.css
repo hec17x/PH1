@@ -1,5 +1,23 @@
 @charset "utf-8";
 
+#content-registro h2
+{
+  margin-top: 5%; 
+}
+
+#content-registro form
+{
+      padding: 2% 3%;
+    background: #fafafa;
+    margin: 8% auto;
+    width: 30%;
+}
+
+#content-registro form p
+{
+      font-size: 100%;
+      margin-bottom: 0%;
+}
 
 #login-lateral
 {
@@ -556,6 +574,147 @@ form p
     margin-bottom: 25%;
 }
 
+
+#formulario-registro
+{
+  position:relative; 
+  min-width: 50%;
+  max-width: 100%;
+}
+
+
+#formulario-registro input
+{
+  font-size: 100%;
+  color: #636363;
+  background: transparent;
+ 
+  padding:10px 10px 10px 5px;
+  margin-top: 12%;
+  display:block;
+  width:95%;
+  font-size: 100%;
+  border:none;
+  border-radius: 0;
+  font-weight: lighter;
+  border-bottom:1px solid rgba(40, 53, 147, 1);
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+
+}
+
+#formulario-registro input:focus
+{
+   outline:none;
+
+}
+#formulario-registro input::-webkit-input-placeholder { 
+   color: rgba(40, 53, 147, 0.5);
+}
+
+#formulario-registro input:focus::-webkit-input-placeholder { 
+  color: transparent;
+}
+
+
+#formulario-registro input[type="submit"]
+{
+    background: rgba(40, 53, 147, 1);
+   margin: 5% auto;
+   min-width: 50%;
+   max-width: 100%;
+    color: white;
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 1px 0px;
+      -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+     
+   
+}
+
+
+
+
+
+#formulario-registro input[type="submit"]:hover
+{
+  
+    background: rgba(83, 109, 254, 1);
+    box-shadow: rgba(0,0,0,0.5) 0px 5px 5px 0px;
+   min-width: 50%;
+   max-width: 100%;
+     transition-property: background;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+      -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+   
+}
+
+
+#formulario-registro label{
+  
+  color:rgba(40, 53, 147, 1); 
+  font-size:110%;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  margin-bottom: 5%;
+      top: -35%;
+  left: 1.2%;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+#formulario-registro #busqueda label {
+  top: 0%;
+}
+
+#formulario-registro input:focus ~ label, input:valid ~ label    {
+
+
+  font-size:110%;
+  color:rgba(83, 109, 254, 1);
+}
+
+
+#formulario-registro p
+{
+    text-align: center;
+    color: rgba(40, 53, 147, 1);
+    font-size: 100%;
+    margin-top: -1%;
+    margin-bottom: 5%;
+}
+#formulario-registro a
+{
+
+    font-size: 100%;
+
+    text-decoration: none;
+
+}
+
+
+#formulario-registro .bar  
+{ 
+  position:relative; 
+  display:block; 
+  width:100%; 
+      margin-bottom: 0%;
+}
+
+
+#formulario-registro input:focus {
+
+  border-bottom:1px solid rgba(83, 109, 254, 1);
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
 
 #formulario
 {

@@ -5,11 +5,11 @@
     include('acceso.inc');
   ?>
   
-  <div id="login-abrir">
+  <div id="login-abrir"onclick="action()" >
       
-       <p id="login-abrir-nombre "onclick="action()">Login</p>
-       <img id="login-abrir-delante" src="images/delante.png"  onclick="action()"alt="foto">
-       <img id="login-abrir-atras" src="images/atras.png"  onclick="action()"alt="foto">
+       <p id="login-abrir-nombre ">Login</p>
+       <img id="login-abrir-delante" src="images/delante.png"  alt="foto">
+       <img id="login-abrir-atras" src="images/atras.png"  alt="foto">
   </div>
 
   <div id="selector-ordenacion">

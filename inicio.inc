@@ -1,8 +1,25 @@
 <header id="cab_principal">
-  <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
+  <a href="./index.php"><img src="images/logo1.png"  alt="foto"></a>
   <nav>
-        <ul class="menu">  
-           <li><a href="busqueda.html">Busqueda Avanzada</a></li>  
+  
+   
+
+        <ul class="menu"> 
+          <?php
+
+           $url_actual = $_SERVER["REQUEST_URI"];
+
+         
+          if($url_actual=="/PH1/index.php" OR $url_actual=="/PH1/")
+          {
+           echo  "<li><a href='busqueda.php'>Busqueda Avanzada</a></li>";  
+          }
+          else
+          {
+             echo  "<li><a href='index.php'>Atras</a></li>";  
+          }
+          
+           ?>
             <li>
                  Apariencia
                  <ul>
@@ -12,7 +29,9 @@
           
            </li>
 
-        </ul>    
+        </ul>  
+          
+       
   </nav> 
   </header>
 

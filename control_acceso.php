@@ -41,8 +41,6 @@
               setcookie('pass',$password,time()+60);
             }
 
-            header('Location: index.php');
-
         }   
         
         echo "<h3 id='Welcome'>Bienvenido ".$user."</h3>";

@@ -24,16 +24,41 @@
    $passR="Roberto1";
  
    if ((($user == $userH) AND ($password == $passH)) OR (($user == $userR) AND ($password ==$passR))){
-      echo "<h3 id='Welcome'>Bienvenido ".$user."</h3>";
-      echo '<script language="javascript">
-		function redireccionarPagina() {
-  			window.location = "perfil.php?user='.$user.'";
-			}
-			setTimeout("redireccionarPagina()", 1500);
-		
-		</script>'; 
-      
+
+
+      if(isset($_GET['recordar'])){ //esta pulsado el chcekbox
+
+            //aqui creamos la cookiee si no existe
+            if(isset($_COOKIE['user'])){
+                setcookie('user',$user,time()+60);
+                setcookie('fecha',time(),time()+60);
+                setcookie('pass',$password,time()+60);
+              }
+            //aqui modificamos la cookie ya existente
+            else{
+              setcookie('user',$user,time()+60);
+              setcookie('fecha',time(),time()+60);
+              setcookie('pass',$password,time()+60);
+            }
+
+            header('Location: index.php');
+
+        }   
+        
+        echo "<h3 id='Welcome'>Bienvenido ".$user."</h3>";
+        echo '<script language="javascript">
+        
+        function redireccionarPagina() {
+              window.location = "perfil.php?user='.$user.'";
+        }
+        
+        setTimeout("redireccionarPagina()", 1500);
+          
+        </script>'; 
+
    }
+
+   //si el login es fallido
    else{
       echo "<h3 id='Welcome'>¡Usuario o contraseña incorrectos!</h3>";
      echo '<script language="javascript">

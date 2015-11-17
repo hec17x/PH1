@@ -67,15 +67,34 @@ function valida(f){
 	return (true);
 }
 
-function Desplegar()
-{
+var hidden = false;
+    function action() {
+        hidden = !hidden;
+        if(hidden) {
+            document.getElementById('login-lateral').style.left="0%";
+            document.getElementById('login-lateral').style.visibility="visible";
+             document.getElementById('login-abrir').style.left="20%";
 
-	
-	document.getElementById("datosPer").style.visibility="visible";
-	document.getElementById("datosPer").style.opacity="1";
-	document.getElementById("datosPer").style.marginTop="0%";
-	
-	document.getElementById("datosPer").style.height="auto";
-	document.getElementById("datosPer").style.transition= "all 1s ease";
-}
+             document.getElementById('cab_principal').style.left="20%";
+             document.getElementById('cab_principal').style.width="80%";
+              document.getElementById('selector-ordenacion').style.marginLeft="22%";
+              document.getElementById('login-abrir-delante').style.visibility="hidden";
+              document.getElementById('login-abrir-atras').style.visibility="visible";
+              document.getElementById('fotos').style.marginLeft="20%";
+        } else {
+           document.getElementById('login-lateral').style.left="-20%";
+            document.getElementById('login-lateral').style.visibility="hidden";
+            document.getElementById('login-abrir').style.left="0%";
+  
+            document.getElementById('cab_principal').style.left="0%";
+             document.getElementById('cab_principal').style.width="100%";
+            document.getElementById('selector-ordenacion').style.marginLeft="2%";
+     		document.getElementById('login-abrir-delante').style.visibility="visible";
+              document.getElementById('login-abrir-atras').style.visibility="hidden";
+            document.getElementById('fotos').style.marginLeft="0%";
+        }
+    }
+
+
+
 

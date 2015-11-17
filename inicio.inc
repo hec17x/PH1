@@ -1,7 +1,5 @@
 <header id="cab_principal">
   <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
-  
-  
   <nav>
         <ul class="menu">  
            <li><a href="busqueda.html">Busqueda Avanzada</a></li>  

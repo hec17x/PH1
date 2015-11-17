@@ -29,21 +29,21 @@
 		<span class="bar"></span>
         <label for="R_email"> Email:</label>
         </div>
-        <br>
+        
         <div id="busqueda">
-		<label for="R_sexo"> Sexo:</label>
-        <br>
+		  <label for="R_sexo"> Sexo:</label>
+      
 			<select id="R_sexo" name="R_sexo">
                 <option value="" disabled selected>Sexo</option>
 				<option value="Masculino">Masculino</option>
 				<option value="Femenino">Femenino</option>
 				</select>
 		</div>
-        <br>
+        
         <div id="busqueda">
 
-		<label for="R_Nacimiento">Fecha de Nacimiento:</label>
-		<br>
+		  <label for="R_Nacimiento">Fecha de Nacimiento:</label>
+		
         <input type="text"  name="R_Nacimiento" id="R_Nacimiento"/> <!--IMPORTATNE, SE HA CAMBIADO LA FECHA A TIPO TEXT EN LUGAR DE DATE -->
 		</div>
 		
@@ -52,10 +52,10 @@
         <span class="bar"></span>
 		<label for="R_ciudad"> Ciudad:</label>
         </div>
-        <br>
+
         <div id="busqueda">
 		<label for="R_pais">Pais:</label>
-		<br>
+
 		<select id="R_pais" name="R_pais">
             <option value="" disabled selected>Pais</option>
                 <option value="España">España</option>
@@ -64,16 +64,16 @@
                 <option value="Portugal">Portugal</option>
             </select>
 		</div>
-        <br>
+
         <div id="busqueda">
 		<label for="R_imagen"> Imagen:</label>
-		<br>
+
 		<input id="R_imagen" name="imagen" type="file" />
 		
 		</div>
-        <br>
+  
         <div id="formulario-registro">  
 		<input type="submit" value="Registrate" /> 
         </div>
-        <br>
+
     </form>

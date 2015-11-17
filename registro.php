@@ -3,6 +3,6 @@
     include('inicio.inc');
 
     include('accesoRegistro.inc');
-  //  include('pie.inc');
+    include('pie.inc');
   ?>
   

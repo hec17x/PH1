@@ -5,7 +5,7 @@
   ?>
 
 
-      <section id="content-datos">
+      <section id="content-registro">
 
 	
 	       

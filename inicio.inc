@@ -10,7 +10,7 @@
            $url_actual = $_SERVER["REQUEST_URI"];
 
          
-          if($url_actual=="/PH1/index.php" OR $url_actual=="/PH1/")
+          if($url_actual=="/PH1/index.php" OR $url_actual=="/PH1/" OR  $url_actual=="/ph1/" OR  $url_actual=="/ph1/index.php")
           {
            echo  "<li><a href='busqueda.php'>Busqueda Avanzada</a></li>";  
           }

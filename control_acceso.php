@@ -44,15 +44,15 @@ if(!isset($_SESSION['user']))
           $_SESSION['pass'] = $password;
             //aqui creamos la cookiee si no existe
             if(isset($_COOKIE['user'])){
-               setcookie('user',$user,time()+60);
-                setcookie('fecha',date("r"),time()+60);
-                setcookie('pass',$password,time()+60);
+               setcookie('user',$user,time()+ 365 * 24 * 60 * 60);
+                setcookie('fecha',date("r"),time()+365 * 24 * 60 * 60);
+                setcookie('pass',$password,time()+365 * 24 * 60 * 60);
               }
             //aqui modificamos la cookie ya existente
             else{
-              setcookie('user',$user,time()+60);
-              setcookie('fecha',date("r"),time()+60);
-              setcookie('pass',$password,time()+60);
+              setcookie('user',$user,time()+365 * 24 * 60 * 60);
+              setcookie('fecha',date("r"),time()+365 * 24 * 60 * 60);
+              setcookie('pass',$password,time()+365 * 24 * 60 * 60);
             }
        
         } 

@@ -1,4 +1,4 @@
-  <?php 
+<?php 
   session_start();
     include('cabecera.inc');  
     include('sidebar.inc');     
@@ -13,26 +13,19 @@
 			 <form action="#" method="post">
 
 			 	<div id= "formulario">
-                    <h3>Crear un nuevo album:</h3> 
+                    <h3>Añade una nueva foto:</h3> 
                 </div>
 
                 <div id="formulario">
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
-                <span class="bar"></span>
-			 	<label for="B_titulo" > Titulo del Album: </label>
-				</div>
-
-				<div id="formulario">
-                <input id="B_descripcion" name="Descripcion" required="required" type="text" placeholder="Descripcion"/>
-               
-			 	<label for="B_descripcion" > Descripcion: </label>
+			 	<label for="B_titulo" > Titulo de la foto: </label>
 				</div>
 
 				 <div id="busqueda">
 	               <br>
 						
-					<label for="B_Dia">Fecha de creación:</label>
+					<label for="B_Dia">Fecha de subida:</label>
                     <br>
 						<select id="B_Dia" name="B_Dia">
                              <option value="" disabled selected>Dia</option>
@@ -125,7 +118,7 @@
                         
                     </div>
                     <br>
-					 <div id="busqueda">
+				<div id="busqueda">
 
 					<label for="R_pais">Pais:</label>
 					<br>
@@ -136,11 +129,21 @@
                             <option value="Congo">Congo</option>
                             <option value="Portugal">Portugal</option>
                         </select>					
-                  </div>
-				<div id="formulario">
-				<a href="resultado.php"><input type="submit" value="Crear nuevo Album"/> </a>
+                </div>
+				
+                 <div id="formulario">
+                    <input id="R_imagen" name="imagen" type="file" />
+                </div>
+                <br>
+
+                <div id="formulario">
+				
+                <a href="resultado.php"><input type="submit" value="Crear nuevo Album"/> </a>
                 </div>
                 </form>
+                 <br>
+                <br>
+                <br>
 	</div>
 </section>
 

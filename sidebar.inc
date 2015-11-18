@@ -27,10 +27,9 @@
         <ul>
         	<li><a href='index.php'>Inicio</a></li>
             <li><a href='datos.php'>Datos</a></li>
-            <li><a href="#">Álbumes</a></li>
-            <?php
-           	echo "<li><a href='nuevoAlbum.php'>Crear álbum</a></li>";?>
-            <li><a href="#">Añadir foto</a></li>
+            <li><a href="albumes.php">Álbumes</a></li>
+            <li><a href='nuevoAlbum.php'>Crear álbum</a></li>
+            <li><a href='nuevaFoto.php'>Añadir foto</a></li>
            
              <li><a href='sesionFin.php'>Salir</a></li>
 			

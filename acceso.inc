@@ -20,6 +20,22 @@ if (isset($_COOKIE['user']))
 }
 else
 {
+  if(isset($_SESSION['user']))
+  {
+     echo "<div id='formulario'>
+   <br>
+   <br>
+   ";
+       echo "        <a href='perfil.php'> <input type='submit' value='Acceder a Plataforma'></a>
+           
+       ";
+
+  echo "        <a href='sesionFin.php'> <input type='submit' value='Cerrar Sesion'></a>
+            <br>
+        </div>";
+  }
+  else
+  {
     echo"
         <form id='miForm' action='control_acceso.php' method='get' onsubmit='return valida(this)'>
          <p>Ingresa tu cuenta aqui</p>
@@ -53,7 +69,7 @@ else
 
             </div>
         </form>";
-
+      }
       
     }
   

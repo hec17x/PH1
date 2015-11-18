@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['user']))
+{
+  header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <!-- La cabecera -->
@@ -15,7 +21,7 @@
 <body onload="this.style.opacity=1">
 <?php
 
-session_start();
+
 
 
 
@@ -31,10 +37,11 @@ session_start();
 
      /* $_SESSION['user'] = $user;
       $_SESSION['pass'] = $password;**/
-     
+     $_SESSION['page'] = $_SERVER['HTTP_REFERER'];
 
       if(isset($_GET['recordar'])){ //esta pulsado el chcekbox
-
+          $_SESSION['user'] = $user;
+          $_SESSION['pass'] = $password;
             //aqui creamos la cookiee si no existe
             if(isset($_COOKIE['user'])){
                setcookie('user',$user,time()+60);
@@ -47,19 +54,20 @@ session_start();
               setcookie('fecha',date("r"),time()+60);
               setcookie('pass',$password,time()+60);
             }
-
+       
         } 
         else
         {
           $_SESSION['user'] = $user;
           $_SESSION['pass'] = $password;
+
         }  
         
         echo "<h3 id='Welcome'>Bienvenido ".$user."</h3>";
         echo '<script language="javascript">
         
         function redireccionarPagina() {
-              window.location = "perfil.php";
+              window.location = "'.$_SESSION['page'].'";
         }
         
         setTimeout("redireccionarPagina()", 1500);
@@ -73,7 +81,7 @@ session_start();
       echo "<h3 id='Welcome'>¡Usuario o contraseña incorrectos!</h3>";
      echo '<script language="javascript">
 		function redireccionarPagina() {
-  			window.location = "index.php";
+  			window.location = "'.$_SESSION['page'].'";
 			}
 			setTimeout("redireccionarPagina()", 1500);
 		

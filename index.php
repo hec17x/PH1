@@ -9,11 +9,22 @@
 
   <div id="login-abrir"onclick="action()" >
       <?php
-      if (isset($_COOKIE['user'])) 
+     if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
       {
+        if(isset($_COOKIE['user']))
+        {
         echo"<p id='login-abrir-nombre ''>Hola ".$_COOKIE['user']."</p>
          <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
           <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+        }
+
+        if(isset($_SESSION['user']))
+        {
+           echo"<p id='login-abrir-nombre ''>Hola ".$_SESSION['user']."</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+        }
+
       }
       else
       {

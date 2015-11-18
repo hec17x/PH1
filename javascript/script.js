@@ -81,6 +81,8 @@ var hidden = false;
               document.getElementById('login-abrir-delante').style.visibility="hidden";
               document.getElementById('login-abrir-atras').style.visibility="visible";
               document.getElementById('fotos').style.marginLeft="20%";
+                     document.getElementById('fotos').style.marginLeft="20%";
+                            document.getElementById('pie').style.marginLeft="20%";
         } else {
            document.getElementById('login-lateral').style.left="-20%";
             document.getElementById('login-lateral').style.visibility="hidden";
@@ -92,9 +94,38 @@ var hidden = false;
      		document.getElementById('login-abrir-delante').style.visibility="visible";
               document.getElementById('login-abrir-atras').style.visibility="hidden";
             document.getElementById('fotos').style.marginLeft="0%";
+            document.getElementById('pie').style.marginLeft="0%";
         }
     }
 
+
+ function action1() {
+        hidden = !hidden;
+        if(hidden) {
+            document.getElementById('login-lateral').style.left="0%";
+            document.getElementById('login-lateral').style.visibility="visible";
+             document.getElementById('login-abrir').style.left="20%";
+
+             document.getElementById('cab_principal').style.left="20%";
+             document.getElementById('cab_principal').style.width="80%";
+              document.getElementById('login-abrir-delante').style.visibility="hidden";
+              document.getElementById('login-abrir-atras').style.visibility="visible";
+              document.getElementById('pie').style.marginLeft="20%";
+               document.getElementById('pie').style.width="80%";
+        } else {
+           document.getElementById('login-lateral').style.left="-20%";
+            document.getElementById('login-lateral').style.visibility="hidden";
+            document.getElementById('login-abrir').style.left="0%";
+  
+            document.getElementById('cab_principal').style.left="0%";
+             document.getElementById('cab_principal').style.width="100%";
+     		document.getElementById('login-abrir-delante').style.visibility="visible";
+              document.getElementById('login-abrir-atras').style.visibility="hidden";
+              document.getElementById('pie').style.marginLeft="0%";
+                  document.getElementById('pie').style.width="100%";
+
+        }
+    }
 
 
 

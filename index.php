@@ -5,7 +5,8 @@
    include('inicio.inc');
     include('acceso.inc');
   ?>
-  
+  <section id="content-index">
+
   <div id="login-abrir"onclick="action()" >
       <?php
       if (isset($_COOKIE['user'])) 

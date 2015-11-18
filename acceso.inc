@@ -59,4 +59,3 @@ else
   
     ?>
     </div>
-<section id="content-index">

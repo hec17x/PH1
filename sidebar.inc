@@ -25,8 +25,8 @@
 
 	 		</a>
         <ul>
-        	
-             	<li><a href='datos.php'>Datos</a></li>
+        	<li><a href='index.php'>Inicio</a></li>
+            <li><a href='datos.php'>Datos</a></li>
             <li><a href="#">Álbumes</a></li>
             <?php
            	echo "<li><a href='nuevoAlbum.php'>Crear álbum</a></li>";?>

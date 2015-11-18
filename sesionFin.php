@@ -14,7 +14,7 @@
 
 	 if (!isset($_SESSION)) { 
       session_start(); 
-    $_SESSION = array();
+ 
     } 
 
     if(isset($_COOKIE['user']))
@@ -25,7 +25,7 @@
     {
       echo "<h3 id='Welcome'>Hasta otra, ".$_SESSION['user']."</h3>";
     }
-
+   $_SESSION = array();
     if(isset($_COOKIE[session_name()])) {
      $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,

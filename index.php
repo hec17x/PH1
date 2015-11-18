@@ -18,7 +18,7 @@
           <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
         }
 
-        if(isset($_SESSION['user']))
+        else if(isset($_SESSION['user']))
         {
            echo"<p id='login-abrir-nombre ''>Hola ".$_SESSION['user']."</p>
          <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>

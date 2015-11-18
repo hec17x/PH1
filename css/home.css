@@ -813,6 +813,26 @@ form p
 
 }
 
+#formularioB input
+{
+
+  color: #636363;
+  background: transparent;
+ font-size: 110%;
+
+  display:block;
+  width:95%;
+ 
+  border:none;
+  border-radius: 0;
+  font-weight: lighter;
+  border-bottom:1px solid rgba(40, 53, 147, 1);
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+
+}
+
 #formulario input:focus
 {
    outline:none;

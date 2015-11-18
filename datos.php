@@ -4,8 +4,37 @@ session_start();
 	include('sidebar.inc'); 	
   ?>
   
-  <section id="content-datos">
+   <section id="content-datos">
 	<div id="datos">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
 		<?php
 		
 		?>

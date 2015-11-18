@@ -7,19 +7,20 @@
 
 	
 	       
-			 <form action="resultado.php" method="get" onsubmit="return validaBusqueda(this)" novalidate="true">
+			 <form id = "busqueda" action="resultado.php" method="get" onsubmit="return validaBusqueda(this)" novalidate="true">
 
-                <div id= "formulario">
+                <div id= "formularioB">
                     <h3>Criterios de busqueda:</h3> 
                 </div>
-
-                <div id="formulario">
+                <div id="formularioB">
+                <label for="B_titulo" > Titulo: </label>
+                <br>
+                <br>
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
                 <span class="bar"></span>
-			 	<label for="B_titulo" > Titulo: </label>
 				</div>
-				 <div id="busqueda">
+				 <div id="formularioB">
 	               <br>
 						
 					<label for="B_Fecha">Fecha de publicación:</label>

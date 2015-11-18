@@ -10,11 +10,20 @@
 	 		<div id="avatar_up">
 	 		<img id="avatar" src="images/avatar.jpg" >
 	 		<?php
+
+	 		if (isset($_COOKIE['user'])) 
+	 		{
 	 			echo "<h2>".$_COOKIE["user"]."</h2>";
+	 		}
+	 		else
+	 		{
+	 			echo "<h2>". $_SESSION['user']."</h2>";
+	 		}
+	 			
 	 		?>
 	 		</div>
 
-	 		<?php echo "</a>"; ?>
+	 		</a>
         <ul>
         	
              	<li><a href='datos.php'>Datos</a></li>

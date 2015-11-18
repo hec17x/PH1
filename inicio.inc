@@ -24,7 +24,7 @@
                  Apariencia
                  <ul>
                     <li><a href="#" onclick="setActiveStyleSheet('Estilo principal'); return false;">Estilo Principal</a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo Alternativo</a></li>    
+                   <li><a href="#" onclick="setActiveStyleSheet('Estilo de escala de grises'); return false;">Estilo Alternativo</a></li>   
                 </ul>
           
            </li>

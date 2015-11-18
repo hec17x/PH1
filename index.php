@@ -2,15 +2,26 @@
   <?php 
   session_start();
     include('cabecera.inc');
-    include('inicio.inc');
+   include('inicio.inc');
     include('acceso.inc');
   ?>
   
   <div id="login-abrir"onclick="action()" >
-      
-       <p id="login-abrir-nombre ">Login</p>
-       <img id="login-abrir-delante" src="images/delante.png"  alt="foto">
-       <img id="login-abrir-atras" src="images/atras.png"  alt="foto">
+      <?php
+      if (isset($_COOKIE['user'])) 
+      {
+        echo"<p id='login-abrir-nombre ''>Hola ".$_COOKIE['user']."</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+      }
+      else
+      {
+         echo "       
+         <p id='login-abrir-nombre ''>Login</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+      }
+       ?>
   </div>
 
   <div id="selector-ordenacion">

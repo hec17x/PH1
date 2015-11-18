@@ -16,7 +16,7 @@
 <?php
 
 session_start();
-session_name("WebsiteID");
+
 
 
    $user = $_GET['usuario'];
@@ -48,7 +48,12 @@ session_name("WebsiteID");
               setcookie('pass',$password,time()+60);
             }
 
-        }   
+        } 
+        else
+        {
+          $_SESSION['user'] = $user;
+          $_SESSION['pass'] = $password;
+        }  
         
         echo "<h3 id='Welcome'>Bienvenido ".$user."</h3>";
         echo '<script language="javascript">

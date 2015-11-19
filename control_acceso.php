@@ -1,9 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['user']))
-{
-  header("Location: index.php");
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,12 +29,13 @@ if(!isset($_SESSION['user']))
    $passH="Hector1";
    $userR="Roberto";
    $passR="Roberto1";
+   $_SESSION['page'] = $_SERVER['HTTP_REFERER'];
  
    if ((($user == $userH) AND ($password == $passH)) OR (($user == $userR) AND ($password ==$passR))){
 
      /* $_SESSION['user'] = $user;
       $_SESSION['pass'] = $password;**/
-     $_SESSION['page'] = $_SERVER['HTTP_REFERER'];
+     
 
       if(isset($_GET['recordar'])){ //esta pulsado el chcekbox
           $_SESSION['user'] = $user;

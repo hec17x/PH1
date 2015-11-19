@@ -138,7 +138,7 @@
                         </select>					
                   </div>
 				<div id="formulario">
-				<a href="resultado.php"><input type="submit" value="Crear nuevo Album"/> </a>
+				<a href="#"><input type="submit" value="Crear nuevo Album"/> </a>
                 </div>
                 </form>
 	</div>

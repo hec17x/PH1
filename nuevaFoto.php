@@ -138,7 +138,7 @@
 
                 <div id="formulario">
 				
-                <a href="resultado.php"><input type="submit" value="Añadir Foto"/> </a>
+                <a href="#"><input type="submit" value="Añadir Foto"/> </a>
                 </div>
                 </form>
                  <br>

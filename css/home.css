@@ -346,6 +346,12 @@ background: rgb(34,34,34); /* for IE */
 {
      background: #757575;
 }
+#busqueda
+{
+    transition:1s ease all; 
+  -moz-transition:1s ease all; 
+  -webkit-transition:1s ease all;
+}
 
 #busqueda label
 {
@@ -529,6 +535,9 @@ nav ul ul li a:hover {
 #content-busqueda
 {
   margin: 8% auto;
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
 }
 
 
@@ -863,7 +872,13 @@ form p
 }
 
 
-
+#for-busqueda
+{
+  margin-left: 0%;
+     transition:1s ease all; 
+  -moz-transition:1s ease all; 
+  -webkit-transition:1s ease all;
+}
 
 
 #formulario input[type="submit"]:hover

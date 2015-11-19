@@ -1,12 +1,50 @@
   <?php 
     include('cabecera.inc');
     include('inicio.inc');
+    include('acceso.inc');
   ?>
   
-<section id="content-busqueda">
 
+
+
+  <?php
+
+    echo "
+
+        <div id='login-abrir'onclick='action2()' >";
+      
+     if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
+      {
+        if(isset($_COOKIE['user']))
+        {
+        echo"<p id='login-abrir-nombre ''>Hola ".$_COOKIE['user']."</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+        }
+
+        else if(isset($_SESSION['user']))
+        {
+           echo"<p id='login-abrir-nombre ''>Hola ".$_SESSION['user']."</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+        }
+
+      }
+      else
+      {
+         echo "       
+         <p id='login-abrir-nombre ''>Login</p>
+         <img id='login-abrir-delante' src='images/delante.png'  alt='foto'>
+          <img id='login-abrir-atras' src='images/atras.png'  alt='foto'>";
+      }
+       echo "</div>";
+       
+
+
+?>
 	
-	       
+	       <section id="content-busqueda">
+            <div id="for-busqueda">
 			 <form id = "busqueda" action="resultado.php" method="get" onsubmit="return validaBusqueda(this)" novalidate="true">
 
                 <div id= "formularioB">
@@ -132,6 +170,7 @@
 				<input type="submit" value="Buscar"/> </a>
                 </div>
                 </form>
+            </div>
 	</div>
 </section>
   <?php 

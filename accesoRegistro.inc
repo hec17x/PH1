@@ -1,5 +1,11 @@
 <section id="content-registro">
-
+   <?php
+         if(!($iden = mysql_connect("localhost", "Hector", "")))
+    die("Error: No se pudo conectar");
+  // Selecciona la base de datos
+  if(!mysql_select_db("P&I", $iden))
+    die("Error: No existe la base de datos");
+   ?>
 
 
 <h2> Registro:</h2> 
@@ -58,10 +64,14 @@
 
 		<select id="R_pais" name="R_pais">
             <option value="" disabled selected>Pais</option>
-                <option value="España">España</option>
-                <option value="Egipto">Egipto</option>
-                <option value="Congo">Congo</option>
-                <option value="Portugal">Portugal</option>
+            <?php
+
+            $consulta='SELECT * FROM Paises';
+            $resultado=mysql_query($consulta);
+            while ($lista=mysql_fetch_array($resultado)) {
+                echo "<option value=".$lista['NomPais'].">".$lista['NomPais']."</option>";
+            }
+            ?>
             </select>
 		</div>
 

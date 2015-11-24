@@ -17,21 +17,34 @@ session_start();
 </head>
 <body onload="this.style.opacity=1">
 <?php
-
-
-
-
-
    $user = $_GET['usuario'];
    $password = $_GET['password'];
 
-   $userH="Hector";
-   $passH="Hector1";
-   $userR="Roberto";
-   $passR="Roberto1";
+  if(!($iden = mysql_connect("localhost", "Hector", "")))
+    die("Error: No se pudo conectar");
+  // Selecciona la base de datos
+  if(!mysql_select_db("P&I", $iden))
+    die("Error: No existe la base de datos");
+
+ $sentencia = "SELECT NomUsuario, Clave FROM usuarios WHERE NomUsuario='$user' AND Clave='$password'";
+  // Ejecuta la sentencia SQL
+  $resultado = mysql_query($sentencia, $iden);
+  if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+  
+   while($fila = mysql_fetch_assoc($resultado))
+  {
+    $userOK=$fila['NomUsuario'];
+    $passOK=$fila['Clave'];
+  }
+
+
+
    $_SESSION['page'] = $_SERVER['HTTP_REFERER'];
- 
-   if ((($user == $userH) AND ($password == $passH)) OR (($user == $userR) AND ($password ==$passR))){
+ if(isset($user) AND isset($passOK))
+ {
+   if ((($user == $userOK) AND ($password == $passOK)))
+   {
 
      /* $_SESSION['user'] = $user;
       $_SESSION['pass'] = $password;**/
@@ -75,15 +88,17 @@ session_start();
    }
 
    //si el login es fallido
-   else{
+   
+ }
+ else{
       echo "<h3 id='Welcome'>¡Usuario o contraseña incorrectos!</h3>";
      echo '<script language="javascript">
-		function redireccionarPagina() {
-  			window.location = "'.$_SESSION['page'].'";
-			}
-			setTimeout("redireccionarPagina()", 1500);
-		
-		</script>'; 
+    function redireccionarPagina() {
+        window.location = "'.$_SESSION['page'].'";
+      }
+      setTimeout("redireccionarPagina()", 1500);
+    
+    </script>'; 
       
      // echo '<a href="'.$_SERVER['HTTP_REFERER'].'"><br>Volver</a>';
    }

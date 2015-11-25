@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-11-2015 a las 09:05:24
+-- Tiempo de generación: 25-11-2015 a las 14:50:23
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.6.14
 
@@ -28,12 +28,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Albumes` (
   `IdAlbum` int(11) NOT NULL,
-  `Titulo` text NOT NULL,
-  `Descripcion` text NOT NULL,
-  `Fecha` date NOT NULL,
-  `Pais` int(11) NOT NULL,
+  `Titulo` text COLLATE utf8_spanish_ci NOT NULL,
+  `Descripcion` text COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Pais` int(11) DEFAULT NULL,
   `Usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Albumes`
+--
+
+INSERT INTO `Albumes` (`IdAlbum`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Usuario`) VALUES
+(1, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
+(2, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
+(3, 'a', 'a', '0000-00-00', 0, 9),
+(4, 'a', 'a', '0000-00-00', 0, 9),
+(5, 'a', 'a', '0000-00-00', 0, 9),
+(6, 'a', 'a', '0000-00-00', 0, 9);
 
 -- --------------------------------------------------------
 
@@ -43,14 +55,22 @@ CREATE TABLE `Albumes` (
 
 CREATE TABLE `Fotos` (
   `IdFotos` int(11) NOT NULL,
-  `Titulo` text NOT NULL,
-  `Descripcion` text,
-  `Fecha` date NOT NULL,
+  `Titulo` text COLLATE utf8_spanish_ci NOT NULL,
+  `Descripcion` text COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha` date DEFAULT NULL,
   `Pais` int(11) NOT NULL,
   `Album` int(11) NOT NULL,
-  `Fichero` text NOT NULL,
+  `Fichero` text COLLATE utf8_spanish_ci NOT NULL,
   `FRegistro` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Fotos`
+--
+
+INSERT INTO `Fotos` (`IdFotos`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Album`, `Fichero`, `FRegistro`) VALUES
+(1, 'asdfadfs', 'fff', '2014-11-30', 1, 0, '', '0000-00-00'),
+(2, 'aaaa', 'aaaa', '0000-00-00', 0, 0, 'avatar4.jpg', '2015-11-25');
 
 -- --------------------------------------------------------
 
@@ -60,8 +80,18 @@ CREATE TABLE `Fotos` (
 
 CREATE TABLE `Paises` (
   `IdPais` int(11) NOT NULL,
-  `NomPais` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `NomPais` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Paises`
+--
+
+INSERT INTO `Paises` (`IdPais`, `NomPais`) VALUES
+(1, 'España'),
+(2, 'Egipto'),
+(3, 'Congo'),
+(4, 'Portugal');
 
 -- --------------------------------------------------------
 
@@ -71,16 +101,25 @@ CREATE TABLE `Paises` (
 
 CREATE TABLE `Usuarios` (
   `IdUsuario` int(11) NOT NULL,
-  `NomUsuario` varchar(15) NOT NULL,
-  `Clave` text NOT NULL,
-  `Email` text NOT NULL,
+  `NomUsuario` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `Clave` text COLLATE utf8_spanish_ci NOT NULL,
+  `Email` text COLLATE utf8_spanish_ci NOT NULL,
   `Sexo` smallint(6) NOT NULL,
   `FNacimiento` date NOT NULL,
-  `Ciudad` text NOT NULL,
+  `Ciudad` text COLLATE utf8_spanish_ci NOT NULL,
   `Pais` int(11) NOT NULL,
-  `Foto` int(11) NOT NULL,
-  `FRegistro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Foto` text COLLATE utf8_spanish_ci NOT NULL,
+  `FRegistro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Usuarios`
+--
+
+INSERT INTO `Usuarios` (`IdUsuario`, `NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`) VALUES
+(1, 'Roberto', 'Roberto1', 'tzrober91@gmail.com', 1, '1991-07-25', 'Almoradi', 0, '0', '0000-00-00 00:00:00'),
+(2, 'Hector', 'Hector1', 'hector@gmail.com', 1, '1991-11-19', 'Redovan', 1, '0', '0000-00-00 00:00:00'),
+(9, 'Hector2', 'Hector2', 'lllallaa@lalala.com', 0, '2015-12-31', 'Alicante', 2, 'avatar.jpg', '2015-11-25 10:04:03');
 
 --
 -- Índices para tablas volcadas
@@ -119,22 +158,22 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT de la tabla `Albumes`
 --
 ALTER TABLE `Albumes`
-  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `Fotos`
 --
 ALTER TABLE `Fotos`
-  MODIFY `IdFotos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdFotos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `Paises`
 --
 ALTER TABLE `Paises`
-  MODIFY `IdPais` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

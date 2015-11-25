@@ -44,6 +44,19 @@
 ?>
 	
 	       <section id="content-busqueda">
+
+                  <?php
+                         if(!($iden = mysql_connect("localhost", "root", "")))
+                    die("Error: No se pudo conectar");
+                  // Selecciona la base de datos
+
+
+                  if(!mysql_select_db("p&i", $iden))
+                    die("Error: No existe la base de datos");
+                   
+                   ?>
+
+
             <div id="for-busqueda">
 			 <form id = "busqueda" action="resultado.php" method="get" onsubmit="return validaBusqueda(this)" novalidate="true">
 
@@ -160,11 +173,15 @@
 					<br>
                     <select id="R_pais" name="R_pais">
                         <option value="" disabled selected>Pais</option>
-                            <option value="España">España</option>
-                            <option value="Egipto">Egipto</option>
-                            <option value="Congo">Congo</option>
-                            <option value="Portugal">Portugal</option>
-                        </select>					
+                        <?php
+                        mysql_query("SET NAMES 'utf8'");
+                        $consulta='SELECT * FROM Paises';
+                        $resultado=mysql_query($consulta);
+                        while ($lista=mysql_fetch_array($resultado)) {
+                            echo "<option value=".$lista['IdPais'].">".$lista['NomPais']."</option>";
+                        }
+                        ?>
+                        </select>				
                   </div>
 				<div id="formulario">
 				<input type="submit" value="Buscar"/> </a>

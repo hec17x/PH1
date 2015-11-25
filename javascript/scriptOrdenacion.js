@@ -20,7 +20,7 @@ function iniciar()
 	imgArray.datos[1].imagen.src= 'images/CK2252.jpg';
 	imgArray.datos[1].titulo= "Flash Autovia";
 	imgArray.datos[1].fecha = new Date("December 13, 2014");
-	imgArray.datos[1].pais= "Alemania";
+	imgArray.datos[1].pais= "Egipto";
 	imgArray.datos[1].ordenado = null;
 	
 	imgArray.datos[2] = new Object();
@@ -28,7 +28,7 @@ function iniciar()
 	imgArray.datos[2].imagen.src = 'images/CK1741.jpg';
 	imgArray.datos[2].titulo= "Inside";
 	imgArray.datos[2].fecha  = new Date("December 1, 2014");
-	imgArray.datos[2].pais= "Italia";
+	imgArray.datos[2].pais= "Congo";
 	imgArray.datos[2].ordenado = null;
 
 
@@ -46,7 +46,7 @@ function iniciar()
 	imgArray.datos[4].imagen.src = 'images/6e609595.jpg';
 	imgArray.datos[4].titulo= "Traffic Light";
 	imgArray.datos[4].fecha = new Date("July 20, 2015");
-	imgArray.datos[4].pais = "Francia";
+	imgArray.datos[4].pais = "Congo";
 	imgArray.datos[4].ordenado = null;
 
 
@@ -55,7 +55,7 @@ function iniciar()
 	imgArray.datos[5].imagen.src = 'images/05502b_o.jpg';
 	imgArray.datos[5].titulo= "Country";
 	imgArray.datos[5].fecha = new Date("November 12, 2011");
-	imgArray.datos[5].pais = "Inglaterra";
+	imgArray.datos[5].pais = "Portugal";
 	imgArray.datos[5].ordenado = null;
 
 
@@ -64,7 +64,7 @@ function iniciar()
 	imgArray.datos[6].imagen.src = 'images/IMG_3822.jpg';
 	imgArray.datos[6].titulo= "Iphone 5";
 	imgArray.datos[6].fecha = new Date("February 6, 2013");
-	imgArray.datos[6].pais = "Italia";
+	imgArray.datos[6].pais = "Egipto";
 	imgArray.datos[6].ordenado = null;
 
 	imgArray.datos[7] = new Object();
@@ -72,7 +72,7 @@ function iniciar()
 	imgArray.datos[7].imagen.src = 'images/KgqDYXR.jpg';
 	imgArray.datos[7].titulo= "Traveler";
 	imgArray.datos[7].fecha = new Date("January 6, 2015");
-	imgArray.datos[7].pais = "Estados Unidos";
+	imgArray.datos[7].pais = "España";
 	imgArray.datos[7].ordenado = null;
 	//mostrar();
 var imagen='';

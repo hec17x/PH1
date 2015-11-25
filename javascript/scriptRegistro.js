@@ -1,7 +1,7 @@
 //Funciones validar Registro completo
 
 //Valida en busqueda.php que se rellene el formulario completo para mostrarlo en resultado.php
-function validaBusqueda(f){
+/*function validaBusqueda(f){
 
 	var titulo = document.getElementById("B_titulo").value;
 	var fechadia =document.getElementById("B_Dia").value;
@@ -24,7 +24,7 @@ function validaBusqueda(f){
 		return (false);
 	}
 
-}
+}*/
 
 
 function validaRegistro(f){

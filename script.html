@@ -1,0 +1,46 @@
+<?php 
+
+	$pueblo= $_GET['pueblo'];
+
+	$fiesta= $_GET['fiesta'];
+
+	$fecha_inicio= $_GET['fecha_inicio'];
+
+	$fecha_fin= $_GET['fecha_fin'];
+
+
+
+	$fecha_inicio = strtotime("$fecha_inicio");
+	echo "1".$fecha_inicio;
+	$fecha_inicio = date("Y-m-d", $fecha_inicio);
+	echo "2".$fecha_inicio;
+
+	//$fecha_fin = date("Y-m-d",$fecha_fin);
+	
+	
+	$link = mysql_connect("mysql13.000webhost.com","a4047274_fiestas","urkaka12");
+if(! $link )
+{
+  die('No es posible conectar: ' . mysql_error());
+}
+else
+{
+    echo "conexion correcta. "; 
+}
+
+
+	mysql_select_db("a4047274_fiestas", $link);
+
+	$result=mysql_query("INSERT INTO valencia VALUES('$pueblo', '$fiesta','$fecha_inicio','$fecha_fin')", $link);
+
+if(! $result )
+{
+  die('Datos no insertados de forma correcta. ' . mysql_error());
+}
+else
+{
+     echo "datos insertados";
+}
+	mysql_close($link);
+
+?>

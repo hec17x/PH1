@@ -114,5 +114,5 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
   </section>
 
 <?php 
-    include('pie.inc');
+
   ?>

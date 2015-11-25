@@ -65,5 +65,5 @@
 
 
   <?php 
-    include('pie.inc');
+
   ?>

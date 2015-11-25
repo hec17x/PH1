@@ -1,12 +1,14 @@
 
   <?php 
+  session_start();
    include('cabecera.inc');
-   
+
+
   ?>
   
 
 <?php
-session_start();
+
    $titulo = $_POST['Titulo'];
    $Fsubida = $_POST['fecha'];
    if(isset($_POST['R_pais'])){
@@ -58,11 +60,18 @@ session_start();
    echo "<br>";
    echo "<br>";
    echo "<br>";
-   echo "Album creado con éxito.";
+   echo "<h1>Album creado con éxito.</h1>";
 
+    echo '<script language="javascript">
+    function redireccionarPagina() {
+        window.location = "perfil.php";
+      }
+      setTimeout("redireccionarPagina()", 2000);
+    
+    </script>';  
 
 ?>
 
 <?php 
-    include('pie.inc');
+
   ?>

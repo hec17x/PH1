@@ -10,7 +10,7 @@ session_start();
    $titulo = $_POST['Titulo'];
    $Fsubida = $_POST['fecha'];
    $pais = $_POST['R_pais'];
-   $album = $_POST['album'];
+   $album = $_POST['Album'];
    $descripcion = $_POST['Descripcion'];
   $archivo = $_FILES['archivo']; 
           if (!isset($archivo)) 
@@ -29,7 +29,6 @@ session_start();
     die("Error: No existe la base de datos");
 
 
-
  $fecha = date('Y-m-d H:i:s');
 
  $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro) VALUES('$titulo','$descripcion','$Fsubida','$pais','$album','$nombre', '$fecha')";
@@ -46,11 +45,18 @@ session_start();
    echo "<br>";
    echo "<br>";
    echo "<br>";
-   echo "Foto subida con exito.";
+   echo "<h1>Foto subida con exito.</h1>";
 
+ echo '<script language="javascript">
+    function redireccionarPagina() {
+        window.location = "perfil.php";
+      }
+      setTimeout("redireccionarPagina()", 2000);
+    
+    </script>';  
 
 ?>
 
 <?php 
-    include('pie.inc');
+
   ?>

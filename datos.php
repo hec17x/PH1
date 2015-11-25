@@ -69,5 +69,5 @@ session_start();
   </section>
 
 <?php 
-    include('pie.inc');
+
   ?>

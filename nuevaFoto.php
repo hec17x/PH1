@@ -90,5 +90,5 @@
 
 
   <?php 
-    include('pie.inc');
+ 
   ?>

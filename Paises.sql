@@ -35,11 +35,11 @@ CREATE TABLE `Paises` (
 -- Volcado de datos para la tabla `Paises`
 --
 
-INSERT INTO `Paises` (`IdPais`, `NomPais`) VALUES
-(1, 'España'),
-(2, 'Egipto'),
-(3, 'Congo'),
-(4, 'Portugal');
+INSERT INTO `Paises` (`NomPais`) VALUES
+('España'),
+('Egipto'),
+('Congo'),
+('Portugal');
 
 --
 -- Índices para tablas volcadas

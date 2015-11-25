@@ -9,7 +9,7 @@
 
 
 <h2> Registro:</h2> 
-	<form class="Registro" action="nuevoUsuario.php" method="get" onsubmit="return validaRegistro(this)" novalidate="true">
+	<form class="Registro" action="nuevoUsuario.php" method="post" enctype="multipart/form-data" onsubmit="return validaRegistro(this)" novalidate="true">
 
         <p>Rellene los siguientes campos:</p>
         <div id="formulario-registro">	
@@ -41,8 +41,8 @@
       
 			<select id="R_sexo" name="R_sexo">
                 <option value="" disabled selected>Sexo</option>
-				<option value="Masculino">Masculino</option>
-				<option value="Femenino">Femenino</option>
+				<option value="0">Masculino</option>
+				<option value="1">Femenino</option>
 				</select>
 		</div>
         
@@ -50,7 +50,7 @@
 
 		  <label for="R_Nacimiento">Fecha de Nacimiento:</label>
 		
-        <input type="text"  name="R_Nacimiento" id="R_Nacimiento"/> <!--IMPORTATNE, SE HA CAMBIADO LA FECHA A TIPO TEXT EN LUGAR DE DATE -->
+        <input type="date"  name="R_Nacimiento" id="R_Nacimiento"/> <!--IMPORTATNE, SE HA CAMBIADO LA FECHA A TIPO TEXT EN LUGAR DE DATE -->
 		</div>
 		
 		 <div id="formulario-registro">   
@@ -65,11 +65,11 @@
 		<select id="R_pais" name="R_pais">
             <option value="" disabled selected>Pais</option>
             <?php
-
+            mysql_query("SET NAMES 'utf8'");
             $consulta='SELECT * FROM Paises';
             $resultado=mysql_query($consulta);
             while ($lista=mysql_fetch_array($resultado)) {
-                echo "<option value=".$lista['NomPais'].">".$lista['NomPais']."</option>";
+                echo "<option value=".$lista['IdPais'].">".$lista['NomPais']."</option>";
             }
             ?>
             </select>
@@ -78,9 +78,9 @@
         <div id="busqueda">
 		<label for="R_imagen"> Imagen:</label>
 
-		<input id="R_imagen" name="imagen" type="file" />
+		<input type="file" name="archivo" id="archivo" /> 
 		
-		</div>
+		</div> 
   
         <div id="formulario-registro">  
 		<input type="submit" value="Registrate" /> 

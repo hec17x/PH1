@@ -3,8 +3,11 @@
          if(!($iden = mysql_connect("localhost", "Hector", "")))
     die("Error: No se pudo conectar");
   // Selecciona la base de datos
+
+
   if(!mysql_select_db("P&I", $iden))
     die("Error: No existe la base de datos");
+   
    ?>
 
 

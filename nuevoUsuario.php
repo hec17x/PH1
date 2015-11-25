@@ -1,7 +1,7 @@
 
   <?php 
    include('cabecera.inc');
-   //include('inicio.inc');
+   include('inicio.inc');
   ?>
   
 
@@ -18,9 +18,9 @@ session_start();
   $archivo = $_FILES['archivo']; 
           if (!isset($archivo)) 
              { die("Debes Elejir un archivo para cargar!"); } 
-  $directorio  = './upload/avatar';
+  $directorio  = './upload/avatar/';
    $nombre = $_FILES['archivo']['name'];
-   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$nombre);
+   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$user."-".$nombre);
 
   if(!($iden = mysql_connect("localhost", "Hector", "")))
     die("Error: No se pudo conectar");
@@ -77,13 +77,13 @@ session_start();
    echo "Pais: " .$pais;
 
 
-  /* echo '<script language="javascript">
+   echo '<script language="javascript">
     function redireccionarPagina() {
         window.location = "index.php";
       }
       setTimeout("redireccionarPagina()", 3000);
     
-    </script>';  */
+    </script>';  
 
 ?>
 

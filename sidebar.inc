@@ -8,9 +8,27 @@
 	
 	 	<a href='perfil.php'>
 	 		<div id="avatar_up">
-	 		<img id="avatar" src="images/avatar.jpg" >
+	 		
 	 		<?php
+	 		 if(!($iden = mysql_connect("localhost", "Hector", "")))
+   	 die("Error: No se pudo conectar");
+  	// Selecciona la base de datos
+ 	 if(!mysql_select_db("P&I", $iden))
+   	 die("Error: No existe la base de datos");
+   	$user=$_SESSION['user'];
+ 	$sentencia = "SELECT NomUsuario, Foto FROM usuarios WHERE NomUsuario='$user'";
+  	// Ejecuta la sentencia SQL
+  	$resultado = mysql_query($sentencia, $iden);
+  	if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+  
+   while($fila = mysql_fetch_assoc($resultado))
+  {
+    $userOK=$fila['NomUsuario'];
+    $foto=$fila['Foto'];
+  }
 
+	 		echo " <img id='avatar' src='upload/avatar/".$user."-".$foto."' >";
 	 		if (isset($_COOKIE['user'])) 
 	 		{
 	 			echo "<h2>".$_COOKIE["user"]."</h2>";

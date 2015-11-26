@@ -23,13 +23,15 @@
 
         //FECHA en formato de la base de datos
 
+        if(!empty($_POST['fecha_inicio']) AND !empty($_POST['fecha_fin']))
+        {
         $fecha_inicio= $_POST['fecha_inicio'];
         echo "INICIO: ".$fecha_inicio;
 
         $fecha_fin= $_POST['fecha_fin'];
         echo "FIN: ".$fecha_fin;
 
-
+        }
 
             if(!($iden = mysql_connect("localhost", "root", "")))
                     die("Error: No se pudo conectar");
@@ -37,10 +39,10 @@
                     die("Error: No existe la base de datos");
         /////////////
 
-        if( !empty($_GET['R_pais'])){ 
+        if( !empty($_POST['R_pais'])){ 
             
 
-            $pais1 = $_GET['R_pais'];     
+            $pais1 = $_POST['R_pais'];     
             $pais = mysql_query("SELECT NomPais FROM paises where IdPais = '$pais1'  ", $iden); ;
             
             //echo "PAIS:" .$pais; //resultado de esta linea muestra Resource id #6
@@ -63,6 +65,9 @@
         
         echo "<br>";
         echo "<br>";
+
+    if(!isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND !isset($pais1))
+    {
 
     $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' ";
     // Ejecuta la sentencia SQL
@@ -95,6 +100,156 @@
             echo "<li><b>Pais</b>".": ".$pais."</li>";
             echo "</ul>";
         }
+    }
+
+if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo='$titulo' AND Pais='$pais1'";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
+
+    if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND !isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo='$titulo'";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
+
+
+    if(isset($titulo) AND empty($fecha_fin) AND empty($fecha_inicio) AND !isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Titulo='$titulo'";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
+
+    if(isset($titulo) AND empty($fecha_fin) AND empty($fecha_inicio) AND isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Titulo='$titulo' AND Pais='$pais1'";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
     ?>
 <!--
     <div>

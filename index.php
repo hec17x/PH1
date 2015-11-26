@@ -55,6 +55,8 @@
  <div id="fotos">
 
   </div>
+  
+
  </section>
   <?php 
     include('pie.inc');

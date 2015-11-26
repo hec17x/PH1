@@ -5,48 +5,32 @@ session_start();
   ?>
   
    <section id="content-datos">
-	<div id="datos">
-		<br>
+	
+		
+					<form action="VerFoto.php" method="post">
+				 
 		<h2>Estos son tus albumes:</h2>
-		<br>
-		<br>
+			
+                       
 		 <?php
                          mysql_query("SET NAMES 'utf8'");
                           $consulta='SELECT * FROM Albumes';
                           $resultado=mysql_query($consulta);
                         while ($lista=mysql_fetch_array($resultado)) {
-                            echo "<option value=".$lista['IdAlbum'].">".$lista['Titulo']."</option>";
+                            echo " <input type='radio' name='Album' value=".$lista['IdAlbum']."><b>Titulo: </b>".$lista['Titulo']."<b> Descripcion:</b> ".$lista['Descripcion']."</input><br>";
                              }
                              ?>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+              
+                   <div id="formulario">
+				<a href="#"><input type="submit" value="Ver"/> </a>
+                </div>
+            </form>
+		
 		
 		<?php
 		
 		?>
-	</div>
+	
   </section>
 
 <?php 

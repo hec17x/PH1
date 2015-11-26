@@ -58,7 +58,7 @@
 
 
             <div id="for-busqueda">
-			 <form id = "busqueda" action="resultado.php" method="get"  novalidate="true">
+			 <form id = "busqueda" action="resultado.php" method="post"  novalidate="true">
 
                 <div id= "formularioB">
                     <h3>Criterios de busqueda:</h3> 

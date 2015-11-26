@@ -20,7 +20,7 @@ session_start();
 
     $user=$_SESSION['user'];
 
-   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$user."-".$nombre);
+   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$nombre);
 
   if(!($iden = mysql_connect("localhost", "Hector", "")))
     die("Error: No se pudo conectar");

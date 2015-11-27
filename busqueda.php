@@ -46,7 +46,7 @@
 	       <section id="content-busqueda">
 
                   <?php
-                         if(!($iden = mysql_connect("localhost", "root", "")))
+                  if(!($iden = mysql_connect("localhost", "root", "")))
                     die("Error: No se pudo conectar");
                   // Selecciona la base de datos
 
@@ -95,7 +95,7 @@
 					<label for="R_pais">Pais:</label>
 					<br>
                     <select id="R_pais" name="R_pais">
-                        <option value="" disabled selected>Pais</option>
+                        <option value="">Cualquiera</option>
                         <?php
                         mysql_query("SET NAMES 'utf8'");
                         $consulta='SELECT * FROM Paises';

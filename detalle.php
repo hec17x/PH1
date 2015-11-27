@@ -42,23 +42,11 @@
 
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
-    //Si viene de index.php muestro esto:
-    if(strpos($_SERVER['HTTP_REFERER'],"index.php") != false) {
-
-    	echo "<div id='detalle_foto'><!-- css  bajar-->
-          </div>
-    	    <div id='dfoto'>
-    		  </div>
-    	    ";
-    }
-    //Si vengo de resultado muestra la foto con una consulta:
-    else if(strpos($_SERVER['HTTP_REFERER'],"resultado.php") != false){
-        //necesitamos el ID de la foto para poder mostrarla con todas sus cosas:
-
+        //Recogemos el ID de la foto para mostrarlo en una consulta y esas cosas
        if($_GET['di'] !=null){
 
             $id = $_GET['di'] ; //esta variable contiene el id de la imagen
-            ////////////////////////////////////////////////////////////////////si solo existe el titulo
+
 
                 if(!($iden = mysql_connect("localhost", "root", "")))
                     die("Error: No se pudo conectar");
@@ -90,8 +78,12 @@
 
 
                         $id= $fila['IdFotos'];
-                          
-                          echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;
+                          echo "<br/>";
+                          echo "<br/>";
+                          echo "<br/>";
+                          echo "<br/>";
+
+                          echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
                           echo "<ul>";
                           echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
                           echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -101,14 +93,7 @@
                     }
 
 
-            ////////////////////////////////////////////////////////////////////////////
-
-
-
-       } 
-
-
-
+            ///////////////////////////////////////////////////////////////////////////
     }
 
 	}

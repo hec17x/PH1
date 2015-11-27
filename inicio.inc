@@ -1,10 +1,12 @@
 <header id="cab_principal">
-  <a href="./index.php"><img src="images/logo1.png"  alt="foto"></a>
+ 
+ 
   <nav>
   
    
 
         <ul class="menu"> 
+           <a href="index.php"><img src="images/logo1.png"  alt="foto"></a>
           <?php
 
            $url_actual = $_SERVER["REQUEST_URI"];

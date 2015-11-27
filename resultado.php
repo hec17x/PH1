@@ -89,7 +89,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -129,7 +129,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -168,7 +168,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -207,7 +207,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -247,7 +247,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -286,7 +286,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -324,7 +324,46 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
+    //si no existe  NADA
+    if(!isset($titulo) AND !isset($fecha_inicio) AND !isset($fecha_fin) AND !isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";

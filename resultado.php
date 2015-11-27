@@ -17,7 +17,7 @@
         if($_POST['Titulo'] !=null){ 
 
             $titulo = $_POST['Titulo'];
-            echo "TITULO: " .$titulo;  echo " -- ";
+            echo "TITULO: " .$titulo;  echo "  ";
             
             }
 
@@ -29,7 +29,7 @@
         echo "INICIO: ".$fecha_inicio;
 
         $fecha_fin= $_POST['fecha_fin'];
-        echo "FIN: ".$fecha_fin;
+        echo "   FIN: ".$fecha_fin;
 
         }
 
@@ -48,24 +48,58 @@
             //echo "PAIS:" .$pais; //resultado de esta linea muestra Resource id #6
             //echo "PAIS:" .$pais1; //resultado de esta es IdPais el numero
              mysql_query("SET NAMES 'utf8'");
-            if($pais1==1) echo "PAIS: España";
-            if($pais1==2) echo "PAIS: Egipto";
-            if($pais1==3) echo "PAIS: Congo";
-            if($pais1==4) echo "PAIS: Portugal";
-            /*          mysql_query("SET NAMES 'utf8'");
-                        $consulta='SELECT * FROM Paises';
-                        $resultado=mysql_query($consulta);
-                        if ($lista=mysql_fetch_array($resultado)) {
-                            if(){
-                                echo "<option value=".$lista['IdPais'].">".$lista['NomPais']."</option>";
-                            }
-                        }*/
+            if($pais1==1) echo "   PAIS: España";
+            if($pais1==2) echo "   PAIS: Egipto";
+            if($pais1==3) echo "   PAIS: Congo";
+            if($pais1==4) echo "   PAIS: Portugal";
             }
 
         
         echo "<br>";
         echo "<br>";
 
+/////////////////////////CONSULTAS////////////////////////////////////
+
+    //si solo existe el titulo
+    if(isset($titulo) AND !isset($fecha_inicio) AND !isset($fecha_fin) AND !isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Titulo like '%$titulo%' ";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "<li><b>ID</b>".": ".$id."</li>";
+            echo "</ul>";
+        }
+    }
+
+    //si solo existe la fecha
     if(!isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND !isset($pais1))
     {
 
@@ -93,7 +127,9 @@
 
 
 
-            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -102,10 +138,11 @@
         }
     }
 
-if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais1))
+    //si solo existe el pais
+    if(!isset($titulo) AND !isset($fecha_inicio) AND !isset($fecha_fin) AND isset($pais1))
     {
 
-    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo='$titulo' AND Pais='$pais1'";
+    $sentencia1 = "SELECT * FROM Fotos WHERE Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
     if(!$resultado)
@@ -129,7 +166,9 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
 
 
 
-            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -138,11 +177,11 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
         }
     }
 
-
+    // si existe titulo y fecha pero no pais
     if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND !isset($pais1))
     {
 
-    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo='$titulo'";
+    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo like '%$titulo%'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
     if(!$resultado)
@@ -166,7 +205,9 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
 
 
 
-            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -176,11 +217,11 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
     }
 
 
-
-    if(isset($titulo) AND empty($fecha_fin) AND empty($fecha_inicio) AND !isset($pais1))
+    //si existe titulo y pais pero no fecha 
+    if(isset($titulo) AND !isset($fecha_inicio) AND !isset($fecha_fin) AND isset($pais1))
     {
 
-    $sentencia1 = "SELECT * FROM Fotos WHERE Titulo='$titulo'";
+    $sentencia1 = "SELECT * FROM Fotos WHERE  Titulo like '%$titulo%' AND Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
     if(!$resultado)
@@ -204,7 +245,9 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
 
 
 
-            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -213,11 +256,11 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
         }
     }
 
-
-    if(isset($titulo) AND empty($fecha_fin) AND empty($fecha_inicio) AND isset($pais1))
+    //si existe pais y fecha pero no titulo:
+    if(!isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais1))
     {
 
-    $sentencia1 = "SELECT * FROM Fotos WHERE Titulo='$titulo' AND Pais='$pais1'";
+    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
     if(!$resultado)
@@ -241,7 +284,9 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
 
 
 
-            echo "<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/>";
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -249,6 +294,49 @@ if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais
             echo "</ul>";
         }
     }
+    //si existe fecha, titulo y pais
+    if(isset($titulo) AND isset($fecha_inicio) AND isset($fecha_fin) AND isset($pais1))
+    {
+
+    $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo like '%$titulo%' AND Pais='$pais1'";
+    // Ejecuta la sentencia SQL
+    $resultado = mysql_query($sentencia1, $iden);
+    if(!$resultado)
+    die("Error: no se pudo realizar la consulta");
+    
+    while($fila = mysql_fetch_assoc($resultado))
+        {
+
+            $fe=$fila['Pais'];
+            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+            // Ejecuta la sentencia SQL
+             $resultado2 = mysql_query($sentencia3, $iden);
+             if(!$resultado2)
+                 die("Error : no se pudo realizar la consulta");
+    
+            while($fila1 = mysql_fetch_assoc($resultado2))
+            {
+
+                $pais=$fila1['NomPais'];
+            }
+
+
+
+            $id= $fila['IdFotos'];
+
+            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='100px'/></a>" ;            
+            echo "<ul>";
+            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+            echo "<li><b>Pais</b>".": ".$pais."</li>";
+            echo "</ul>";
+        }
+    }
+
+
+
+
+    
 
     ?>
 <!--

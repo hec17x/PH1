@@ -5,7 +5,50 @@ function iniciar()
 {
 
 
+				/*if(!($iden = mysql_connect("localhost", "root", "")))
+                    die("Error: No se pudo conectar");
+                if(!mysql_select_db("p&i", $iden))
+                    die("Error: No existe la base de datos");
 
+
+                $sentencia1 = "SELECT * FROM Fotos WHERE IdFotos = '$id' ";
+                // Ejecuta la sentencia SQL
+                $resultado = mysql_query($sentencia1, $iden);
+                if(!$resultado)
+                die("Error: no se pudo realizar la consulta");
+                var contador = 0;
+
+                while($fila = mysql_fetch_assoc($resultado))
+                    {
+
+                        $fe=$fila['Pais'];
+                        $sentencia3 = "SELECT * FROM fotos";
+                        // Ejecuta la sentencia SQL
+                         $resultado2 = mysql_query($sentencia3, $iden);
+                         if(!$resultado2)
+                             die("Error : no se pudo realizar la consulta");
+               
+
+
+	                      echo "<img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
+	                      echo "<ul>";
+	                      echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
+	                      echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+	                      echo "<li><b>Pais</b>".": ".$pais."</li>";
+	                      echo "<li><b>ID</b>".": ".$id."</li>";
+	                      echo "</ul>";
+	                	  imgArray.datos[0] = new Object();
+
+						imgArray.datos[contador].imagen = new Image();
+						imgArray.datos[contador].imagen.src = './upload/fotos/".$fila['Fichero']."';
+						imgArray.datos[contador].titulo=".$fila['Titulo'].";
+						imgArray.datos[contador].fecha = ".$fila['Fecha'].";
+						imgArray.datos[contador].pais= ".$pais.";
+						imgArray.datos[contador].ordenado = null;
+
+						contador ++;
+
+                    }*/
 	imgArray.datos[0] = new Object();
 	imgArray.datos[0].imagen = new Image();
 	imgArray.datos[0].imagen.src = 'images/129H.jpg';

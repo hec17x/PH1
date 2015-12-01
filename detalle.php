@@ -42,11 +42,23 @@
 
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
-        //Recogemos el ID de la foto para mostrarlo en una consulta y esas cosas
+    //Si viene de index.php muestro esto:
+    if(strpos($_SERVER['HTTP_REFERER'],"index.php") != false) {
+
+    	echo "<div id='detalle_foto'><!-- css  bajar-->
+          </div>
+    	    <div id='dfoto'>
+    		  </div>
+    	    ";
+    }
+    //Si vengo de resultado muestra la foto con una consulta:
+    else if(strpos($_SERVER['HTTP_REFERER'],"resultado.php") != false){
+        //necesitamos el ID de la foto para poder mostrarla con todas sus cosas:
+
        if($_GET['di'] !=null){
 
             $id = $_GET['di'] ; //esta variable contiene el id de la imagen
-
+            ////////////////////////////////////////////////////////////////////si solo existe el titulo
 
                 if(!($iden = mysql_connect("localhost", "root", "")))
                     die("Error: No se pudo conectar");
@@ -101,7 +113,9 @@
 	{	
 			echo "<h3>Necesitas estar <a href='registro.php'>Registrado</a> o iniciar sesión para ver esta foto.</h3>";
 	}
+}
 	echo "</div>";
     include('pie.inc');
+
   ?>
   

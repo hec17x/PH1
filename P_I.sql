@@ -35,19 +35,6 @@ CREATE TABLE `Albumes` (
   `Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `Albumes`
---
-
-INSERT INTO `Albumes` (`IdAlbum`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Usuario`) VALUES
-(1, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
-(2, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
-(3, 'a', 'a', '0000-00-00', 0, 9),
-(4, 'a', 'a', '0000-00-00', 0, 9),
-(5, 'a', 'a', '0000-00-00', 0, 9),
-(6, 'a', 'a', '0000-00-00', 0, 9);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Fotos`
@@ -64,15 +51,6 @@ CREATE TABLE `Fotos` (
   `FRegistro` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Volcado de datos para la tabla `Fotos`
---
-
-INSERT INTO `Fotos` (`IdFotos`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Album`, `Fichero`, `FRegistro`) VALUES
-(1, 'asdfadfs', 'fff', '2014-11-30', 1, 0, '', '0000-00-00'),
-(2, 'aaaa', 'aaaa', '0000-00-00', 0, 0, 'avatar4.jpg', '2015-11-25');
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Paises`
@@ -82,18 +60,6 @@ CREATE TABLE `Paises` (
   `IdPais` int(11) NOT NULL,
   `NomPais` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `Paises`
---
-
-INSERT INTO `Paises` (`IdPais`, `NomPais`) VALUES
-(1, 'España'),
-(2, 'Egipto'),
-(3, 'Congo'),
-(4, 'Portugal');
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `Usuarios`
@@ -112,12 +78,55 @@ CREATE TABLE `Usuarios` (
   `FRegistro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
+
+
+--
+-- Volcado de datos para la tabla `Albumes`
+--
+
+INSERT INTO `Albumes` (`IdAlbum`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Usuario`) VALUES
+(1, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
+(2, 'asdfadfs', 'fff', '2014-11-30', 1, 9),
+(3, 'a', 'a', '0000-00-00', 0, 9),
+(4, 'a', 'a', '0000-00-00', 0, 9),
+(5, 'a', 'a', '0000-00-00', 0, 9),
+(6, 'a', 'a', '0000-00-00', 0, 9);
+
+-- --------------------------------------------------------
+
+
+--
+-- Volcado de datos para la tabla `Fotos`
+--
+
+INSERT INTO `Fotos` (`IdFotos`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Album`, `Fichero`, `FRegistro`) VALUES
+(1, 'asdfadfs', 'fff', '2014-11-30', 1, 0, '', '0000-00-00'),
+(2, 'aaaa', 'aaaa', '0000-00-00', 0, 0, 'avatar4.jpg', '2015-11-25');
+
+-- --------------------------------------------------------
+
+
+
+--
+-- Volcado de datos para la tabla `Paises`
+--
+
+INSERT INTO `Paises` (`IdPais`, `NomPais`) VALUES
+(1, 'España'),
+(2, 'Egipto'),
+(3, 'Congo'),
+(4, 'Portugal');
+
+-- --------------------------------------------------------
+
+
 --
 -- Volcado de datos para la tabla `Usuarios`
 --
 
 INSERT INTO `Usuarios` (`IdUsuario`, `NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`) VALUES
-(1, 'Roberto', 'Roberto1', 'tzrober91@gmail.com', 1, '1991-07-25', 'Almoradi', 0, '0', '0000-00-00 00:00:00'),
+(1, 'Roberto', 'Roberto1', 'tzrober91@gmail.com', 1, '1991-07-25', 'Almoradi', 1, '0', '0000-00-00 00:00:00'),
 (2, 'Hector', 'Hector1', 'hector@gmail.com', 1, '1991-11-19', 'Redovan', 1, '0', '0000-00-00 00:00:00'),
 (9, 'Hector2', 'Hector2', 'lllallaa@lalala.com', 0, '2015-12-31', 'Alicante', 2, 'avatar.jpg', '2015-11-25 10:04:03');
 

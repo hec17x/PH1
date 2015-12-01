@@ -25,6 +25,30 @@
     {
       echo "<h3 id='Welcome'>Hasta otra, ".$_SESSION['user']."</h3>";
     }
+
+  //Si viene de darmedebaja.php muestro esto:
+    if(strpos($_SERVER['HTTP_REFERER'],"darmedebaja.php") != false) {
+
+            $user = $_SESSION['user'];
+
+            if(!($iden = mysql_connect("localhost", "root", "")))
+                die("Error: No se pudo conectar");
+            // Selecciona la base de datos
+            if(!mysql_select_db("p&i", $iden))
+                die("Error: No existe la base de datos");
+                  
+
+            $sentencia1 = "DELETE FROM usuarios where NomUsuario='$user'";
+            // Ejecuta la sentencia SQL
+            $resultado = mysql_query($sentencia1, $iden);
+            if(!$resultado)
+            die("Error: no se pudo realizar la consulta");
+                
+       }
+
+
+
+
    $_SESSION = array();
     if(isset($_COOKIE[session_name()])) {
      $params = session_get_cookie_params();

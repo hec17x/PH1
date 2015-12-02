@@ -13,7 +13,6 @@ session_start();
    $email = $_POST['Email'];
    $nacimiento = $_POST['R_Nacimiento'];
    $ciudad = $_POST['R_ciudad'];
-   $pais = $_POST['R_pais'];
 
 
   if(!($iden = mysql_connect("localhost", "root", "")))
@@ -44,7 +43,7 @@ session_start();
  /*$sentencia = "UPDATE INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$nombre')";
  */
  $sentencia = "UPDATE usuarios
-                SET NomUsuario='$user', Clave='$password', Email = '$email', FNacimiento='$nacimiento', Ciudad='$ciudad', Pais ='$pais'
+                SET NomUsuario='$user', Clave='$password', Email = '$email', FNacimiento='$nacimiento', Ciudad='$ciudad'
                 WHERE IdUsuario='$id'";
 
   //ejecutamos la sentencias
@@ -86,7 +85,7 @@ session_start();
    echo "Ciudad: " .$ciudad;
    echo "<br>";      
    echo "<br>";
-   echo "Pais: " .$pais;
+
 
 
 

@@ -37,7 +37,8 @@ session_start();
 		                ?>
 		               
 		            <form id= "formulario" action="modificarUsuario.php" method="post" onsubmit="return modificarDatos(this)" novalidate="true">
-		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, y pulsa actualizar datos:</p>
+		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, 
+		                		y pulsa actualizar datos, tendras que volver a inciar sesion:</p>
 		                <?php
 
 	                    //echo "<li><b>ID</b>".": ".$fila['IdUsuario']."</li>";
@@ -88,7 +89,7 @@ session_start();
 	                    echo "<b>Pais</b>".": ".$pais."";
 
 	                    ?>
-	                    <input type="echo" id="Id_usuario" name="Id_usuario" value="<?php echo $fila['IdUsuario'];?>">
+	                    <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $fila['IdUsuario'];?>">
 
 	                    <input type="submit" value="Actualizar Datos"/> </a>
 	                </form>

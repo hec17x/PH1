@@ -14,8 +14,26 @@ session_start();
                        
 		 <?php
                          mysql_query("SET NAMES 'utf8'");
-                          $consulta='SELECT * FROM Albumes';
+                          $user=$_SESSION['user'];
+
+                    		
+                          $consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
+                          $resultado1 = mysql_query($consulta1, $iden);
+
+
+						if($resultado1 === FALSE) { 
+ 						   die(mysql_error()); // TODO: better error handling
+							}
+
+
+                        while ($lista1=mysql_fetch_array($resultado1)) {
+                           
+                        		 $usuario=$lista1['IdUsuario'];
+                              }
+                         
+                          $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
                           $resultado=mysql_query($consulta);
+
                         while ($lista=mysql_fetch_array($resultado)) {
                             echo " <input type='radio' name='Album' value=".$lista['IdAlbum']."><b>Titulo: </b>".$lista['Titulo']."<b> Descripcion:</b> ".$lista['Descripcion']."</input><br>";
                              }

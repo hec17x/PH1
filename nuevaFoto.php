@@ -33,8 +33,17 @@
                     <select id="R_Album" name="Album">
                         <option value="" disabled selected>Album</option>
                           <?php
+                          $user=$_SESSION['user'];
+
+
+                              $consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
+                            $resultado1=mysql_query($consulta1);
+                             while ($lista1=mysql_fetch_array($resultado1)) {
+                                $usuario=$lista1['IdUsuario'];
+                             }
+
                          mysql_query("SET NAMES 'utf8'");
-                          $consulta='SELECT * FROM Albumes';
+                          $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
                           $resultado=mysql_query($consulta);
                         while ($lista=mysql_fetch_array($resultado)) {
                             echo "<option value=".$lista['IdAlbum'].">".$lista['Titulo']."</option>";

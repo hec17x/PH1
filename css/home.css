@@ -552,7 +552,7 @@ nav ul ul li a:hover {
 #fotos
 {
    margin-left: 0%;
-  margin-bottom: 37%;
+  margin-bottom: 40%;
    transition:1s ease all; 
   -moz-transition:1s ease all; 
   -webkit-transition:1s ease all;
@@ -965,11 +965,12 @@ form p
     overflow: hidden;
   position: relative;
     float: left;
-     width: 25%;
+   width: 25%;
+   height: 150px;
      line-height: 0;
   box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 
-
+background: black;
 }
 
 
@@ -983,8 +984,8 @@ form p
 
 #galeria_index img
 {
-    max-width:100%;
-
+  
+  width: 100%;
     -webkit-transition: transform 0.1s ease;
     -moz-transition: transform 0.1s ease;
     -o-transition: transform 0.1s ease;
@@ -1026,6 +1027,7 @@ form p
   bottom: 0%;
 
 }
+
 
 
 h1{

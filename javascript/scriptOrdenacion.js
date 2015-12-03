@@ -1,130 +1,29 @@
 	var imgArray = new Object();
 	imgArray.datos = new Array();
 
-function iniciar()
+function iniciar(tituloF, fichero, fechaF, paisF, num, ide)
 {
 
 
-				/*if(!($iden = mysql_connect("localhost", "root", "")))
-                    die("Error: No se pudo conectar");
-                if(!mysql_select_db("p&i", $iden))
-                    die("Error: No existe la base de datos");
+	//alert(tituloF);
+
+	imgArray.datos[num] = new Object();
+	imgArray.datos[num].imagen = new Image();
+	imgArray.datos[num].imagen.src = 'upload/fotos/'+fichero;
+	imgArray.datos[num].titulo= tituloF;
+	imgArray.datos[num].fecha = new Date(fechaF);
+	imgArray.datos[num].pais= paisF;
+	imgArray.datos[num].ordenado = null;
+	imgArray.datos[num].identificacion = ide;
 
 
-                $sentencia1 = "SELECT * FROM Fotos WHERE IdFotos = '$id' ";
-                // Ejecuta la sentencia SQL
-                $resultado = mysql_query($sentencia1, $iden);
-                if(!$resultado)
-                die("Error: no se pudo realizar la consulta");
-                var contador = 0;
-
-                while($fila = mysql_fetch_assoc($resultado))
-                    {
-
-                        $fe=$fila['Pais'];
-                        $sentencia3 = "SELECT * FROM fotos";
-                        // Ejecuta la sentencia SQL
-                         $resultado2 = mysql_query($sentencia3, $iden);
-                         if(!$resultado2)
-                             die("Error : no se pudo realizar la consulta");
-               
-
-
-	                      echo "<img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
-	                      echo "<ul>";
-	                      echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
-	                      echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
-	                      echo "<li><b>Pais</b>".": ".$pais."</li>";
-	                      echo "<li><b>ID</b>".": ".$id."</li>";
-	                      echo "</ul>";
-	                	  imgArray.datos[0] = new Object();
-
-						imgArray.datos[contador].imagen = new Image();
-						imgArray.datos[contador].imagen.src = './upload/fotos/".$fila['Fichero']."';
-						imgArray.datos[contador].titulo=".$fila['Titulo'].";
-						imgArray.datos[contador].fecha = ".$fila['Fecha'].";
-						imgArray.datos[contador].pais= ".$pais.";
-						imgArray.datos[contador].ordenado = null;
-
-						contador ++;
-
-                    }*/
-	imgArray.datos[0] = new Object();
-	imgArray.datos[0].imagen = new Image();
-	imgArray.datos[0].imagen.src = 'images/129H.jpg';
-	imgArray.datos[0].titulo= "Vintage car";
-	imgArray.datos[0].fecha = new Date("August 24, 2014");
-	imgArray.datos[0].pais= "España";
-	imgArray.datos[0].ordenado = null;
-
-
-	imgArray.datos[1] = new Object();
-	imgArray.datos[1].imagen = new Image();
-	imgArray.datos[1].imagen.src= 'images/CK2252.jpg';
-	imgArray.datos[1].titulo= "Flash Autovia";
-	imgArray.datos[1].fecha = new Date("December 13, 2014");
-	imgArray.datos[1].pais= "Egipto";
-	imgArray.datos[1].ordenado = null;
-	
-	imgArray.datos[2] = new Object();
-	imgArray.datos[2].imagen = new Image();
-	imgArray.datos[2].imagen.src = 'images/CK1741.jpg';
-	imgArray.datos[2].titulo= "Inside";
-	imgArray.datos[2].fecha  = new Date("December 1, 2014");
-	imgArray.datos[2].pais= "Congo";
-	imgArray.datos[2].ordenado = null;
-
-
-	imgArray.datos[3] = new Object();
-	imgArray.datos[3].imagen = new Image();
-	imgArray.datos[3].imagen.src = 'images/IMG_3556.jpg';
-	imgArray.datos[3].titulo= "Marcador";
-	imgArray.datos[3].fecha = new Date("April 5, 2010");
-	imgArray.datos[3].pais = "España";
-	imgArray.datos[3].ordenado = null;
-
-
-	imgArray.datos[4] = new Object();
-	imgArray.datos[4].imagen = new Image();
-	imgArray.datos[4].imagen.src = 'images/6e609595.jpg';
-	imgArray.datos[4].titulo= "Traffic Light";
-	imgArray.datos[4].fecha = new Date("July 20, 2015");
-	imgArray.datos[4].pais = "Congo";
-	imgArray.datos[4].ordenado = null;
-
-
-	imgArray.datos[5] = new Object();
-	imgArray.datos[5].imagen = new Image();
-	imgArray.datos[5].imagen.src = 'images/05502b_o.jpg';
-	imgArray.datos[5].titulo= "Country";
-	imgArray.datos[5].fecha = new Date("November 12, 2011");
-	imgArray.datos[5].pais = "Portugal";
-	imgArray.datos[5].ordenado = null;
-
-
-	imgArray.datos[6] = new Object();
-	imgArray.datos[6].imagen = new Image();
-	imgArray.datos[6].imagen.src = 'images/IMG_3822.jpg';
-	imgArray.datos[6].titulo= "Iphone 5";
-	imgArray.datos[6].fecha = new Date("February 6, 2013");
-	imgArray.datos[6].pais = "Egipto";
-	imgArray.datos[6].ordenado = null;
-
-	imgArray.datos[7] = new Object();
-	imgArray.datos[7].imagen = new Image();
-	imgArray.datos[7].imagen.src = 'images/KgqDYXR.jpg';
-	imgArray.datos[7].titulo= "Traveler";
-	imgArray.datos[7].fecha = new Date("January 6, 2015");
-	imgArray.datos[7].pais = "España";
-	imgArray.datos[7].ordenado = null;
-	//mostrar();
 var imagen='';
 
 	for(var i in imgArray.datos)
 	{
 	
 		imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar('+i+')">\n\
+		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[i].identificacion+')">\n\
 		<img src=' + imgArray.datos[i].imagen.src + ' alt='+ imgArray.datos[i].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[i].titulo+' </p>\n\
@@ -200,7 +99,7 @@ function ordenar()
 			}
 
 			imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
+		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -236,7 +135,7 @@ function ordenar()
 		if(imgArray.datos[aux].imagen!=null)
 		{
 			imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
+		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -260,16 +159,16 @@ function ordenar()
 	
 				if(imgArray.datos[x].ordenado!="fecha"&&ordenFecha[j]==imgArray.datos[x].fecha&&Boolean(test)==false)
 				{
-					aux=x
+					aux=x;
 					imgArray.datos[x].ordenado="fecha";
 					test=true;
 					
 				}
 			}
 
-	
+			
 			imagen+='\n\
-		<div id="galeria_index" onclick="redireccionar('+aux+')">\n\
+		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
 				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
@@ -294,7 +193,7 @@ function redireccionar(x)
 
 function cargar()
 {
-	iniciar();
+	//iniciar();
 	 var loc = document.location.href;
    var getString = loc.split('?')[1];
    var GET = getString.split('&');

@@ -26,6 +26,6 @@
 <!-- El cuerpo -->
 
 
-<body onload="iniciar(); readStyle(); cargar();" onunload="saveStyle();">
+<body onload="readStyle(); cargar();" onunload="saveStyle();">
 <!--<body onload="iniciar()";>-->
 <br>

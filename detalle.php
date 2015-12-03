@@ -11,7 +11,7 @@
     echo "<section id='content-det'>
 
 		<div id='login-abrir'onclick='action1()' >";
-      
+        
   	 if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
       {
         if(isset($_COOKIE['user']))
@@ -43,21 +43,10 @@
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
     //Si viene de index.php muestro esto:
-    if(strpos($_SERVER['HTTP_REFERER'],"index.php") != false) {
+  
+       if($_GET['id'] !=null){
 
-    	echo "<div id='detalle_foto'><!-- css  bajar-->
-          </div>
-    	    <div id='dfoto'>
-    		  </div>
-    	    ";
-    }
-    //Si vengo de resultado muestra la foto con una consulta:
-    else if(strpos($_SERVER['HTTP_REFERER'],"resultado.php") != false){
-        //necesitamos el ID de la foto para poder mostrarla con todas sus cosas:
-
-       if($_GET['di'] !=null){
-
-            $id = $_GET['di'] ; //esta variable contiene el id de la imagen
+            $id = $_GET['id'] ; //esta variable contiene el id de la imagen
             ////////////////////////////////////////////////////////////////////si solo existe el titulo
 
                 if(!($iden = mysql_connect("localhost", "root", "")))
@@ -66,7 +55,7 @@
                     die("Error: No existe la base de datos");
 
 
-                $sentencia1 = "SELECT * FROM Fotos WHERE IdFotos = '$id' ";
+                $sentencia1 = "SELECT * FROM Fotos WHERE IdFotos = '".$id."' ";
                 // Ejecuta la sentencia SQL
                 $resultado = mysql_query($sentencia1, $iden);
                 if(!$resultado)
@@ -106,14 +95,16 @@
 
 
             ///////////////////////////////////////////////////////////////////////////
-    }
+    
 
 	}
+
 	else
 	{	
 			echo "<h3>Necesitas estar <a href='registro.php'>Registrado</a> o iniciar sesión para ver esta foto.</h3>";
 	}
 }
+
 	echo "</div>";
     include('pie.inc');
 

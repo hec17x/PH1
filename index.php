@@ -9,6 +9,8 @@
 
   <div id="login-abrir"onclick="action()" >
       <?php
+
+
      if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
       {
         if(isset($_COOKIE['user']))
@@ -53,6 +55,55 @@
           
   </div>
  <div id="fotos">
+
+  <?php
+
+      $var =0;
+
+      if(!($iden = mysql_connect("localhost", "root", "")))
+        die("Error: No se pudo conectar");
+
+       if(!mysql_select_db("p&i", $iden))
+       die("Error: No existe la base de datos");
+
+      $sentencia="SELECT * FROM fotos ORDER BY FRegistro DESC";
+      $resultado = mysql_query($sentencia, $iden);
+        if(!$resultado)
+          die("Error: no se pudo realizar la consulta");
+         
+         while($fila = mysql_fetch_assoc($resultado))
+         {
+
+             $fe=$fila["Pais"];
+                        $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+                        // Ejecuta la sentencia SQL
+                         $resultado2 = mysql_query($sentencia3, $iden);
+                         if(!$resultado2)
+                             die("Error : no se pudo realizar la consulta");
+                
+                        while($fila1 = mysql_fetch_assoc($resultado2))
+                        {
+
+                            $pais=$fila1['NomPais'];
+                        }
+
+            $fichero=$fila["Fichero"];
+            $titulo=$fila["Titulo"];
+            $fechaF=$fila["FRegistro"];
+            $ide= $fila["IdFotos"];
+            ?>
+         
+            <script language="javascript" >
+              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $ide; ?>");
+            </script>
+                  
+                  <?php
+
+
+            $var=$var+1;
+         }
+
+  ?>
 
   </div>
   

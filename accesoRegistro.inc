@@ -12,7 +12,8 @@
 
 
 <h2> Registro:</h2> 
-	<form class="Registro" action="nuevoUsuario.php" method="post" enctype="multipart/form-data" onsubmit="return validaRegistro(this)" novalidate="true">
+    <!--onsubmit="return validaRegistro(this)"-->
+	<form class="Registro" action="nuevoUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
 
         <p>Rellene los siguientes campos:</p>
         <div id="formulario-registro">	
@@ -53,7 +54,7 @@
 
 		  <label for="R_Nacimiento">Fecha de Nacimiento:</label>
 		
-        <input type="date"  name="R_Nacimiento" id="R_Nacimiento"/> <!--IMPORTATNE, SE HA CAMBIADO LA FECHA A TIPO TEXT EN LUGAR DE DATE -->
+        <input type="date"  name="R_Nacimiento" id="R_Nacimiento"/> 
 		</div>
 		
 		 <div id="formulario-registro">   

@@ -35,39 +35,39 @@ session_start();
 		                {
 		                
 		                ?>
-		               
-		            <form id= "formulario" action="modificarUsuario.php" method="post" onsubmit="return modificarDatos(this)" novalidate="true">
+		               <!--onsubmit="return modificarDatos(this)"-->
+		            <form id= "formulario" action="modificarUsuario.php" method="post"  novalidate="true">
 		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, 
 		                		y pulsa actualizar datos:</p>
 		                <?php
 
 	                    //echo "<li><b>ID</b>".": ".$fila['IdUsuario']."</li>";
 	                    
-	                    echo "<b>Nombre</b>".":";
+	                    echo "<b>Nombre:</b>";
 	                    ?>
 	                    <input type="text" id ="R_usuario" name="usuario" value="<?php echo $fila['NomUsuario'];?>">
 	                    <br><br>
 	                    <?php
 	                    //echo "<li><b>Contraseña</b>".": ".$fila['Clave']."</li>";
-	                    echo "<b>Contraseña</b>".":";
+	                    echo "<b>Contraseña:</b>";
 	                    ?>
 	                    <input type="text" id="R_contrasenya" name="contrasenya" value="<?php echo $fila['Clave'];?>">
 	                    <br><br>
 	                    <?php
 	                    //echo "<li><b>Contraseña</b>".": ".$fila['Clave']."</li>";
-	                    echo "<b>Contraseña</b>".":";
+	                    echo "<b>Email:</b>";
 	                    ?>
 	                    <input type="text" id="R_email" name="Email" value="<?php echo $fila['Email'];?>">
 	                    <br><br>
 	                    <?php
 	                    //echo "<li><b>Fecha de Nacimiento</b>".": ".$fila['FNacimiento']."</li>";
-	                    echo "<b>Fecha de Nacimiento</b>".":";
+	                    echo "<b>Fecha de Nacimiento:</b>";
 	                    ?>
 	                    <input type="date" id="R_Nacimiento"  name="R_Nacimiento" value="<?php echo $fila['FNacimiento'];?>">
 	                    <br><br>
 	                    <?php
 	                    //echo "<li><b>Ciudad</b>".": ".$fila['Ciudad']."</li>";
-	                    echo "<b>Ciudad</b>".":";
+	                    echo "<b>Ciudad:</b>";
 	                    ?>
 	                    <input type="text" id="R_ciudad" name="R_ciudad" value="<?php echo $fila['Ciudad'];?>">
 	                    <br><br>
@@ -86,7 +86,7 @@ session_start();
                             $pais=$fila1['NomPais'];
                         }
 
-	                    echo "<b>Pais</b>".": ".$pais."";
+	                    echo "<b>Pais:  </b>".$pais."";
 
 	                    ?>
 	                    <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $fila['IdUsuario'];?>">

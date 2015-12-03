@@ -34,11 +34,18 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
 
          $consulta2='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
                           $resultado2=mysql_query($consulta2);
-                        while ($lista2=mysql_fetch_array($resultado2)) {
-                           	 
-                           	 $IDA=$lista2["IdAlbum"]; 
+         
+		
 
-                             }
+        if($resultado2){
+		        while ($lista2=mysql_fetch_array($resultado2)) {
+		                           	 
+		    	 $IDA=$lista2["IdAlbum"]; 
+                 }
+		}
+
+if(!empty($IDA)){ //Creo que este if soluciona el problema de error si el usuario no tiene fotos.
+      
 
       $sentencia="SELECT * FROM fotos WHERE Album=".$IDA." ORDER BY FRegistro DESC";
       $resultado = mysql_query($sentencia, $iden);
@@ -75,6 +82,7 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
 
             $var=$var+1;
          }
+}
 
   ?>
 		 	

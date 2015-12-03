@@ -26,10 +26,6 @@ function modificarDatos(f){
 	if(usuario=="" || usuario==" " || usuario ==null){
 
 		alert("Introduzca un usuario.");
-		/*document.getElementById("user").innerHTML='<input id="R_usuario" name="Nombre de usuario" type="text" placeholder="Nombre de usuario"/>\n\
-                    <span class="bar"></span>\n\
-                    <p id="error">Introduzca un usuario</p>\n\
-					<label for="R_usuario" > Usuario: </label>';*/
 		return(false);
 	}
 	else {

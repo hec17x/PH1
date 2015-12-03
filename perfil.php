@@ -25,8 +25,22 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
 
        if(!mysql_select_db("p&i", $iden))
        die("Error: No existe la base de datos");
+ 	 $user=$_SESSION['user'];
+ 		$consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
+                            $resultado1=mysql_query($consulta1);
+                             while ($lista1=mysql_fetch_array($resultado1)) {
+                                $usuario=$lista1['IdUsuario'];
+                             }
 
-      $sentencia="SELECT * FROM fotos ORDER BY FRegistro DESC";
+         $consulta2='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
+                          $resultado2=mysql_query($consulta2);
+                        while ($lista2=mysql_fetch_array($resultado2)) {
+                           	 
+                           	 $IDA=$lista2["IdAlbum"]; 
+
+                             }
+
+      $sentencia="SELECT * FROM fotos WHERE Album=".$IDA." ORDER BY FRegistro DESC";
       $resultado = mysql_query($sentencia, $iden);
         if(!$resultado)
           die("Error: no se pudo realizar la consulta");

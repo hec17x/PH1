@@ -28,7 +28,14 @@
     $foto=$fila['Foto'];
   }
 
-	 		echo " <img id='avatar' src='upload/avatar/".$user."-".$foto."' >";
+  			if($foto!=0)
+			{
+	 			echo " <img id='avatar' src='upload/avatar/".$user."-".$foto."' >";
+	 		}
+	 		else
+	 		{
+	 			echo " <img id='avatar' src='images/avatar3.jpg' >";
+	 		}
 	 		if (isset($_COOKIE['user'])) 
 	 		{
 	 			echo "<h2>".$_COOKIE["user"]."</h2>";

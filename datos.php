@@ -38,7 +38,7 @@ session_start();
 		               
 		            <form id= "formulario" action="modificarUsuario.php" method="post" onsubmit="return modificarDatos(this)" novalidate="true">
 		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, 
-		                		y pulsa actualizar datos, tendras que volver a inciar sesion:</p>
+		                		y pulsa actualizar datos:</p>
 		                <?php
 
 	                    //echo "<li><b>ID</b>".": ".$fila['IdUsuario']."</li>";

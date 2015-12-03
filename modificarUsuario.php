@@ -21,20 +21,17 @@ session_start();
   if(!mysql_select_db("p&i", $iden))
     die("Error: No existe la base de datos");
 
-/*
-   //vamos a comprobar si modifica usuario o contraseña para cerrar sesion
-  var $cerrarSesion = (false);
-  $sentencia1 = "SELECT NomUsuario from usuarios where IdUsuario='$id'";
-  $sentencia2 = "SELECT Clave from usuarios where IdUsuario='$id'";
 
 
-  if($sentencia1 == $user && $sentencia2== $password) $cerrarSesion = (false);
 
-  else $cerrarSesion = (true);
+$sentencia = "UPDATE usuarios
+          SET NomUsuario='$user', Clave='$password', Email = '$email', FNacimiento='$nacimiento', Ciudad='$ciudad'
+          WHERE IdUsuario='$id'";
 
-*/
-
-
+ setcookie('user',$user,time()+ 365 * 24 * 60 * 60);
+ setcookie('pass',$password,time()+365 * 24 * 60 * 60);
+ $_SESSION['user'] = $user;
+ $_SESSION['pass'] = $password;
 
 
 
@@ -42,9 +39,7 @@ session_start();
 
  /*$sentencia = "UPDATE INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$nombre')";
  */
- $sentencia = "UPDATE usuarios
-                SET NomUsuario='$user', Clave='$password', Email = '$email', FNacimiento='$nacimiento', Ciudad='$ciudad'
-                WHERE IdUsuario='$id'";
+ 
 
   //ejecutamos la sentencias
   $resultado = mysql_query($sentencia, $iden);
@@ -91,11 +86,13 @@ session_start();
 
    echo '<script language="javascript">
     function redireccionarPagina() {
-        window.location = "sesionFin.php";
+        window.location = "perfil.php";
       }
       setTimeout("redireccionarPagina()", 5000);
     
     </script>';  
+
+
 
 ?>
 

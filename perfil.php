@@ -90,34 +90,21 @@ if(!empty($IDA)){ //Creo que este if soluciona el problema de error si el usuari
 
 		<h3>Últimos álbumes creados:</h3>
 
-			<div id="albumes">
-			<div id="con_nom">
-			<p>Album Prueba</p>
-			</div>
-			<img id="con_avatar" src="images/album.png" >
-			
-		</div>
 		<div id="albumes">
-			<div id="con_nom">
-			<p>Album Prueba</p>
-			</div>
-			<img id="con_avatar" src="images/album.png" >
-			
-	
-		</div>
-		<div id="albumes">
-			<div id="con_nom">
-			<p>Album Prueba</p>
-			</div>
-			<img id="con_avatar" src="images/album.png" >
-			
-	
-		</div>
-		<div id="albumes">
-			<div id="con_nom">
-			<p>Album Prueba</p>
-			</div>
-			<img id="con_avatar" src="images/album.png" >
+			<?php
+                        while ($lista1=mysql_fetch_array($resultado1)) {
+                           
+                        		 $usuario=$lista1['IdUsuario'];
+                              }
+                         
+                          $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
+                          $resultado=mysql_query($consulta);
+
+                        while ($lista=mysql_fetch_array($resultado)) {
+                            echo "<p>Titulo: ".$lista['Titulo']."</p>";
+                            echo "<p>Descripcion: ".$lista['Descripcion']."</p>";
+                             }
+                             ?>
 			
 	
 		</div>

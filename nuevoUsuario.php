@@ -20,7 +20,6 @@
    if(!empty($_POST['R_pais']))          $pais = $_POST['R_pais'];
 
 
-
 //validamos usuario*******************************************************************************************
 if (preg_match('/^[a-zA-Z0-9]{3,15}$/',$user)){ 
 
@@ -164,13 +163,23 @@ else{
 
 
 ////////////////////////////fin validaciones
+  
+  $target_path = "upload/avatar/";
+  $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
-  $archivo = $_FILES['archivo']; 
-          if (!isset($archivo)) 
-             { die("Debes Elejir un archivo para cargar!"); } 
-  $directorio  = './upload/avatar/';
-   $nombre = $_FILES['archivo']['name'];
-   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$user."-".$nombre);
+  if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path))
+  { 
+    echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+    rename ("$target_path", "upload/avatar/" .$user .".jpg");
+  } 
+  else{
+    echo "Ha ocurrido un error, trate de nuevo!";
+  }
+
+
+
+
+
 
   if(!($iden = mysql_connect("localhost", "root", "")))
     die("Error: No se pudo conectar");
@@ -182,7 +191,8 @@ else{
 
  $fecha = date('Y-m-d H:i:s');
 
- $sentencia = "INSERT INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$nombre')";
+ $sentencia = "INSERT INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) 
+                      VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$target_path')";
   // Ejecuta la sentencia SQL
   $resultado = mysql_query($sentencia, $iden);
 
@@ -237,9 +247,13 @@ else{
    echo "<br>";      
    echo "<br>";
    echo "Pais: " .$pais;
+   echo "<br>";      
+   echo "<br>";
+   echo "Direccion foto: " .$target_path;
 
 
-   echo '<script language="javascript">
+
+    echo '<script language="javascript">
     function redireccionarPagina() {
         window.location = "index.php";
       }

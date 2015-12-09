@@ -1,3 +1,5 @@
+
+
 	<sidebar>
 
 	 <div id="sideBg">
@@ -15,7 +17,15 @@
   	// Selecciona la base de datos
  	 if(!mysql_select_db("p&i", $iden))
    	 die("Error: No existe la base de datos");
-   	$user=$_SESSION['user'];
+   	
+   	 if(isset($_COOKIE['user'])){
+        $user = $_COOKIE['user'];
+        }
+
+     else if(isset($_SESSION['user'])){   
+	   	$user=$_SESSION['user'];
+        }
+ 	
  	$sentencia = "SELECT NomUsuario, Foto FROM usuarios WHERE NomUsuario='$user'";
   	// Ejecuta la sentencia SQL
   	$resultado = mysql_query($sentencia, $iden);
@@ -28,13 +38,13 @@
     $foto=$fila['Foto'];
   }
 
-  			if($foto!=0)
-			{
-	 			echo " <img id='avatar' src='upload/avatar/".$user."-".$foto."' >";
+  			if($foto=='upload/avatar/')
+			{ 
+	 			echo " <img id='avatar' src='images/avatar3.jpg' >";									  
 	 		}
 	 		else
 	 		{
-	 			echo " <img id='avatar' src='images/avatar3.jpg' >";
+	 			echo " <img id='avatar' src='upload/avatar/".$user.".jpg' >";
 	 		}
 	 		if (isset($_COOKIE['user'])) 
 	 		{

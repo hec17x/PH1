@@ -25,7 +25,15 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
 
        if(!mysql_select_db("p&i", $iden))
        die("Error: No existe la base de datos");
- 	 $user=$_SESSION['user'];
+ 	   	
+   		if(isset($_COOKIE['user'])){
+        	$user = $_COOKIE['user'];
+        }
+
+     	else if(isset($_SESSION['user'])){   
+	   		$user=$_SESSION['user'];
+        }
+
  		$consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
                             $resultado1=mysql_query($consulta1);
                              while ($lista1=mysql_fetch_array($resultado1)) {

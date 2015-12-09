@@ -82,7 +82,7 @@
         <div id="busqueda">
 		<label for="R_imagen"> Imagen:</label>
 
-		<input type="file" name="archivo" id="archivo" /> 
+		<input type="file" name="uploadedfile" id="uploadedfile" /> 
 		
 		</div> 
   

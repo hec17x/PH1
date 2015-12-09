@@ -19,7 +19,9 @@ session_start();
 //validamos usuario*******************************************************************************************
 if (preg_match('/^[a-zA-Z0-9]{3,15}$/',$user)){ 
 
-//Usuario correcto
+//Usuario correcto //cambiamos el nombre de la imagen para que la encuentre:
+    $userViejo = $_SESSION['user'];
+    rename ("upload/avatar/" .$userViejo .".jpg", "upload/avatar/" .$user .".jpg");
 
 }else{
 
@@ -186,7 +188,7 @@ $sentencia = "UPDATE usuarios
     function redireccionarPagina() {
         window.location = "perfil.php";
       }
-      setTimeout("redireccionarPagina()", 5000);
+      setTimeout("redireccionarPagina()", 3000);
     
     </script>';  
 

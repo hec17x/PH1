@@ -170,7 +170,7 @@ else{
   if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path))
   { 
     echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
-    rename ("$target_path", "upload/avatar/" .$user .".jpg");
+    rename ("$target_path", "upload/avatar/" .$user ."00.jpg");
   } 
   else{
     echo "Ha ocurrido un error, trate de nuevo!";

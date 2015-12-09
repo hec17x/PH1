@@ -44,7 +44,7 @@
 	 		}
 	 		else
 	 		{
-	 			echo " <img id='avatar' src='upload/avatar/".$user.".jpg' >";
+	 			echo " <img id='avatar' src='upload/avatar/".$user."00.jpg' >";
 	 		}
 	 		if (isset($_COOKIE['user'])) 
 	 		{

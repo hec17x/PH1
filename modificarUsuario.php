@@ -124,7 +124,7 @@ else{
     { 
         
         echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
-        rename ("$target_path", "upload/avatar/" .$user .".jpg");
+        rename ("$target_path", "upload/avatar/" .$user ."00.jpg");
 
          $sentencia2 = "UPDATE usuarios
           SET Foto = '$target_path'
@@ -173,7 +173,7 @@ $sentencia = "UPDATE usuarios
      
      //cambiamos el nombre a la imagen para que la encuentr el user
     
-     rename ("upload/avatar/" .$userViejo .".jpg", "upload/avatar/" .$user .".jpg");
+     rename ("upload/avatar/" .$userViejo ."00.jpg", "upload/avatar/" .$user ."00.jpg");
 
 
      setcookie('user',$user,time()+ 365 * 24 * 60 * 60);

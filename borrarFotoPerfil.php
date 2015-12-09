@@ -17,7 +17,7 @@ session_start();
 
     $user = $_SESSION['user'];
     $target_path = "upload/avatar/";
-    unlink("upload/avatar/" .$user .".jpg");
+    unlink("upload/avatar/" .$user ."00.jpg");
 
     $sentencia2 = "UPDATE usuarios
     SET Foto = '$target_path'

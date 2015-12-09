@@ -33,7 +33,13 @@
                     <select id="R_Album" name="Album">
                         <option value="" disabled selected>Album</option>
                           <?php
-                          $user=$_SESSION['user'];
+                          if(isset($_COOKIE['user'])){
+                              $user = $_COOKIE['user'];
+                            }
+
+                          else if(isset($_SESSION['user'])){   
+                            $user=$_SESSION['user'];
+                            }
 
 
                               $consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
@@ -80,7 +86,7 @@
                 </div>
 				
                  <div id="formulario">
-                    <input type="file" name="archivo" id="archivo" />
+                    <input type="file" name="uploadedfile" id="uploadedfile" />
                     <label for="B_titulo" > Foto: </label>
                 </div>
                 <br>

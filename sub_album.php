@@ -22,7 +22,13 @@
    $descripcion = $_POST['Descripcion'];
 
    
-    $user=$_SESSION['user'];
+    if(isset($_COOKIE['user'])){
+          $user = $_COOKIE['user'];
+        }
+
+      else if(isset($_SESSION['user'])){   
+        $user=$_SESSION['user'];
+        }
 
    
   if(!($iden = mysql_connect("localhost", "root", "")))
@@ -33,7 +39,6 @@
 
 
 
- $user=$_SESSION['user'];
   $sentencia1 = "SELECT IdUsuario FROM usuarios WHERE NomUsuario='$user'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
@@ -46,29 +51,39 @@
   }
 
 
- $sentencia = "INSERT INTO albumes(Titulo, Descripcion, Fecha, Pais, Usuario) VALUES('$titulo','$descripcion','$Fsubida', '$pais', '$id')";
-  // Ejecuta la sentencia SQL
-  $resultado = mysql_query($sentencia, $iden);
-  if(!$resultado)
-  {
-    die("Error crear el album");
-  }
+  $sentencia2 = "SELECT * from albumes where Titulo = '$titulo' and Usuario = '$id'  ";
+  $resultado2 = mysql_query($sentencia2, $iden);
+  $filas = mysql_num_rows($resultado2);
+  if($filas == 0){
 
 
-
-   echo "<br>";
-   echo "<br>";
-   echo "<br>";
-   echo "<br>";
-   echo "<h1>Album creado con éxito.</h1>";
-
-    echo '<script language="javascript">
-    function redireccionarPagina() {
-        window.location = "perfil.php";
+     $sentencia = "INSERT INTO albumes(Titulo, Descripcion, Fecha, Pais, Usuario) VALUES('$titulo','$descripcion','$Fsubida', '$pais', '$id')";
+      // Ejecuta la sentencia SQL
+      $resultado = mysql_query($sentencia, $iden);
+      if(!$resultado)
+      {
+        die("Error crear el album");
       }
-      setTimeout("redireccionarPagina()", 2000);
-    
-    </script>';  
+
+
+
+       echo "<br>";
+       echo "<br>";
+       echo "<br>";
+       echo "<br>";
+       echo "<h1>Album creado con éxito.</h1>";
+
+        echo '<script language="javascript">
+        function redireccionarPagina() {
+            window.location = "perfil.php";
+          }
+          setTimeout("redireccionarPagina()", 2000);
+        
+        </script>';
+}
+else{
+  die("ya existe este album");
+}
 
 ?>
 

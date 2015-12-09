@@ -9,10 +9,16 @@ session_start();
 		<br>
 		<?php
 
-	 		if (isset($_SESSION['user'])) 
+	 		if (isset($_SESSION['user']) || isset($_COOKIE['user'])) 
 	 		{
 	 				//capturamos usuario y lo mostramos
-	 				$user = $_SESSION['user'];
+	 				if(isset($_COOKIE['user'])){
+			        	$user = $_COOKIE['user'];
+			        }
+
+			     	else if(isset($_SESSION['user'])){   
+				   		$user=$_SESSION['user'];
+			        }
 	 				//echo "$user";
 
                     echo "<br/>";
@@ -107,7 +113,6 @@ session_start();
 			 		}
 	 		else
 	 		{
-	 			echo "<h2>". $_SESSION['user']."</h2>";
 	 		}
 	 			
 	 		

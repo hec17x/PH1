@@ -14,9 +14,14 @@ session_start();
                        
 		 <?php
                          mysql_query("SET NAMES 'utf8'");
-                          $user=$_SESSION['user'];
+                        if(isset($_COOKIE['user'])){
+                            $user = $_COOKIE['user'];
+                          }
 
-                    		
+                        else if(isset($_SESSION['user'])){   
+                          $user=$_SESSION['user'];
+                          }
+                                            		
                           $consulta1='SELECT * FROM Usuarios WHERE NomUsuario="'.$user.'"';
                           $resultado1 = mysql_query($consulta1, $iden);
 

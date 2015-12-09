@@ -8,7 +8,7 @@ if (isset($_COOKIE['user']))
    ";
 
  echo "<p>Ultimo acceso a la plataforma:</p>";
- echo "<p>".$_COOKIE['fecha']."</p>";
+ if(isset($_COOKIE['fecha'])) echo "<p>".$_COOKIE['fecha']."</p>";
   echo "        <a href='perfil.php'> <input type='submit' value='Acceder a Plataforma'></a>
            
        ";

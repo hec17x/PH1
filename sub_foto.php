@@ -9,9 +9,35 @@
 session_start();
    $titulo = $_POST['Titulo'];
    $Fsubida = $_POST['fecha'];
+   $descripcion = $_POST['Descripcion'];
    
 
-    //Validamos si hemos seleccionado un sexo y un album///////////////////////////////////////////////******************
+    //Validamos si hemos echo las cosas y un album///////////////////////////////////////////////******************
+if(($titulo=="") || ($titulo==" ")){
+      ?>
+
+      <script type="text/javascript">
+          alert("Introduce un Titulo");
+          stop();
+          history.back();
+        </script>
+        <?php
+}
+
+if(($descripcion=="") || ($descripcion==" ")){
+
+?>
+
+<script type="text/javascript">
+    alert("Introduce una descripcion");
+    stop();
+    history.back();
+  </script>
+  
+  <?php
+}
+
+
 
 if(isset($_POST['Album'])){
     $album = $_POST['Album'];
@@ -51,16 +77,17 @@ $album = $_POST['Album'];
    
 
 
-   $descripcion = $_POST['Descripcion'];
-   $archivo = $_FILES['archivo']; 
-          if (!isset($archivo)) 
-             { die("Debes Elejir un archivo para cargar!"); } 
-  $directorio  = './upload/fotos/';
-   $nombre = $_FILES['archivo']['name'];
+   
 
+
+   if(isset($_COOKIE['user'])){
+      $user = $_COOKIE['user'];
+    }
+
+  else if(isset($_SESSION['user'])){   
     $user=$_SESSION['user'];
+    }
 
-   move_uploaded_file($_FILES['archivo']['tmp_name'], $directorio.$nombre);
 
   if(!($iden = mysql_connect("localhost", "root", "")))
     die("Error: No se pudo conectar");
@@ -71,32 +98,55 @@ $album = $_POST['Album'];
 
  $fecha = date('Y-m-d H:i:s');
 
- $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro) VALUES('$titulo','$descripcion','$Fsubida','$pais','$album','$nombre', '$fecha')";
-  // Ejecuta la sentencia SQL
-  $resultado = mysql_query($sentencia, $iden);
-  if(!$resultado)
-  {
-    die("Error al subir la foto");
-  }
+
+//con esto no subimos dos veces la misma foto(mismo titulo) al mismo album
+$sentencia2 = " SELECT * from fotos where Titulo = '$titulo' and Album = '$album'  ";
+$resultado2 = mysql_query($sentencia2, $iden);
+$filas = mysql_num_rows($resultado2);
+
+if($filas == 0){
 
 
+    $target_path = "upload/fotos/";
+    $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
-   echo "<br>";
-   echo "<br>";
-   echo "<br>";
-   echo "<br>";
-   echo "<h1>Foto subida con exito.</h1>";
+    if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path))
+    { 
+      echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+      rename ("$target_path", "upload/fotos/".$album .$titulo.".jpg");
+    } 
+    else{
+      echo "Ha ocurrido un error, trate de nuevo!";
+    }
 
- echo '<script language="javascript">
-    function redireccionarPagina() {
-        window.location = "perfil.php";
+
+     $fichero = $album. $titulo. ".jpg";
+
+     $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro) 
+                  VALUES('$titulo','$descripcion','$Fsubida','$pais','$album','$fichero', '$fecha')";
+      // Ejecuta la sentencia SQL
+      $resultado = mysql_query($sentencia, $iden);
+      if(!$resultado)
+      {
+        die("Error al subir la foto");
       }
-      setTimeout("redireccionarPagina()", 2000);
-    
-    </script>';  
 
-?>
 
-<?php 
 
-  ?>
+       echo "<br>";
+       echo "<br>";
+       echo "<br>";
+       echo "<br>";
+       echo "<h1>Foto subida con exito.</h1>";
+
+     echo '<script language="javascript">
+        function redireccionarPagina() {
+            window.location = "perfil.php";
+          }
+          setTimeout("redireccionarPagina()", 2000);
+        
+        </script>';
+}      
+else{
+    die("ya existe este titulo/foto en este album");
+}

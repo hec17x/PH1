@@ -48,14 +48,24 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
         if($resultado2){
 		        while ($lista2=mysql_fetch_array($resultado2)) {
 		                           	 
-		    	 $IDA=$lista2["IdAlbum"]; 
+		    	 $array[] = $lista2["IdAlbum"]; 
                  }
 		}
+		//numero de albumes en el array:
+		$contarAlbum = count($array);
 
-if(!empty($IDA)){ //Creo que este if soluciona el problema de error si el usuario no tiene fotos.
+if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usuario no tiene fotos.
+      
+	if($contarAlbum == 1)		
+      $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]."        ORDER BY FRegistro DESC";
+     
+	if($contarAlbum == 2)		
+      $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]." or Album = ".$array[1]."       ORDER BY FRegistro DESC";
+    if($contarAlbum == 3)		
+      $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]." or Album = ".$array[1]."  or Album = ".$array[2]."     ORDER BY FRegistro DESC";
       
 
-      $sentencia="SELECT * FROM fotos WHERE Album=".$IDA." ORDER BY FRegistro DESC";
+
       $resultado = mysql_query($sentencia, $iden);
         if(!$resultado)
           die("Error: no se pudo realizar la consulta");

@@ -71,6 +71,8 @@
         if(!$resultado)
           die("Error: no se pudo realizar la consulta");
          
+
+         $contador = 0; //el contador es para mostrar solo 8 fotos en galeria de index
          while($fila = mysql_fetch_assoc($resultado))
          {
 
@@ -91,16 +93,19 @@
             $titulo=$fila["Titulo"];
             $fechaF=$fila["FRegistro"];
             $ide= $fila["IdFotos"];
-            ?>
-         
-            <script language="javascript" >
-              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $ide; ?>");
-            </script>
-                  
-                  <?php
+            
+            if($contador < 8){
+              ?> 
+              <script language="javascript" >
+
+                iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $ide; ?>");
+              </script>      
+              <?php
+            }
 
 
             $var=$var+1;
+            $contador = $contador + 1;
          }
 
   ?>

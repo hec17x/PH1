@@ -1,7 +1,7 @@
 
   <?php 
    include('cabecera.inc');
-   include('inicio.inc');
+   //include('inicio.inc');
   ?>
   
 
@@ -18,11 +18,8 @@ session_start();
 
 //validamos usuario*******************************************************************************************
 if (preg_match('/^[a-zA-Z0-9]{3,15}$/',$user)){ 
-
-//Usuario correcto //cambiamos el nombre de la imagen para que la encuentre:
-    $userViejo = $_SESSION['user'];
-    rename ("upload/avatar/" .$userViejo .".jpg", "upload/avatar/" .$user .".jpg");
-
+      //almacenamos el nombre viejo del user
+      $userViejo = $_SESSION['user'];
 }else{
 
 ?>
@@ -117,12 +114,34 @@ else{
     die("Error: No existe la base de datos");
 
 
+//este if solo ejecuta si se introduce imagen
+
+    $target_path = "upload/avatar/";
+    $target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+    //unlink("upload/avatar/" .$user .".jpg");
+
+    if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path))
+    { 
+        
+        echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+        rename ("$target_path", "upload/avatar/" .$user .".jpg");
+
+         $sentencia2 = "UPDATE usuarios
+          SET Foto = '$target_path'
+          WHERE IdUsuario='$id'";
+          $resultado2 = mysql_query($sentencia2, $iden);
+    } 
+    else{
+      echo "No se ha subido foto, o no se ha cambiado";
+    }
+
+   
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 $sentencia = "UPDATE usuarios
           SET NomUsuario='$user', Clave='$password', Email = '$email', FNacimiento='$nacimiento', Ciudad='$ciudad'
           WHERE IdUsuario='$id'";
-
 
 
 
@@ -150,7 +169,13 @@ $sentencia = "UPDATE usuarios
   </script>
   <?php
   }
-  else{ 
+  else{
+     
+     //cambiamos el nombre a la imagen para que la encuentr el user
+    
+     rename ("upload/avatar/" .$userViejo .".jpg", "upload/avatar/" .$user .".jpg");
+
+
      setcookie('user',$user,time()+ 365 * 24 * 60 * 60);
      setcookie('pass',$password,time()+365 * 24 * 60 * 60);
      $_SESSION['user'] = $user;
@@ -188,7 +213,7 @@ $sentencia = "UPDATE usuarios
     function redireccionarPagina() {
         window.location = "perfil.php";
       }
-      setTimeout("redireccionarPagina()", 3000);
+     setTimeout("redireccionarPagina()", 3000);
     
     </script>';  
 

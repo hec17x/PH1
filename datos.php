@@ -36,7 +36,7 @@ session_start();
 		                
 		                ?>
 		               <!--onsubmit="return modificarDatos(this)"-->
-		            <form id= "formulario" action="modificarUsuario.php" method="post"  novalidate="true">
+		            <form id= "formulario" action="modificarUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
 		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, 
 		                		y pulsa actualizar datos:</p>
 		                <?php
@@ -71,24 +71,33 @@ session_start();
 	                    ?>
 	                    <input type="text" id="R_ciudad" name="R_ciudad" value="<?php echo $fila['Ciudad'];?>">
 	                    <br><br>
-	                    <?php
+	                    
+	                    <!--<?php
 
-						$fe=$fila['Pais'];
-                        $sentencia3 = "SELECT * FROM paises WHERE IdPais='$fe'";
+						//$fe=$fila['Pais'];
+                        //$sentencia3 = "SELECT * FROM paises WHERE IdPais='$fe'";
                         // Ejecuta la sentencia SQL
-                         $resultado2 = mysql_query($sentencia3, $iden);
-                         if(!$resultado2)
-                             die("Error : no se pudo realizar la consulta");
+                        // $resultado2 = mysql_query($sentencia3, $iden);
+                        // if(!$resultado2)
+                        //     die("Error : no se pudo realizar la consulta");
                 
-                        while($fila1 = mysql_fetch_assoc($resultado2))
+                        // while($fila1 = mysql_fetch_assoc($resultado2))
                         {
 
-                            $pais=$fila1['NomPais'];
+                        //    $pais=$fila1['NomPais'];
                         }
 
-	                    echo "<b>Pais:  </b>".$pais."";
+	                    // echo "<b>Pais:  </b>".$pais."";
 
+	                    ?> -->
+
+	                     <?php
+	                    //echo "<li><b>Fecha de Nacimiento</b>".": ".$fila['FNacimiento']."</li>";
+	                    echo "<b>Cambiar de imagen:</b>";
 	                    ?>
+
+						<input type="file" name="uploadedfile" id="uploadedfile" /> 
+
 	                    <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $fila['IdUsuario'];?>">
 
 	                    <input type="submit" value="Actualizar Datos"/> </a>
@@ -107,27 +116,7 @@ session_start();
 	 			
 	 		?>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		 
 		<br>
 		<br>
 		<br>

@@ -65,6 +65,7 @@
             <li><a href="albumes.php">Álbumes</a></li>
             <li><a href='nuevoAlbum.php'>Crear álbum</a></li>
             <li><a href='nuevaFoto.php'>Añadir foto</a></li>
+            <li><a href='borrarFotoPerfil.php'>Borrar foto de Perfil</a></li>
             <li><a href='darmedebaja.php'>Darme de baja</a></li>       
             <li><a href='sesionFin.php'>Salir</a></li>
 			

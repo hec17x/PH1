@@ -9,10 +9,50 @@
 session_start();
    $titulo = $_POST['Titulo'];
    $Fsubida = $_POST['fecha'];
-   $pais = $_POST['R_pais'];
-   $album = $_POST['Album'];
+   
+
+    //Validamos si hemos seleccionado un sexo y un album///////////////////////////////////////////////******************
+
+if(isset($_POST['Album'])){
+    $album = $_POST['Album'];
+}
+else{
+
+    ?>
+
+    <script type="text/javascript">
+    alert("Seleccione un Album");    
+    stop();
+    history.back();
+    </script>
+    
+    <?php
+}  
+
+if(isset($_POST['R_pais'])){
+    $pais = $_POST['R_pais'];
+}
+else{
+
+    ?>
+
+    <script type="text/javascript">
+    alert("Seleccione un Pais");    
+    stop();
+    history.back();
+    </script>
+    
+    <?php
+}  
+
+
+
+$album = $_POST['Album'];
+   
+
+
    $descripcion = $_POST['Descripcion'];
-  $archivo = $_FILES['archivo']; 
+   $archivo = $_FILES['archivo']; 
           if (!isset($archivo)) 
              { die("Debes Elejir un archivo para cargar!"); } 
   $directorio  = './upload/fotos/';

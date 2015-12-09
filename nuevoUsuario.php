@@ -185,16 +185,27 @@ else{
  $sentencia = "INSERT INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$nombre')";
   // Ejecuta la sentencia SQL
   $resultado = mysql_query($sentencia, $iden);
+
   if(!$resultado)
   {
-       echo "<br>";
-   echo "<br>";
-   echo "<br>";
-   echo "<br>";
-      echo "<br>";
-   echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
 
-    die("El Usuario ya existe");
+
+        ?>
+          <script type="text/javascript">
+              alert("Este usuario ya existe");
+              stop();
+              history.back();
+            
+            </script>
+  <?php
+
+
   }
 
 

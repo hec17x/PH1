@@ -9,7 +9,7 @@
       <section id="content-registro">
 
 	
-	           <form class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data" onsubmit="return validaRegistro(this)" novalidate="true">
+	           <form class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data">
 
 			 	<div id= "formulario">
                     <h3>Añade una nueva foto:</h3> 

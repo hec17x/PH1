@@ -127,8 +127,6 @@ $sentencia = "UPDATE usuarios
 
  $fecha = date('Y-m-d H:i:s');
 
- /*$sentencia = "UPDATE INTO usuarios(NomUsuario, Clave, Email, Sexo, FNacimiento, Ciudad, Pais, FRegistro, Foto) VALUES('$user','$password','$email','$sexo','$nacimiento', '$ciudad', '$pais', '$fecha', '$nombre')";
- */
  
 
   //ejecutamos la sentencias

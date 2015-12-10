@@ -19,7 +19,13 @@ session_start();
 //validamos usuario*******************************************************************************************
 if (preg_match('/^[a-zA-Z0-9]{3,15}$/',$user)){ 
       //almacenamos el nombre viejo del user
-      $userViejo = $_SESSION['user'];
+      if(isset($_COOKIE['user'])){
+          $userViejo = $_COOKIE['user'];
+        }
+
+      else if(isset($_SESSION['user'])){   
+        $userViejo=$_SESSION['user'];
+        }
 }else{
 
 ?>

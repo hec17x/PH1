@@ -108,7 +108,7 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
   ?>
 		 	
   		</div>
-
+  		<br>
 		<h3>Últimos álbumes creados:</h3>
 
 			<?php

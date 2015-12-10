@@ -10,7 +10,7 @@
     <!--seleccion de fotos -->
   <div id="fotoseleccionada">
     <?php 
-      include("muestralineas.inc");
+      include("muestralineas.php");
     ?>
   </div>
 

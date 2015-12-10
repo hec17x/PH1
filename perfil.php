@@ -89,12 +89,15 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
             $fichero=$fila["Fichero"];
             $titulo=$fila["Titulo"];
             $fechaF=$fila["FRegistro"];
+            $idfoto = $fila["IdFotos"];
             ?>
-         
+         	<div id = "fotos">
             <script language="javascript" >
-              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
+              //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
+              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
+
             </script>
-                  
+            </div>      
                   <?php
 
 
@@ -108,7 +111,6 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
 
 		<h3>Últimos álbumes creados:</h3>
 
-		<div id="albumes">
 			<?php
                         while ($lista1=mysql_fetch_array($resultado1)) {
                            
@@ -116,16 +118,18 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
                               }
                          
                           $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
-                          $resultado=mysql_query($consulta);
+                          $resultado=mysql_query($consulta, $iden);
 
                         while ($lista=mysql_fetch_array($resultado)) {
-                            echo "<p>Titulo: ".$lista['Titulo']."</p>";
-                            echo "<p>Descripcion: ".$lista['Descripcion']."</p>";
+                        	$idbm= $lista['IdAlbum'];
+                            echo "<a href='verAlbum.php?id=$idbm'>","<input type='submit' name='Album' value=".$lista['Titulo']."></input></a>
+                        <b> Descripcion:</b> ".$lista['Descripcion']."
+                                  <br>"."<br>";
                              }
                              ?>
 			
 	
-		</div>
+		
 		
 		<h2>Tus contactos:</h2>
 		<div id="contactos">

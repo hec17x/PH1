@@ -7,6 +7,13 @@
   ?>
   <section id="content-index">
 
+    <!--seleccion de fotos -->
+  <div id="fotoseleccionada">
+    <?php 
+      include("muestralineas.inc");
+    ?>
+  </div>
+
   <div id="login-abrir"onclick="action()" >
       <?php
 

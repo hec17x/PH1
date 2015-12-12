@@ -70,6 +70,8 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
         if(!$resultado)
           die("Error: no se pudo realizar la consulta");
          
+         
+         $contador = 0; //el contador es para mostrar solo 8 fotos en galeria de index
          while($fila = mysql_fetch_assoc($resultado))
          {
 
@@ -90,15 +92,18 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
             $titulo=$fila["Titulo"];
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
-            ?>
-         	<div id = "fotos">
-            <script language="javascript" >
-              //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
-              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
 
-            </script>
-            </div>      
+            if($contador < 8){
+	            ?>
+	         	<div id = "fotos">
+	            <script language="javascript" >
+	              //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
+	              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
+
+	            </script>
+	            </div>      
                   <?php
+            }
 
 
             $var=$var+1;

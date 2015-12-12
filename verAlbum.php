@@ -61,12 +61,14 @@
 
 	    $idAlbum = $_GET['id'];
 
-	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum'";
+	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
 	    // Ejecuta la sentencia SQL
 	    $resultado = mysql_query($sentencia1, $iden);
 	    if(!$resultado)
 	    die("Error: no se pudo realizar la consulta");
 	    
+        $var = 0;
+
 	    while($fila = mysql_fetch_assoc($resultado))
 	        {
 
@@ -84,15 +86,20 @@
 	            }
 
 
+            $fichero=$fila["Fichero"];
+            $titulo=$fila["Titulo"];
+            $fechaF=$fila["FRegistro"];
+            $idfoto = $fila["IdFotos"];
+            ?>
+            <div id = "fotos">
+            <script language="javascript" >
+              //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
+              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
 
-	            $id= $fila['IdFotos'];
-
-	            echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
-	            echo "<ul>";
-	            echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
-	            echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
-	            echo "<li><b>Pais</b>".": ".$pais."</li>";
-	            echo "</ul>";
+            </script>
+            </div>      
+                  <?php
+            $var=$var+1;
 	        }
     }
     ?>

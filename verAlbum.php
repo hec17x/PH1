@@ -9,8 +9,8 @@
   
 
 
-<h3>Éstas son las fotos del album:</h3> 
-	
+<div id= "datos">
+
     <?php
 
 
@@ -63,6 +63,23 @@
 
 	    $idAlbum = $_GET['id'];
 
+        $sentencia3 = "SELECT * FROM albumes where IdAlbum='$idAlbum'";
+        // Ejecuta la sentencia SQL
+        $resultado3 = mysql_query($sentencia3, $iden);
+        if(!$resultado3)
+            die("Error: no se pudo realizar la consulta");
+        
+
+        while($fila = mysql_fetch_assoc($resultado3))
+            {
+                $tituloAlbum=$fila["Titulo"];        
+            }
+
+        echo 'Éstas son las fotos del album: ' .$tituloAlbum;
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+
 	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
 	    // Ejecuta la sentencia SQL
 	    $resultado = mysql_query($sentencia1, $iden);
@@ -93,23 +110,22 @@
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
             ?>
-            <div id= "datos">
             <div id = "fotos">
             <script language="javascript" >
               //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
               iniciarAlbum("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
             </script>
             </div>
-                        </div>      
+                              
       
             <?php
             $var=$var+1;
 	        }
     }
     ?>
-
+</div>
 
 </section>
   <?php 
-    include('pie.inc');
+ 
   ?>

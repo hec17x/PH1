@@ -47,7 +47,8 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
                  }
     }
     //numero de albumes en el array:
-    $contarAlbum = count($array);
+    if(isset($array)) $contarAlbum = count($array);
+    else        $contarAlbum = 0;
 
 if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usuario no tiene fotos.
       

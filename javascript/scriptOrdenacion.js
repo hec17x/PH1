@@ -1,6 +1,48 @@
 	var imgArray = new Object();
 	imgArray.datos = new Array();
 
+	var imgArrayAlbum = new Object();
+	imgArrayAlbum.datos = new Array();
+
+function iniciarAlbum(tituloF, fichero, fechaF, paisF, num, ide)
+{
+
+
+	//alert(tituloF);
+
+	imgArrayAlbum.datos[num] = new Object();
+	imgArrayAlbum.datos[num].imagen = new Image();
+	imgArrayAlbum.datos[num].imagen.src = 'upload/fotos/'+fichero;
+	imgArrayAlbum.datos[num].titulo= tituloF;
+	imgArrayAlbum.datos[num].fecha = new Date(fechaF);
+	imgArrayAlbum.datos[num].pais= paisF;
+	imgArrayAlbum.datos[num].ordenado = null;
+	imgArrayAlbum.datos[num].identificacion = ide;
+
+
+var imagen='';
+
+	for(var i in imgArrayAlbum.datos)
+	{
+		
+		imagen+='\n\
+		<div id="galeria_index" onclick="redireccionar('+imgArrayAlbum.datos[i].identificacion+')">\n\
+		<img src=' + imgArrayAlbum.datos[i].imagen.src + ' alt='+ imgArrayAlbum.datos[i].titulo+'>\n\
+			<div id="info">\n\
+				<p>TITULO: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
+				<p>FECHA: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
+				<p>PAIS: '+imgArrayAlbum.datos[i].pais+'</p>\n\
+			</div>\n\
+		</div>'
+		;	
+	}
+if(document.getElementById("fotos")!=null)
+{
+
+	document.getElementById("fotos").innerHTML = imagen;
+}
+}
+
 function iniciar(tituloF, fichero, fechaF, paisF, num, ide)
 {
 

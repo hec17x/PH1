@@ -1,7 +1,9 @@
 
   <?php 
     include('cabecera.inc');
-    include('inicio.inc');
+    //include('inicio.inc');
+    include('sidebar.inc');     
+
 
   ?>
   
@@ -91,14 +93,16 @@
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
             ?>
+            <div id= "datos">
             <div id = "fotos">
             <script language="javascript" >
               //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
-              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
-
+              iniciarAlbum("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
             </script>
-            </div>      
-                  <?php
+            </div>
+                        </div>      
+      
+            <?php
             $var=$var+1;
 	        }
     }

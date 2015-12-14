@@ -18,7 +18,7 @@
           }
           else
           {
-             echo  "<li><a href='index.php'>Atras</a></li>";  
+             echo  "<li><a href='javascript:history.back()'>Atras</a></li>";  
           }
           
            ?>

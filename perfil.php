@@ -80,6 +80,7 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
                         $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
                         // Ejecuta la sentencia SQL
                          $resultado2 = mysql_query($sentencia3, $iden);
+                          mysql_query("SET NAMES 'utf8'");
                          if(!$resultado2)
                              die("Error : no se pudo realizar la consulta");
                 

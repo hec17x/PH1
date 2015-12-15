@@ -5,11 +5,12 @@
 
   ?>
   
-
-
+<br>
+<div id= "datos">
 <h2> Resultado de busqueda</h2>
 <h3>Criterios de busqueda:</h3> 
-	
+
+
     <?php
 
     /*ESTE SCRIPT IMPRIME TITULO FECHA Y PAIS EN RESULTADO DE BUSQUEDA
@@ -96,6 +97,7 @@
             echo "<li><b>Pais</b>".": ".$pais."</li>";
             echo "<li><b>ID</b>".": ".$id."</li>";
             echo "</ul>";
+            
         }
     }
 
@@ -396,6 +398,7 @@
 	<div id="fotos">
 	</div>-->
 
+</div>
 </section>
   <?php 
     include('pie.inc');

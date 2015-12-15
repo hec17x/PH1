@@ -2,7 +2,7 @@
   <?php 
     include('cabecera.inc');
     //include('inicio.inc');
-    include('sidebar.inc');     
+   include('sidebar.inc');     
 
 
   ?>
@@ -119,11 +119,18 @@
             <?php
             $var=$var+1;
 	        }
-    }
-    ?>
+    
+    
+    echo "<br><a href='borrarAlbum.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+}
+?>
 </div>
 
-</section>
-  <?php 
+
+           
+
+
+
+
+
  
-  ?>

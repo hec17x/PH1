@@ -10,7 +10,7 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
   ?>
   
   <section id="content-datos">
-	<div id="datos">
+	<div id="datos2">
 
 		<h2>Tu galería:</h2>
 		<h3>Últimas fotos subidas:</h3>

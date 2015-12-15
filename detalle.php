@@ -3,6 +3,8 @@
     include('cabecera.inc');
     include('inicio.inc');
     include('acceso.inc');
+    include('adodb5/adodb.inc.php');
+
     ?>
 
 
@@ -95,7 +97,64 @@
 
 
             ///////////////////////////////////////////////////////////////////////////
-    
+
+          //empezamos los comentarios aqui, primero los mostramos con ADOdb
+
+/*
+          $con = NewADOConnection('mysql');
+          $con->Connect('localhost', // El servidor
+                        'root',      // El usuario
+                        '',          // La contraseña
+                        'p&i');      // La base de datos
+
+          // Ejecuta una sentencia SQL
+          $sentencia = "SELECT * FROM 'comentario'";
+          $resultado = $con->Execute($sentencia);
+          echo "<pre>";
+
+          while(!$resultado->EOF) {
+              echo '<tr>';
+              echo '<td>' . $resultado->fields['Comentario'] . '</td>';
+              echo '</tr>';
+              $resultado->MoveNext();
+          }
+          echo "</pre>";*/
+
+          include_once 'adodb/adodb.inc.php';
+          $con = NewADOConnection('mysql');
+          $con->Connect('localhost', // El servidor
+          'root', // El usuario
+          '', // La contraseña
+          'p&i'); // La base de datos
+          // Ejecuta una sentencia SQL
+          $sentencia = "SELECT * FROM comentario where Foto = '$id' ";
+          $resultado = $con->Execute($sentencia);
+          $cont = 0;
+          // Recorre el resultado y lo muestra en forma de tabla HTML
+          while(!$resultado->EOF) {
+
+              if($cont == 0 ){
+                 echo '<table><tr>';
+                 echo '<th>Usuario</th><th>Fecha</th><th>Comentario</th>';
+                 echo '</tr>';
+                 $cont =1;
+              }
+              echo '<tr>';
+              echo '<td>' . $resultado->fields['Usuario'] . '</td>';
+              echo '<td>' . $resultado->fields['Fecha'] . '</td>';
+              echo '<td>' . $resultado->fields['Comentario'] . '</td>';
+
+              $resultado->MoveNext();
+          }
+          echo '</table>';
+
+         
+
+
+      
+
+
+
 
 	}
 

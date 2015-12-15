@@ -78,9 +78,25 @@ CREATE TABLE `Usuarios` (
   `FRegistro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Estructura de tabla para la tabla `Comentarios` ------------------------------------------------------
+--
 
+CREATE TABLE `Comentario` (
+  `IdComentario` int(11) NOT NULL,
+  `Comentario` text COLLATE utf8_spanish_ci NOT NULL,
+  `Fecha` date NOT NULL,
+  `Usuario` int(11) NOT NULL,
+  `Foto` int(11) NOT NULL,
+  `Validado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+ALTER TABLE `Comentarios`
+  ADD PRIMARY KEY (`IdComentario`);
 
+INSERT INTO `comentario`(`IdComentario`, `Comentario`, `Fecha`, `Usuario`, `Foto`, `Validado`) 
+VALUES (1,'Guau! es el coche de batman','0000-00-00',38, 22,0 )
+----------------------------------------------------------------------------------------------------------
 --
 -- Volcado de datos para la tabla `Albumes`
 --

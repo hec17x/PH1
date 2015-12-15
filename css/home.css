@@ -5,6 +5,11 @@
 
 }
 
+#perfil
+{
+  background: white;
+}
+
 #content-registro h2
 {
   margin-top: 5%; 
@@ -221,6 +226,15 @@ border-radius: 50%;
   {
 
   }
+
+#datos2
+{
+  background: white;
+  padding: 2% 3%;
+  width: 80%;
+  margin-bottom: 5%;
+   box-shadow: 0px 0px 3px grey;
+}
 
 #content-datos
 {
@@ -1024,6 +1038,22 @@ section#fotos {
    display: -ms-flexbox; /*IE 10*/
    margin: 5% ;
 }
+
+section#fotosA { 
+   padding: .5vw;
+
+   -ms-flex-wrap: wrap;
+   -ms-flex-direction: column;
+   -webkit-flex-flow: row wrap; 
+   flex-flow: row wrap; 
+   display: -webkit-box;
+   display: flex;
+   display: -ms-flexbox; /*IE 10*/
+   margin: 5% ;
+}
+
+
+
 section#fotos div { 
    -webkit-box-flex: auto;
    -ms-flex: auto;
@@ -1075,6 +1105,12 @@ section#fotos div img {
   display: inline-block;
   width: 40%;
   margin-right: 10%;
+}
+
+#foto-rel
+{
+  display: inline-block;
+  margin: 1%;
 }
 
 h1{

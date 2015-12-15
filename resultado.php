@@ -6,7 +6,7 @@
   ?>
   
 <br>
-<div id= "datos">
+
 <h2> Resultado de busqueda</h2>
 <h3>Criterios de busqueda:</h3> 
 
@@ -78,12 +78,13 @@
             $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
             // Ejecuta la sentencia SQL
              $resultado2 = mysql_query($sentencia3, $iden);
+              mysql_query("SET NAMES 'utf8'");
              if(!$resultado2)
                  die("Error : no se pudo realizar la consulta");
     
             while($fila1 = mysql_fetch_assoc($resultado2))
             {
-
+                mysql_query("SET NAMES 'utf8'");
                 $pais=$fila1['NomPais'];
             }
 
@@ -108,6 +109,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' ";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -122,7 +124,7 @@
                  die("Error : no se pudo realizar la consulta");
     
             while($fila1 = mysql_fetch_assoc($resultado2))
-            {
+            { mysql_query("SET NAMES 'utf8'");
 
                 $pais=$fila1['NomPais'];
             }
@@ -147,6 +149,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -161,7 +164,7 @@
                  die("Error : no se pudo realizar la consulta");
     
             while($fila1 = mysql_fetch_assoc($resultado2))
-            {
+            { mysql_query("SET NAMES 'utf8'");
 
                 $pais=$fila1['NomPais'];
             }
@@ -200,7 +203,7 @@
                  die("Error : no se pudo realizar la consulta");
     
             while($fila1 = mysql_fetch_assoc($resultado2))
-            {
+            { mysql_query("SET NAMES 'utf8'");
 
                 $pais=$fila1['NomPais'];
             }
@@ -241,7 +244,7 @@
     
             while($fila1 = mysql_fetch_assoc($resultado2))
             {
-
+                 mysql_query("SET NAMES 'utf8'");
                 $pais=$fila1['NomPais'];
             }
 
@@ -280,7 +283,7 @@
     
             while($fila1 = mysql_fetch_assoc($resultado2))
             {
-
+                 mysql_query("SET NAMES 'utf8'");
                 $pais=$fila1['NomPais'];
             }
 
@@ -318,7 +321,7 @@
     
             while($fila1 = mysql_fetch_assoc($resultado2))
             {
-
+                 mysql_query("SET NAMES 'utf8'");
                 $pais=$fila1['NomPais'];
             }
 
@@ -357,20 +360,21 @@
     
             while($fila1 = mysql_fetch_assoc($resultado2))
             {
-
+                 mysql_query("SET NAMES 'utf8'");
                 $pais=$fila1['NomPais'];
             }
 
 
 
             $id= $fila['IdFotos'];
-
+            echo "<div id='foto-rel'>";
             echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
             echo "<li><b>Pais</b>".": ".$pais."</li>";
             echo "</ul>";
+            echo "</div>";
         }
     }
 
@@ -380,25 +384,7 @@
     
 
     ?>
-<!--
-    <div>
-			<select id="Nordenacion" name="Nordenacion" onchange="ordenar()">
-                <option value="" disabled selected>Ordenar por</option>
-                <option value="Fecha">Fecha</option>
-                <option value="Titulo">Titulo</option>
-                <option value="Pais">Pais</option>
-            </select>
-			<select id="Tordenacion" name="Tordenacion" onchange="ordenar()">
-                <option value="Ascendente" disabled selected>Tipo de ordenacion</option>
-                <option value="Ascendente">Ascendente</option>
-                <option value="Descendente">Descendente</option>
-            </select>
-					
-	</div>
-	<div id="fotos">
-	</div>-->
 
-</div>
 </section>
   <?php 
     include('pie.inc');

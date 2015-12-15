@@ -61,7 +61,7 @@
             </select>
           
   </div>
- <div id="fotos">
+ <section id="fotos">
 
   <?php
 
@@ -101,7 +101,7 @@
             $fechaF=$fila["FRegistro"];
             $ide= $fila["IdFotos"];
             
-            if($contador < 8){
+            if($contador < 12){
               ?> 
               <script language="javascript" >
 
@@ -117,7 +117,7 @@
 
   ?>
 
-  </div>
+  </section>
   
 
  </section>

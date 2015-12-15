@@ -14,7 +14,7 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
 
 		<h2>Tu galería:</h2>
 		<h3>Últimas fotos subidas:</h3>
-		 <div id="fotos">
+		 <section id="fotos"->
 
 		 	 <?php
 
@@ -94,9 +94,9 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
 
-            if($contador < 8){
+            if($contador < 6){
 	            ?>
-	         	<div id = "fotos">
+	         	<div>
 	            <script language="javascript" >
 	              //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
 	              iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
@@ -113,11 +113,12 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
 
   ?>
 		 	
-  		</div>
+  		</section>
   		<br>
 		<h3>Últimos álbumes creados:</h3>
 
 			<?php
+       echo "<section id='ult-alb'>";
                         while ($lista1=mysql_fetch_array($resultado1)) {
                            
                         		 $usuario=$lista1['IdUsuario'];
@@ -127,72 +128,39 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
                           $resultado=mysql_query($consulta, $iden);
 
                         while ($lista=mysql_fetch_array($resultado)) {
+
+                          echo "<div id='cajaAlb'>";
                         	$idbm= $lista['IdAlbum'];
-                            echo "<a href='verAlbum.php?id=$idbm'>","<input type='submit' name='Album' value=".$lista['Titulo']."></input></a>
-                        <b> Descripcion:</b> ".$lista['Descripcion']."
-                                  <br>"."<br>";
+                          $consultando='SELECT * FROM Fotos WHERE Album="'.$idbm.'"';
+                          $resul=mysql_query($consultando, $iden);
+                          
+                           $i=0;
+                         
+                          while ($lista2=mysql_fetch_array($resul)) {
+                            if($i<3)
+                          {
+                            echo "<div id='pAlbum'>";
+                            echo "<img src=upload/fotos/".$lista2["Fichero"].">";
+                              echo "</div>";
+                            $i++;
+                          }
+                          }
+
+                          if ($i==0) {
+                            echo "<img id='blank-alb' src='images/album.png'>";
+                          }
+
+                          echo "<div id='desAlb'>";
+                            echo "
+                        <b> Descripcion:</b> ".$lista['Descripcion']."<br><a href='verAlbum.php?id=$idbm'><button type='submit'>Ver</button></a>
+                                  "."<br>";
+                          
+                            echo "</div>";
+                        echo "</div>";
                              }
+                                 echo "</section>";
                              ?>
 			
-	
-		
-		
-		<h2>Tus contactos:</h2>
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot</p>
-			</div>
-			<img id="con_avatar" src="images/avatar.jpg" >
-			
-		</div>
-
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot</p>
-			</div>
-			<img id="con_avatar" src="images/avatar2.jpg" >
-			
-			
-		</div>
-
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot</p>
-			</div>
-			<img id="con_avatar" src="images/avatar3.jpg" >
-			
-			
-		</div>
-
-
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot</p>
-			</div>
-			<img id="con_avatar" src="images/avatar4.jpg" >
-			
-			
-		</div>
-
-
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot</p>
-			</div>
-			<img id="con_avatar" src="images/avatar5.jpg" >
-			
-			
-		</div>
-
-		<h2>Tus grupos:</h2>
-		<div id="contactos">
-			<div id="con_nom">
-			<p>Bot Group</p>
-			</div>
-			<img id="con_avatar" src="images/group1.png" >
-			
-			
-		</div>
 	</div>
   </section>
 

@@ -76,9 +76,7 @@
             }
 
         echo 'Éstas son las fotos del album: ' .$tituloAlbum;
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
+     
 
 	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
 	    // Ejecuta la sentencia SQL
@@ -110,13 +108,13 @@
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
             ?>
-            <div id = "fotos">
+            <section id = "fotos">
             <script language="javascript" >
               //iniciar("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>");
               iniciarAlbum("<?php echo $titulo; ?>","<?php echo $fichero; ?>","<?php echo $fechaF; ?>","<?php echo $pais; ?>","<?php echo $var; ?>","<?php echo $idfoto; ?>");
             </script>
-            </div>
-                              
+            </section>
+                          
       
             <?php
             $var=$var+1;

@@ -8,7 +8,7 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
   include('cabecera.inc');
   include('sidebar.inc');   
   ?>
-  
+     <section id="content-datos">
   <div id="datos">
 
        <?php
@@ -75,24 +75,51 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
     <h3>Éstos son tus álbumes:</h3>
 
       <?php
-        while ($lista1=mysql_fetch_array($resultado1)) {
-           
-             $usuario=$lista1['IdUsuario'];
-              }
-         
-          $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
-          $resultado=mysql_query($consulta, $iden);
+       echo "<section id='ult-alb'>";
+                        while ($lista1=mysql_fetch_array($resultado1)) {
+                           
+                             $usuario=$lista1['IdUsuario'];
+                              }
+                         
+                          $consulta='SELECT * FROM Albumes WHERE Usuario="'.$usuario.'"';
+                          $resultado=mysql_query($consulta, $iden);
 
-        while ($lista=mysql_fetch_array($resultado)) {
-          $idbm= $lista['IdAlbum'];
-            echo "<a href='verAlbum.php?id=$idbm'>","<input type='submit' name='Album' value=".$lista['Titulo']."></input></a>
-        <b> Descripcion:</b> ".$lista['Descripcion']."
-                  <br>"."<br>";
-             }
-             ?>
+                        while ($lista=mysql_fetch_array($resultado)) {
+
+                          echo "<div id='cajaAlb'>";
+                          $idbm= $lista['IdAlbum'];
+                          $consultando='SELECT * FROM Fotos WHERE Album="'.$idbm.'"';
+                          $resul=mysql_query($consultando, $iden);
+                          
+                           $i=0;
+                         
+                          while ($lista2=mysql_fetch_array($resul)) {
+                            if($i<3)
+                          {
+                            echo "<div id='pAlbum'>";
+                            echo "<img src=upload/fotos/".$lista2["Fichero"].">";
+                              echo "</div>";
+                            $i++;
+                          }
+                          }
+
+                          if ($i==0) {
+                            echo "<img id='blank-alb' src='images/album.png'>";
+                          }
+
+                          echo "<div id='desAlb'>";
+                            echo "
+                        <b> Descripcion:</b> ".$lista['Descripcion']."<br><a href='verAlbum.php?id=$idbm'><button type='submit'>Ver</button></a>
+                                  ";
+                          
+                            echo "</div>";
+                        echo "</div>";
+                             }
+                                 echo "</section>";
+                             ?>
 
   </div>
-
+</section>
 <?php 
 
   ?>

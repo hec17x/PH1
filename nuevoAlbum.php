@@ -6,41 +6,31 @@
   ?>
 
 
-      <section id="content-registro">
+      <section id="content-datos">
 
-	
-	       
-			 <form action="sub_album.php" method="post">
 
-			 	<div id= "formulario">
+			 <form id="datos"action="sub_album.php" method="post">
+      <div id="formulario">
                     <h3>Crear un nuevo album:</h3> 
-                </div>
+               
 
-                <div id="formulario">
+              <label for="B_titulo" > Titulo del Album: </label>
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
-                <span class="bar"></span>
-			 	<label for="B_titulo" > Titulo del Album: </label>
-				</div>
-
-				<div id="formulario">
+           
+         
+        <label for="B_descripcion" > Descripcion: </label>
+    
+			
                 <input id="B_descripcion" name="Descripcion" required="required" type="text" placeholder="Descripcion"/>
-               
-			 	<label for="B_descripcion" > Descripcion: </label>
-				</div>
-
-				 <div id="busqueda">
-	               <br>
+      
 					<label for="B_Dia">Fecha de subida:</label>
                     <br>
                            <input type="date"  name="fecha" id="fecha"/>
                         
-                    </div>
-                        
-                    </div>
-                    <br>
-					<div id="busqueda">
-
+                    
+                  
+					
                     <label for="R_pais">Pais:</label>
                     <br>
                     <select id="R_pais" name="R_pais">
@@ -54,12 +44,12 @@
                              }
                              ?>
                         </select>                   
-                </div>
-				<div id="formulario">
+                
 				<a href="#"><input type="submit" value="Crear nuevo Album"/> </a>
                 </div>
                 </form>
 	</div>
+
 </section>
 
 

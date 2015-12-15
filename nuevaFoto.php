@@ -6,27 +6,27 @@
   ?>
 
 
-      <section id="content-registro">
+      <section id="content-datos">
 
 	
-	           <form class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data">
+	           <form id="datos" class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data">
 
-			 	<div id= "formulario">
                     <h3>Añade una nueva foto:</h3> 
-                </div>
+            
 
                 <div id="formulario">
+                  <label for="B_titulo" > Titulo de la foto: </label>
                 <input id="B_titulo" name="Titulo" required="required" type="text" placeholder="Titulo"/>
                
-			 	<label for="B_titulo" > Titulo de la foto: </label>
-				</div>
+			 	
 
-                <div id="formulario">
+			
+
+              <label for="B_titulo" > Descripcion: </label>
                 <input id="B_titulo" name="Descripcion" required="required" type="text" placeholder="Descripcion"/>
                
-                <label for="B_titulo" > Descripcion: </label>
-                </div>
-                <div id="busqueda">
+                
+              
 
                     <label for="R_Album">Album:</label>
                     <br>
@@ -56,20 +56,17 @@
                              }
                              ?>
                         </select>                   
-                </div>
+        
          
 
-				 <div id="busqueda">
-	               <br>
+			
 						
 					<label for="B_Dia">Fecha de subida:</label>
                     <br>
 						   <input type="date"  name="fecha" id="fecha"/>
                         
-                    </div>
-                    <br>
-				<div id="busqueda">
-
+                   
+                   
 					<label for="R_pais">Pais:</label>
 					<br>
                     <select id="R_pais" name="R_pais">
@@ -83,22 +80,20 @@
                              }
                              ?>
                         </select>					
-                </div>
-				
-                 <div id="formulario">
+                  <br>
+                  <br>
+                
+				        <label for="B_titulo" >Foto: </label>
+                  <br>
                     <input type="file" name="uploadedfile" id="uploadedfile" />
-                    <label for="B_titulo" > Foto: </label>
-                </div>
-                <br>
-
-                <div id="formulario">
+                 
+               
 				
-                <a href="#"><input type="submit" value="Añadir Foto"/> </a>
+                <input type="submit" value="Añadir Foto"/> 
                 </div>
                 </form>
                  <br>
-                <br>
-                <br>
+               
 	</div>
 </section>
 

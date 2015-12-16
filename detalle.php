@@ -40,10 +40,7 @@
       }
        echo "</div>";
        
-?>
-<form  action="nuevoComentario.php" method="post">
 
-<?php
 
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
@@ -87,8 +84,8 @@
                           $pais = 'No definido';
 
 
-                        $id= $fila['IdFotos'];
-
+                          $id= $fila['IdFotos'];
+                          $idAlbum = $fila['Album'];
 
                           echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
                           echo "<ul>";
@@ -103,9 +100,19 @@
                           echo "<li><b>ID</b>".": ".$id."</li>";
                           echo "</ul>";
 
+
        }
 
+                          echo "<a href='verAlbum.php?id=$idAlbum'>
+                                <button type='submit'>Ver Album</button></a>";
+                    }
 
+
+?>
+
+<form  action="nuevoComentario.php" method="post">
+
+<?php
             ///////////////////////////////////////////////////////////////////////////
 
           //empezamos los comentarios aqui, primero los mostramos con ADOdb

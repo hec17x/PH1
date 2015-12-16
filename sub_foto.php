@@ -59,17 +59,17 @@ if(isset($_POST['R_pais'])){
     $pais = $_POST['R_pais'];
 }
 else{
-
+    $pais = '0';
     ?>
 
     <script type="text/javascript">
-    alert("Seleccione un Pais");    
+    alert("Introduce un Pais");
     stop();
-    history.back();
+    return (false);
     </script>
     
     <?php
-}
+  }
 
 
 
@@ -100,7 +100,8 @@ $album = $_POST['Album'];
 
 
 
-if($_FILES['uploadedfile']['name'] != 'undefinied'){
+
+if($_FILES['uploadedfile']['name'] == 0 && $pais!='0' ){
 
 
     $target_path = "upload/fotos/";
@@ -152,5 +153,12 @@ if($_FILES['uploadedfile']['name'] != 'undefinied'){
     }
 }      
 else{
-    die("ya existe este titulo/foto en este album o hubo un error al subir la foto");
+    echo "<h3>Introduce un pais.</h3>";
+      echo '<script language="javascript">
+        function redireccionarPagina() {
+            window.history.back();
+          }
+          setTimeout("redireccionarPagina()", 3000);
+        
+        </script>';
 }

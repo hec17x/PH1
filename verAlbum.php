@@ -70,8 +70,23 @@
 
         while($fila = mysql_fetch_assoc($resultado3))
             {
-                $tituloAlbum=$fila["Titulo"];        
+                $tituloAlbum=$fila["Titulo"];
+                $userAlbum = $fila["Usuario"];
+        
             }
+        //buscamos el nombre de usuario aqui
+        $sentencia10 = "SELECT * from usuarios where IdUsuario ='$userAlbum' ";
+        $resultado10 = mysql_query($sentencia10, $iden);
+         if(!$resultado10)
+            die("Error: no se pudo realizar la consulta");
+        
+
+        while($fila = mysql_fetch_assoc($resultado10))
+            {
+                $nombreUserAlbum = $fila['NomUsuario'];    
+            }
+
+
         echo "<br>";
         echo 'Éstas son las fotos del album: ' .$tituloAlbum;
         echo "<br>";
@@ -100,7 +115,6 @@
 	                $pais=$fila1['NomPais'];
 	            }
 
-
             $fichero=$fila["Fichero"];
             $titulo=$fila["Titulo"];
             $fechaF=$fila["FRegistro"];
@@ -118,8 +132,14 @@
             $var=$var+1;
 	        }
    
-    
-    echo "<a href='borrarAlbum.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+    $sesion = $_SESSION['user'];
+    //echo "$sesion";
+    //echo "$nombreUserAlbum";
+    if($sesion == $nombreUserAlbum)
+        echo "<a href='borrarAlbum.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+    else{
+        echo"Album del usuario: ".$nombreUserAlbum."";
+    }
 }
 ?>
 </div>

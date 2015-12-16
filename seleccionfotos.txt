@@ -1,4 +1,4 @@
-7#Antonio#Buena foto
-8#Hector#Me encanta
-9#Roberto#Explendido
-10#Gabriel#Like
+32#Antonio#¿Te gusta conducir?
+33#Hector#Buen caballito
+25#Roberto#Buen detalle y bonitos colores
+35#Gabriel#Un gran campeon

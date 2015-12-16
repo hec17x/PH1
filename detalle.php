@@ -116,26 +116,6 @@
             ///////////////////////////////////////////////////////////////////////////
 
           //empezamos los comentarios aqui, primero los mostramos con ADOdb
-
-/*
-          $con = NewADOConnection('mysql');
-          $con->Connect('localhost', // El servidor
-                        'root',      // El usuario
-                        '',          // La contraseña
-                        'p&i');      // La base de datos
-
-          // Ejecuta una sentencia SQL
-          $sentencia = "SELECT * FROM 'comentario'";
-          $resultado = $con->Execute($sentencia);
-          echo "<pre>";
-
-          while(!$resultado->EOF) {
-              echo '<tr>';
-              echo '<td>' . $resultado->fields['Comentario'] . '</td>';
-              echo '</tr>';
-              $resultado->MoveNext();
-          }
-          echo "</pre>";*/
           ?>
           <section id="datos">
           <?php
@@ -165,7 +145,7 @@
 
               if($cont == 0 ){
                  echo '<table><tr>';
-                 echo '<th>Usuario</th><th>Fecha</th><th>Comentario</th>';
+                 echo '<th>Usuario</th><th>Comentario</th><th>Fecha</th>';
                  echo '</tr>';
                  $cont =1;
               }

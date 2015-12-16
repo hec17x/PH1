@@ -5,67 +5,64 @@
   ?>
 
 
-<section id="content-registro">
+<section id="content-datos">
 						<!---->
-			<form  action = "albumes.php" onsubmit="eliminar()">
+			<section id="datos2">
 
 				<div id="cuerpo">
 
 				<?php
+
+
 		        if($_GET['id']!=null){
+		        	$idAlbum = $_GET['id'];
+		        	try
+		        	{
+		        		$con = new PDO('mysql:host=localhost; dbname=P&I', 'root', '');
+		        		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		        		
+		        		$query = "SELECT * FROM Albumes WHERE IdAlbum='".$idAlbum."'";
+		        		$resultado=$con->query($query);
+		        		$rows = $resultado->fetchAll();
 
-		            $idAlbum = $_GET['id'];
+		        		foreach($rows as $fila) {
+		        			echo "<p><b>Seguro que quieres borrar ".$fila['Titulo']." Si pulsa borrar, se borrarán todas las fotos de este album.</b> </p>";
+		     				
+    					}
+    					$con=NULL;
+		        	}
+		        	catch(PDOException $e) 
+		        	{
+ 						echo "¡Error!\n";
+    					echo "Fichero: " . $e->getFile() . "<br />";
+    					echo "Línea:  " . $e->getLine() . "<br />";
+    					echo "Código: " . $e->getCode() . "<br />";
+    					echo "Mensaje: " . $e->getMessage() . "<br />";
+    					/*$query =' DELETE from fotos where Album = "'.$idAlbum.'"';
+		        		$query1 = 'DELETE FROM albumes where IdAlbum="'.$idAlbum.'"';*/
 
-		              $sentencia3 = "SELECT * FROM albumes where IdAlbum='$idAlbum'";
-		              // Ejecuta la sentencia SQL
-		              $resultado3 = mysql_query($sentencia3, $iden);
-		              if(!$resultado3)
-		                  die("Error: no se pudo realizar la consulta");
-		              
-
-		              while($fila = mysql_fetch_assoc($resultado3))
-		                  {
-		                      $tituloAlbum=$fila["Titulo"];        
-		                  }
-
-		              echo '<b>Si pulsa borrar, se borrarán todas las fotos del album: </b>' .$tituloAlbum;
+		        	}
+		           
+		  		echo "<a href='borra.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+		     
+					
 		        }
-		       
-		        ?>
 
-						<input type="submit" value="Borrar Album" /> 
-						
-						<script  type="text/javascript">
-
-							function eliminar()
-							{	
-								<?php 
-									$user = $_SESSION['user'];
-
-						            if(!($iden = mysql_connect("localhost", "root", "")))
-						                die("Error: No se pudo conectar");
-						            // Selecciona la base de datos
-						            if(!mysql_select_db("p&i", $iden))
-						                die("Error: No existe la base de datos");
-						            
-						            //borra fotos de album
-						            $sentencia2 =" DELETE from fotos where Album = '$idAlbum'  ";
-						            $resultado2 = mysql_query($sentencia2, $iden);
-						            if(!resultado2)
-						            	die("Error al borrar las fotos del album");
-
-						            //borra album
-						            $sentencia1 = "DELETE FROM albumes where IdAlbum='$idAlbum'";
-						            // Ejecuta la sentencia SQL
-						            $resultado = mysql_query($sentencia1, $iden);
-						            if(!$resultado)
-						            	die("Error: no se pudo borrar el album");
-						            return true;
+		      
 								 ?>
 
-								   
-					 		}
-						</script>
+			
+
+	
+		        		
+		    
+
+
+
+						
+					
+
+						
 						</div>
 
 

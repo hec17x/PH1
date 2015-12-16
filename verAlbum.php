@@ -10,8 +10,8 @@
   ?>
   
 
-
-<div id= "datos">
+ <section id="content-datos">
+    <div id="datos2">
 
     <?php
 
@@ -53,10 +53,6 @@
             if($pais1==4) echo "   PAIS: Portugal";
             }
 
-        
-        echo "<br>";
-        echo "<br>";
-
 /////////////////////////CONSULTAS////////////////////////////////////
 
     
@@ -76,9 +72,9 @@
             {
                 $tituloAlbum=$fila["Titulo"];        
             }
-
+        echo "<br>";
         echo 'Éstas son las fotos del album: ' .$tituloAlbum;
-     
+        echo "<br>";
 
 	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
 	    // Ejecuta la sentencia SQL
@@ -121,12 +117,13 @@
             <?php
             $var=$var+1;
 	        }
+   
     
-    
-    echo "<br><a href='borrarAlbum.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+    echo "<a href='borrarAlbum.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
 }
 ?>
 </div>
+</section>
 
 
            

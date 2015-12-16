@@ -96,11 +96,11 @@ $album = $_POST['Album'];
     die("Error: No existe la base de datos");
 
 
- $fecha = date('Y-m-dH-i-s');
+ $fecha = date('Y-m-d-H-i-s');
 
 
 
-if($_FILES['uploadedfile']['name'] == 0){
+if($_FILES['uploadedfile']['name'] != 'undefinied'){
 
 
     $target_path = "upload/fotos/";

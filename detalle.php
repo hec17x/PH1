@@ -10,7 +10,7 @@
 
     <?php
 
-    echo "<section id='content-det'>
+    echo "<section id='content-registro'>
 
 		<div id='login-abrir'onclick='action1()' >";
         
@@ -102,7 +102,8 @@
                           echo "<li><b>Pais</b>".": ".$pais."</li>";
                           echo "<li><b>ID</b>".": ".$id."</li>";
                           echo "</ul>";
-                    }
+
+       }
 
 
             ///////////////////////////////////////////////////////////////////////////

@@ -24,8 +24,24 @@ var imagen='';
 
 	for(var i in imgArrayAlbum.datos)
 	{
-		
-		imagen+='\n\
+		if(window.location.pathname=="/PH1/verAlbum.php")
+		{
+			imagen+='\n\
+		<div id="galeria_index">\n\
+		<img src=' + imgArrayAlbum.datos[i].imagen.src + ' alt='+ imgArrayAlbum.datos[i].titulo+'>\n\
+			<div id="info">\n\
+				<p>TITULO: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
+				<p>FECHaaA: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
+				<p>PAIS: '+imgArrayAlbum.datos[i].pais+'</p>\n\
+				<button onclick="redireccionar('+imgArrayAlbum.datos[i].identificacion+')">Detalles</button>\n\
+				<button onclick="redireccionar2('+imgArrayAlbum.datos[i].identificacion+');">Borrar Foto</button>\n\
+			</div>\n\
+		</div>'
+		;	
+		}
+		else
+		{
+			imagen+='\n\
 		<div id="galeria_index" onclick="redireccionar('+imgArrayAlbum.datos[i].identificacion+')">\n\
 		<img src=' + imgArrayAlbum.datos[i].imagen.src + ' alt='+ imgArrayAlbum.datos[i].titulo+'>\n\
 			<div id="info">\n\
@@ -35,11 +51,16 @@ var imagen='';
 			</div>\n\
 		</div>'
 		;	
+		}
+		
 	}
 if(document.getElementById("fotos")!=null)
 {
 
 	document.getElementById("fotos").innerHTML = imagen;
+
+		
+
 }
 }
 
@@ -190,6 +211,7 @@ function ordenar()
 		}
 		
 		document.getElementById("fotos").innerHTML = imagen;
+
 	}
 
 	if(Nord=="Fecha")
@@ -232,6 +254,12 @@ function redireccionar(x)
 {
 	location.href="detalle.php?id="+x;
 }
+
+function redireccionar2(x)
+{
+	location.href="borrarFoto.php?id="+x;
+}
+
 
 function cargar()
 {

@@ -15,13 +15,13 @@
 
 
 		        if($_GET['id']!=null){
-		        	$idAlbum = $_GET['id'];
+		        	$idF = $_GET['id'];
 		        	try
 		        	{
 		        		$con = new PDO('mysql:host=localhost; dbname=P&I', 'root', '');
 		        		$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		        		
-		        		$query = "SELECT * FROM Albumes WHERE IdAlbum='".$idAlbum."'";
+		        		$query = "SELECT * FROM Fotos WHERE IdFotos='".$idF."'";
 		        		$resultado=$con->query($query);
 		        		$rows = $resultado->fetchAll();
 
@@ -43,7 +43,7 @@
 
 		        	}
 		           
-		  		echo "<a href='borra.php?id=$idAlbum'><button type='submit'>Borrar Album</button></a>";
+		  		echo "<a href='borraF.php?id=$idF'><button type='submit'>Borrar Foto</button></a>";
 		     
 					
 		        }

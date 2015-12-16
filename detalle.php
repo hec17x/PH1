@@ -190,7 +190,7 @@
 	}
 
 	
-}
+
 else
   { 
       echo "<h3>Necesitas estar <a href='registro.php'>Registrado</a> o iniciar sesión para ver esta foto.</h3>";

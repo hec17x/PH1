@@ -60,8 +60,16 @@ if(isset($_POST['R_pais'])){
 }
 else{
 
-    $pais=0;
-}  
+    ?>
+
+    <script type="text/javascript">
+    alert("Seleccione un Pais");    
+    stop();
+    history.back();
+    </script>
+    
+    <?php
+}
 
 
 
@@ -88,15 +96,11 @@ $album = $_POST['Album'];
     die("Error: No existe la base de datos");
 
 
- $fecha = date('Y-m-d H:i:s');
+ $fecha = date('Y-m-dH-i-s');
 
 
-//con esto no subimos dos veces la misma foto(mismo titulo) al mismo album
-$sentencia2 = " SELECT * from fotos where Titulo = '$titulo' and Album = '$album'  ";
-$resultado2 = mysql_query($sentencia2, $iden);
-$filas = mysql_num_rows($resultado2);
 
-if($filas == 0 && $_FILES['uploadedfile']['name'] == 0){
+if($_FILES['uploadedfile']['name'] == 0){
 
 
     $target_path = "upload/fotos/";
@@ -105,11 +109,11 @@ if($filas == 0 && $_FILES['uploadedfile']['name'] == 0){
     if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path))
     { 
       echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
-      rename ("$target_path", "upload/fotos/".$album .$titulo.".jpg");
+      rename ("$target_path", "upload/fotos/".$album .$fecha.".jpg");
   
 
 
-     $fichero = $album. $titulo. ".jpg";
+     $fichero = $album. $fecha. ".jpg";
 
      $sentencia = "INSERT INTO fotos(Titulo, Descripcion, Fecha, Pais, Album, Fichero, FRegistro) 
                   VALUES('$titulo','$descripcion','$Fsubida','$pais','$album','$fichero', '$fecha')";

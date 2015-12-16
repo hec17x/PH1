@@ -40,7 +40,10 @@
       }
        echo "</div>";
        
+?>
+<form  action="nuevoComentario.php" method="post">
 
+<?php
 
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
@@ -67,29 +70,35 @@
                     {
 
                         $fe=$fila['Pais'];
-                        $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
-                        // Ejecuta la sentencia SQL
-                         $resultado2 = mysql_query($sentencia3, $iden);
-                         if(!$resultado2)
-                             die("Error : no se pudo realizar la consulta");
-                
-                        while($fila1 = mysql_fetch_assoc($resultado2))
-                        {
 
-                            $pais=$fila1['NomPais'];
+                        if($fe!=0){
+                            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+                            // Ejecuta la sentencia SQL
+                             $resultado2 = mysql_query($sentencia3, $iden);
+                             if(!$resultado2)
+                                 die("Error : no se pudo realizar la consulta");
+                    
+                            while($fila1 = mysql_fetch_assoc($resultado2))
+                            {
+                                $pais=$fila1['NomPais'];
+                            }
                         }
+                        else 
+                          $pais = 'No definido';
 
 
                         $id= $fila['IdFotos'];
-                          echo "<br/>";
-                          echo "<br/>";
-                          echo "<br/>";
-                          echo "<br/>";
+
 
                           echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
                           echo "<ul>";
-                          echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
-                          echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
+                          echo "<li><b>Título</b>".": ".$fila['Titulo']."</li>";
+                          echo "<li><b>Descripción</b>".": ".$fila['Descripcion']."</li>";                          
+
+                          $fechita = $fila['Fecha'];
+                          if($fechita == '0000-00-00')
+                              $fechita == 'No definida';
+                          echo "<li><b>Fecha</b>".": ".$fechita."</li>";
                           echo "<li><b>Pais</b>".": ".$pais."</li>";
                           echo "<li><b>ID</b>".": ".$id."</li>";
                           echo "</ul>";
@@ -119,7 +128,9 @@
               $resultado->MoveNext();
           }
           echo "</pre>";*/
-
+          ?>
+          <section id="datos">
+          <?php
           include_once 'adodb/adodb.inc.php';
           $con = NewADOConnection('mysql');
           $con->Connect('localhost', // El servidor
@@ -131,6 +142,7 @@
           $sentencia = "SELECT * FROM comentario where Foto = '$id' ";
           $resultado = $con->Execute($sentencia);
           $cont = 0;
+
           // Recorre el resultado y lo muestra en forma de tabla HTML
           while(!$resultado->EOF) {
 
@@ -151,22 +163,21 @@
               }
               echo '<tr>';
               echo '<td>' . $NomUsuario . '</td>';
-              echo '<td>' . $resultado->fields['Fecha'] . '</td>';
               echo '<td>' . $resultado->fields['Comentario'] . '</td>';
+              echo '<td>' . $resultado->fields['Fecha'] . '</td>';
 
               $resultado->MoveNext();
           }
           echo '</table>';
           ?>
           <!-- FORMULARIO PARA INTRODUCIR EL COMENTARIO-->
-          <form  action="nuevoComentario.php" method="post">
-
+          
           <input id="comentario" name="comentario"  type="text" placeholder="Escribe tu comentario..."/>
           <input type="hidden" id="idfoto" name="idfoto" value = "<?php echo "$id" ?>"    />
           <input type="submit" value="Comentar" /> 
 
           </form>
-
+          </section>
           <?php
 	}
 

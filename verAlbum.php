@@ -1,5 +1,7 @@
 
   <?php 
+  session_start();
+
     include('cabecera.inc');
     //include('inicio.inc');
    include('sidebar.inc');     

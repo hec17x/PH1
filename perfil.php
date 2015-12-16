@@ -62,8 +62,10 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
      
 	if($contarAlbum == 2)		
       $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]." or Album = ".$array[1]."       ORDER BY FRegistro DESC";
-    if($contarAlbum == 3)		
+  if($contarAlbum == 3)		
       $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]." or Album = ".$array[1]."  or Album = ".$array[2]."     ORDER BY FRegistro DESC";
+  if($contarAlbum == 4)   
+      $sentencia="SELECT * FROM fotos WHERE Album=".$array[0]." or Album = ".$array[1]."  or Album = ".$array[2]." or Album = ".$array[3]."     ORDER BY FRegistro DESC";
       
 
 

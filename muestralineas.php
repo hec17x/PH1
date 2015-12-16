@@ -48,17 +48,17 @@ while($fila = mysql_fetch_assoc($resultado)){
 
         $id= $fila['IdFotos'];
         $titulo = $fila['Titulo'];
-
+        $descrip = $fila['Descripcion'];
         echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;  
 }
 
 echo "<br/>";
-echo "ID Imagen: ";
-echo $id;
-echo "<br/>";
-echo "<br/>";
 echo "Titulo Imagen: ";
 echo $titulo;
+echo "<br/>";
+echo "<br/>";
+echo "Descripción: ";
+echo $descrip;
 echo "<br/>";
 echo "<br/>";
 echo "Crítico: ";

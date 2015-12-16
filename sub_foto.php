@@ -60,15 +60,7 @@ if(isset($_POST['R_pais'])){
 }
 else{
 
-    ?>
-
-    <script type="text/javascript">
-    alert("Seleccione un Pais");    
-    stop();
-    history.back();
-    </script>
-    
-    <?php
+    $pais=0;
 }  
 
 
@@ -104,7 +96,7 @@ $sentencia2 = " SELECT * from fotos where Titulo = '$titulo' and Album = '$album
 $resultado2 = mysql_query($sentencia2, $iden);
 $filas = mysql_num_rows($resultado2);
 
-if($filas == 0){
+if($filas == 0 && $_FILES['uploadedfile']['name'] == 0){
 
 
     $target_path = "upload/fotos/";
@@ -114,10 +106,7 @@ if($filas == 0){
     { 
       echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
       rename ("$target_path", "upload/fotos/".$album .$titulo.".jpg");
-    } 
-    else{
-      echo "Ha ocurrido un error, trate de nuevo!";
-    }
+  
 
 
      $fichero = $album. $titulo. ".jpg";
@@ -146,7 +135,18 @@ if($filas == 0){
           setTimeout("redireccionarPagina()", 2000);
         
         </script>';
+          } 
+    else{
+      echo "<h3>No se ha subido la foto, intentelo de nuevo.</h3>";
+      echo '<script language="javascript">
+        function redireccionarPagina() {
+            window.history.back();
+          }
+          setTimeout("redireccionarPagina()", 3000);
+        
+        </script>';
+    }
 }      
 else{
-    die("ya existe este titulo/foto en este album");
+    die("ya existe este titulo/foto en este album o hubo un error al subir la foto");
 }

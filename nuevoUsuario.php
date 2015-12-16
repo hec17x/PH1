@@ -173,7 +173,7 @@ else{
     rename ("$target_path", "upload/avatar/" .$user ."00.jpg");
   } 
   else{
-    echo "Ha ocurrido un error, trate de nuevo!";
+    echo "Registro realizado sin foto de perfil!";
   }
 
 

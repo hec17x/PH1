@@ -91,8 +91,11 @@ CREATE TABLE `Comentario` (
   `Validado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-ALTER TABLE `Comentarios`
+ALTER TABLE `Comentario`
   ADD PRIMARY KEY (`IdComentario`);
+
+ALTER TABLE `Comentario`
+  MODIFY `IdComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 INSERT INTO `comentario`(`IdComentario`, `Comentario`, `Fecha`, `Usuario`, `Foto`, `Validado`) 
 VALUES (1,'Guau! es el coche de batman','0000-00-00',38, 22,0 )

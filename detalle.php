@@ -127,11 +127,21 @@
           '', // La contraseña
           'p&i'); // La base de datos
           // Ejecuta una sentencia SQL
+
           $sentencia = "SELECT * FROM comentario where Foto = '$id' ";
           $resultado = $con->Execute($sentencia);
           $cont = 0;
           // Recorre el resultado y lo muestra en forma de tabla HTML
           while(!$resultado->EOF) {
+
+              $idusu = $resultado->fields['Usuario'];
+              //buscamos el nombre del user:
+              $sentencia10 = "SELECT * from usuarios where IdUsuario = '$idusu' ";
+              $resultado10 = $con->Execute($sentencia10);
+              while(!$resultado10->EOF){
+                  $NomUsuario = $resultado10->fields['NomUsuario'];
+                  $resultado10->MoveNext();
+              }
 
               if($cont == 0 ){
                  echo '<table><tr>';
@@ -140,22 +150,24 @@
                  $cont =1;
               }
               echo '<tr>';
-              echo '<td>' . $resultado->fields['Usuario'] . '</td>';
+              echo '<td>' . $NomUsuario . '</td>';
               echo '<td>' . $resultado->fields['Fecha'] . '</td>';
               echo '<td>' . $resultado->fields['Comentario'] . '</td>';
 
               $resultado->MoveNext();
           }
           echo '</table>';
+          ?>
+          <!-- FORMULARIO PARA INTRODUCIR EL COMENTARIO-->
+          <form  action="nuevoComentario.php" method="post">
 
-         
+          <input id="comentario" name="comentario"  type="text" placeholder="Escribe tu comentario..."/>
+          <input type="hidden" id="idfoto" name="idfoto" value = "<?php echo "$id" ?>"    />
+          <input type="submit" value="Comentar" /> 
 
+          </form>
 
-      
-
-
-
-
+          <?php
 	}
 
 	

@@ -60,7 +60,8 @@
          
 
 			
-						
+						<br>
+            <br>
 					<label for="B_Dia">Fecha de subida:</label>
                     <br>
 						   <input type="date"  name="fecha" id="fecha"/>

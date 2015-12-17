@@ -19,69 +19,65 @@
      if($_GET['id']!=null){
 
       $user = $_GET['id'];
-          if(!($iden = mysql_connect("localhost", "root", "")))
-                    die("Error: No se pudo conectar");
-                  // Selecciona la base de datos
-                if(!mysql_select_db("p&i", $iden))
-                    die("Error: No existe la base de datos");
-                      
 
-                $sentencia1 = "SELECT * FROM usuarios where IdUsuario='$user'";
-                // Ejecuta la sentencia SQL
-                $resultado = mysql_query($sentencia1, $iden);
-                
-                if(!$resultado)
-                die("Error: no se pudo realizar la consulta");
-                
-                while($fila = mysql_fetch_assoc($resultado))
-                    {
+        try
+        {
 
-                      $nom = $fila['NomUsuario'];
+
+          $con = new PDO('mysql:host=localhost; dbname=P&I', 'root', '');
+          $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+           $sentencia1 = "SELECT * FROM usuarios where IdUsuario='$user'";
+           $resultado=$con->query($sentencia1);
+           $rows = $resultado->fetchAll();
+
+            foreach($rows as $fila) {
+
+              $nom = $fila['NomUsuario'];
                       $email = $fila['Email'];
                       $nac = $fila['FNacimiento'];
                       $ciu = $fila['Ciudad']; 
                       $fe = $fila['Pais'];
 
-                       $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
-                            // Ejecuta la sentencia SQL
-                             $resultado2 = mysql_query($sentencia3, $iden);
-                             if(!$resultado2)
-                                 die("Error : no se pudo realizar la consulta");
-                            while($fila1 = mysql_fetch_assoc($resultado2))
-                            {
-                                $pais=$fila1['NomPais'];
+               $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
+               $resultado2=$con->query($sentencia3);
+               $rows2 = $resultado2->fetchAll();
 
-                            }
-                      echo "<h3>Datos Personales</h3>";
+               foreach($rows2 as $fila1) {
+                   $pais=$fila1['NomPais'];
+               }
+
+               echo "<h3>Datos Personales</h3>";
                       echo "<p><b>Nombre: </b>$nom</p>";
                       echo "<p><b>Email: </b>$email</p>";
                       echo "<p><b>Nacimiento: </b>$nac</p>";
                       echo "<p><b>Ciudad: </b>$ciu</p>";
                       echo "<p><b>Pais: </b>$pais</p>";
-
-                      
-                    }
-                    ?>
+                       echo "<section id='ult-alb'>";
+                  ?>
 
                      <h3>Álbumes:</h3>
 
       <?php
-       echo "<section id='ult-alb'>";
-                  
+      
                          
                           $consulta='SELECT * FROM Albumes WHERE Usuario="'.$user.'"';
-                          $resultado=mysql_query($consulta, $iden);
+                          $resultado4=$con->query( $consulta);
+                           $rows5 = $resultado4->fetchAll();
 
-                        while ($lista=mysql_fetch_array($resultado)) {
+                       foreach($rows5 as $lista) {
 
                           echo "<div id='cajaAlb'>";
                           $idbm= $lista['IdAlbum'];
                           $consultando='SELECT * FROM Fotos WHERE Album="'.$idbm.'"';
-                          $resul=mysql_query($consultando, $iden);
+                          $resultado5=$con->query($consultando);
+                          $rows6 = $resultado5->fetchAll();
+
+                         
                           
                            $i=0;
                          
-                          while ($lista2=mysql_fetch_array($resul)) {
+                         foreach($rows6 as $lista2) {
                             if($i<3)
                           {
                             echo "<div id='pAlbum'>";
@@ -104,6 +100,28 @@
                         echo "</div>";
                              }
                                  echo "</section>";
+            }
+
+        }
+        catch(PDOException $e) 
+        {
+            echo "¡Error!\n";
+              echo "Fichero: " . $e->getFile() . "<br />";
+              echo "Línea:  " . $e->getLine() . "<br />";
+              echo "Código: " . $e->getCode() . "<br />";
+              echo "Mensaje: " . $e->getMessage() . "<br />";
+
+              }
+
+
+
+
+                    ?>
+
+                   
+
+      <?php
+      
                              ?>
 
   </div>

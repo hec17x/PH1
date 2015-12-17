@@ -50,58 +50,57 @@
 
             $id = $_GET['id'] ; //esta variable contiene el id de la imagen
             ////////////////////////////////////////////////////////////////////si solo existe el titulo
+            try
+              {
+                $con = new PDO('mysql:host=localhost; dbname=P&I', 'root', '');
+                $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+              /*  
+              $con->Connect('localhost', // El servidor
+              'root', // El usuario
+              '', // La contraseña
+              'p&i'); // La base de datos
+              // Ejecuta una sentencia SQL*/
 
-                if(!($iden = mysql_connect("localhost", "root", "")))
-                    die("Error: No se pudo conectar");
-                if(!mysql_select_db("p&i", $iden))
-                    die("Error: No existe la base de datos");
+                $query = "SELECT * FROM Fotos WHERE IdFotos = '".$id."' ";
+                $resultado=$con->query($query);
+                $rows = $resultado->fetchAll();
 
+                foreach($rows as $fila) {
 
-                $sentencia1 = "SELECT * FROM Fotos WHERE IdFotos = '".$id."' ";
-                // Ejecuta la sentencia SQL
-                $resultado = mysql_query($sentencia1, $iden);
-                if(!$resultado)
-                die("Error: no se pudo realizar la consulta");
-
-
-
-
-                while($fila = mysql_fetch_assoc($resultado))
+                    $fe=$fila['Pais'];
+                    if($fe!=0)
                     {
+                    $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
 
-                        $fe=$fila['Pais'];
-                        
-                        if($fe!=0){
-                            $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
-                            // Ejecuta la sentencia SQL
-                             $resultado2 = mysql_query($sentencia3, $iden);
-                             if(!$resultado2)
-                                 die("Error : no se pudo realizar la consulta");
+                    $resultado2=$con->query($sentencia3);
+                    $rows2 = $resultado2->fetchAll();
+
+                    foreach($rows2 as $fila2) {
+                      $pais = $fila2['NomPais'];
+                    }
+
+                  }
+                  else
+                    $pais = 'No definido';
+                   
+
+
+                    $id= $fila['IdFotos'];
+                    $idAlbum = $fila['Album'];
                     
-                            while($fila1 = mysql_fetch_assoc($resultado2))
-                            {
-                                $pais=$fila1['NomPais'];
-                            }
-
-                           
-                            
-                        }
-                        else 
-                          $pais = 'No definido';
-
-
-                          $id= $fila['IdFotos'];
-                          $idAlbum = $fila['Album'];
-                         
-                          $sentencia4  = "SELECT * FROM Albumes WHERE IdAlbum = '".$idAlbum."' ";
-                           $resultado3 = mysql_query($sentencia4, $iden);
-                            while($fila3 = mysql_fetch_assoc($resultado3))
+                     $sentencia4  = "SELECT * FROM Albumes WHERE IdAlbum = '".$idAlbum."' ";
+                           $resultado3 = $con->query($sentencia4);
+                              $rows3 = $resultado3->fetchAll();
+                            foreach($rows3 as $fila3) {
                              {
                                 $Puser=$fila3['Usuario'];
                               
                             }
 
-                          echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
+
+
+                     echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
                           echo "<ul id='detalle_foto'>";
                           echo "<li><b>Título</b>".": ".$fila['Titulo']."</li>";
                           echo "<li><b>Descripción</b>".": ".$fila['Descripcion']."</li>";                          
@@ -113,10 +112,24 @@
                           echo "<li><b>Pais</b>".": ".$pais."</li>";
                           echo "<li><b>ID</b>".": ".$id."</li>";
                           echo "</ul>";
+                      }
+                
 
 
-       }
+              $con=NULL;
+              }
+              }
+              catch(PDOException $e) 
+              {
+            echo "¡Error!\n";
+              echo "Fichero: " . $e->getFile() . "<br />";
+              echo "Línea:  " . $e->getLine() . "<br />";
+              echo "Código: " . $e->getCode() . "<br />";
+              echo "Mensaje: " . $e->getMessage() . "<br />";
 
+              }
+
+  
                           echo "<a href='perAlbum.php?id=$idAlbum'>
                                 <button type='submit'>Ver Album</button></a>";
                           echo "<a href='resumen.php?id=$Puser'>

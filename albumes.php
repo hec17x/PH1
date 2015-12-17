@@ -9,7 +9,7 @@ if(!isset($_SESSION['user']) AND !isset($_COOKIE['user']))
   include('sidebar.inc');   
   ?>
      <section id="content-datos">
-  <div id="datos">
+  <div id="datos2">
 
        <?php
 

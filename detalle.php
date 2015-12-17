@@ -10,7 +10,7 @@
 
     <?php
 
-    echo "<section id='content-registro'>
+    echo "<section id='datos'>
 
 		<div id='login-abrir'onclick='action1()' >";
         
@@ -62,12 +62,15 @@
                 $resultado = mysql_query($sentencia1, $iden);
                 if(!$resultado)
                 die("Error: no se pudo realizar la consulta");
-                
+
+
+
+
                 while($fila = mysql_fetch_assoc($resultado))
                     {
 
                         $fe=$fila['Pais'];
-
+                        
                         if($fe!=0){
                             $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
                             // Ejecuta la sentencia SQL
@@ -79,6 +82,9 @@
                             {
                                 $pais=$fila1['NomPais'];
                             }
+
+                           
+                            
                         }
                         else 
                           $pais = 'No definido';
@@ -86,9 +92,17 @@
 
                           $id= $fila['IdFotos'];
                           $idAlbum = $fila['Album'];
+                         
+                          $sentencia4  = "SELECT * FROM Albumes WHERE IdAlbum = '".$idAlbum."' ";
+                           $resultado3 = mysql_query($sentencia4, $iden);
+                            while($fila3 = mysql_fetch_assoc($resultado3))
+                             {
+                                $Puser=$fila3['Usuario'];
+                              
+                            }
 
                           echo "    <img src='./upload/fotos/".$fila['Fichero']."' width='400px'/></a>" ;
-                          echo "<ul>";
+                          echo "<ul id='detalle_foto'>";
                           echo "<li><b>Título</b>".": ".$fila['Titulo']."</li>";
                           echo "<li><b>Descripción</b>".": ".$fila['Descripcion']."</li>";                          
 
@@ -103,8 +117,10 @@
 
        }
 
-                          echo "<a href='verAlbum.php?id=$idAlbum'>
+                          echo "<a href='perAlbum.php?id=$idAlbum'>
                                 <button type='submit'>Ver Album</button></a>";
+                          echo "<a href='resumen.php?id=$Puser'>
+                                <button type='submit'>Detalle de usuario</button></a>";
                     }
 
 
@@ -138,6 +154,7 @@
           echo "</pre>";*/
           ?>
           <section id="datos">
+            <span>Comentarios:</span>
           <?php
           include_once 'adodb/adodb.inc.php';
           $con = NewADOConnection('mysql');

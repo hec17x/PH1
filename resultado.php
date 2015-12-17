@@ -252,7 +252,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
+            echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -291,7 +291,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
+            echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -329,7 +329,7 @@
 
             $id= $fila['IdFotos'];
 
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
+            echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";
@@ -368,7 +368,7 @@
 
             $id= $fila['IdFotos'];
             echo "<div id='foto-rel'>";
-            echo "<a href='detalle.php?di=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
+            echo "<a href='detalle.php?id=$id'>","<img src='./upload/fotos/".$fila['Fichero']."' width='200px'/></a>" ;            
             echo "<ul>";
             echo "<li><b>Titulo</b>".": ".$fila['Titulo']."</li>";
             echo "<li><b>Fecha</b>".": ".$fila['Fecha']."</li>";

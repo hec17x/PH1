@@ -38,7 +38,7 @@ session_start();
 		                
 		                ?>
 		               <!--onsubmit="return modificarDatos(this)"-->
-		            <form id= "datos" action="modificarUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
+		            <form id= "datos2" action="modificarUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
 		                	<p>Estos son tus datos, para modificarlos cambia el valor de cualquiera de ellos, 
 		                		y pulsa actualizar datos:</p>
 		              <div id="formulario">

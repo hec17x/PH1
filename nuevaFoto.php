@@ -9,7 +9,7 @@
       <section id="content-datos">
 
 	
-	           <form id="datos" class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data">
+	           <form id="datos2" class="Registro" action="sub_foto.php" method="post" enctype="multipart/form-data">
 
                     <h3>Añade una nueva foto:</h3> 
             

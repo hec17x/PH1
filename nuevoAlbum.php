@@ -9,7 +9,7 @@
       <section id="content-datos">
 
 
-			 <form id="datos"action="sub_album.php" method="post">
+			 <form id="datos2"action="sub_album.php" method="post">
       <div id="formulario">
                     <h3>Crear un nuevo album:</h3> 
                

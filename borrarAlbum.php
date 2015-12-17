@@ -26,7 +26,7 @@
 		        		$rows = $resultado->fetchAll();
 
 		        		foreach($rows as $fila) {
-		        			echo "<p><b>Seguro que quieres borrar ".$fila['Titulo']." Si pulsa borrar, se borrarán todas las fotos de este album.</b> </p>";
+		        			echo "<p><b>Esta apunto de borrar ".$fila['Titulo'].". Si pulsa borrar, se borrarán todas las fotos de este album.</b> </p>";
 		     				
     					}
     					$con=NULL;

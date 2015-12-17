@@ -26,6 +26,7 @@
 
           $con = new PDO('mysql:host=localhost; dbname=P&I', 'root', '');
           $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $con -> exec("SET CHARACTER SET utf8");
 
            $sentencia1 = "SELECT * FROM usuarios where IdUsuario='$user'";
            $resultado=$con->query($sentencia1);
@@ -93,7 +94,7 @@
 
                           echo "<div id='desAlb'>";
                             echo "
-                        <b> Descripcion:</b> ".$lista['Descripcion']."<br><a href='verAlbum.php?id=$idbm'><button type='submit'>Ver</button></a>
+                        <b> Descripcion:</b> ".$lista['Descripcion']."<br><a href='perAlbum.php?id=$idbm'><button type='submit'>Ver</button></a>
                                   ";
                           
                             echo "</div>";

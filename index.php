@@ -8,7 +8,7 @@
   <section id="content-index">
 
     <!--seleccion de fotos -->
-  <div id="fotoseleccionada">
+  <div id="datos">
     <?php 
       include("muestralineas.php");
     ?>
@@ -75,6 +75,7 @@
 
       $sentencia="SELECT * FROM fotos ORDER BY FRegistro DESC";
       $resultado = mysql_query($sentencia, $iden);
+       mysql_query("SET NAMES 'utf8'");
         if(!$resultado)
           die("Error: no se pudo realizar la consulta");
          

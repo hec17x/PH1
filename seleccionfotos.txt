@@ -1,4 +1,4 @@
-32#Antonio#¿Te gusta conducir?
-33#Hector#Buen caballito
-25#Roberto#Buen detalle y bonitos colores
-35#Gabriel#Un gran campeon
+7#Antonio#¿Te gusta conducir?
+36#Hector#Buen caballito
+20#Roberto#Buen detalle y bonitos colores
+25#Gabriel#Un gran campeon

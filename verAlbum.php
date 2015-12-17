@@ -95,6 +95,7 @@
 	    $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
 	    // Ejecuta la sentencia SQL
 	    $resultado = mysql_query($sentencia1, $iden);
+         mysql_query("SET NAMES 'utf8'");
 	    if(!$resultado)
 	    die("Error: no se pudo realizar la consulta");
 	    

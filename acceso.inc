@@ -42,17 +42,19 @@ else
 
           <div id='formulario'>
             <div id='user'>
+            <label for='L_Usuario'>Usuario</label>
           <input id='L_Usuario'type='text' name='usuario' placeholder='Usuario' metho='post' >
         
             <span class='bar'></span>
-            <label for='L_Usuario'>Usuario</label>
+            
              </div>
             </div>
-            <div id='formulario'>
+            <div id='formulario'> 
+            <label for='L_Contraseña'>Contraseña</label>
             <input id='L_Contrasenya' type='password' name='password' placeholder='Contraseña' >
           
            <span class='bar'></span>
-            <label for='L_Contraseña'>Contraseña</label>
+           
             </div>
 
             <div>

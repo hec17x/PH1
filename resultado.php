@@ -120,6 +120,7 @@
             $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
             // Ejecuta la sentencia SQL
              $resultado2 = mysql_query($sentencia3, $iden);
+              mysql_query("SET NAMES 'utf8'");
              if(!$resultado2)
                  die("Error : no se pudo realizar la consulta");
     
@@ -189,6 +190,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo like '%$titulo%'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -229,6 +231,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE  Titulo like '%$titulo%' AND Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -268,6 +271,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -306,6 +310,7 @@
     $sentencia1 = "SELECT * FROM Fotos WHERE Fecha>='$fecha_inicio' AND Fecha<='$fecha_fin' AND Titulo like '%$titulo%' AND Pais='$pais1'";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     
@@ -345,6 +350,7 @@
     $sentencia1 = "SELECT * FROM Fotos";
     // Ejecuta la sentencia SQL
     $resultado = mysql_query($sentencia1, $iden);
+     mysql_query("SET NAMES 'utf8'");
     if(!$resultado)
     die("Error: no se pudo realizar la consulta");
     

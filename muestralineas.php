@@ -24,7 +24,7 @@ else{
 	}
 
 	list($idfoto, $critico, $explicacion) = explode("#", $fichero[$random]);
-
+	
 	echo "<br/>";
 	echo "<br/>";
 	echo "<br/>";

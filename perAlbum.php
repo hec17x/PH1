@@ -46,6 +46,7 @@
       $sentencia1 = "SELECT * FROM Fotos where Album='$idAlbum' ORDER BY FRegistro DESC";
       // Ejecuta la sentencia SQL
       $resultado = mysql_query($sentencia1, $iden);
+        mysql_query("SET NAMES 'utf8'");
       if(!$resultado)
       die("Error: no se pudo realizar la consulta");
       
@@ -58,12 +59,13 @@
               $sentencia3 = "SELECT * FROM Paises WHERE IdPais='$fe'";
               // Ejecuta la sentencia SQL
                $resultado2 = mysql_query($sentencia3, $iden);
+               
                if(!$resultado2)
                    die("Error : no se pudo realizar la consulta");
       
               while($fila1 = mysql_fetch_assoc($resultado2))
               {
-
+                
                   $pais=$fila1['NomPais'];
               }
 
@@ -72,6 +74,7 @@
             $titulo=$fila["Titulo"];
             $fechaF=$fila["FRegistro"];
             $idfoto = $fila["IdFotos"];
+
             ?>
             <section id = "fotos">
             <script language="javascript" >

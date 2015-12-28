@@ -10,7 +10,7 @@
 
     <?php
 
-    echo "<section id='datos'>
+    echo "
 
 		<div id='login-abrir'onclick='action1()' >";
         
@@ -45,6 +45,7 @@
 	if(isset($_COOKIE['user']) OR isset($_SESSION['user']) )
 	{
     //Si viene de index.php muestro esto:
+  echo "<section id='datos'>";
   
        if($_GET['id'] !=null){
 
@@ -179,6 +180,8 @@
                  echo '<table><tr>';
                  echo '<th>Usuario</th><th>Comentario</th><th>Fecha</th>';
                  echo '</tr>';
+                 echo '<br>';
+                 echo '<br>';
                  $cont =1;
               }
               echo '<tr>';
@@ -189,6 +192,7 @@
               $resultado->MoveNext();
           }
           echo '</table>';
+          echo '<br>';
           ?>
           <!-- FORMULARIO PARA INTRODUCIR EL COMENTARIO-->
           
@@ -198,15 +202,21 @@
 
           </form>
           </section>
+
           <?php
 	}
 
 	
 
 else
-  { 
+  {   
+      echo "<section id='datosdetalle'>";
+      echo "<br>";
+      echo "<br>";
+      echo "<br>";
       echo "<h3>Necesitas estar <a href='registro.php'>Registrado</a> o iniciar sesión para ver esta foto.</h3>";
   }
+
 	echo "</div>";
     include('pie.inc');
 

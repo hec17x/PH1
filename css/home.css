@@ -9,6 +9,27 @@
 {
   background: white;
 }
+#datosdetalle
+{
+  min-width: 15%;
+      margin: auto auto auto 15%;
+    max-width: 70%;
+    margin-left: 25%;
+    margin-right: 10%;
+
+    background: #fafafa;
+    padding: 2% 3%;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+      -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+#datosdetalle h3
+{
+  margin-top: 4%;
+}
 
 #content-registro h2
 {

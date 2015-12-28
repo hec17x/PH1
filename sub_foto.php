@@ -60,15 +60,7 @@ if(isset($_POST['R_pais'])){
 }
 else{
 
-    ?>
-
-    <script type="text/javascript">
-    alert("Seleccione un Pais");    
-    stop();
-    history.back();
-    </script>
-    
-    <?php
+    $pais = '0';
 }  
 
 
@@ -112,10 +104,7 @@ if($filas == '0'){
     { 
       echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
       rename ("$target_path", "upload/fotos/".$album .$fecha.".jpg");
-    } 
-    else{
-      echo "Ha ocurrido un error, trate de nuevo!";
-    }
+    
 
 
      $fichero = $album. $fecha. ".jpg";
@@ -144,7 +133,15 @@ if($filas == '0'){
           setTimeout("redireccionarPagina()", 2000);
         
         </script>';
-}      
+
+    } 
+    else{
+      echo "Ha ocurrido un error, trate de nuevo!";
+    }
+
+
+
+}
 else{
     die("ya existe este titulo/foto en este album");
 }

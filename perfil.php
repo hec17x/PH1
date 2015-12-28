@@ -85,7 +85,8 @@ if($contarAlbum!=0){ //Creo que este if soluciona el problema de error si el usu
                          mysql_query("SET NAMES 'utf8'");
                          if(!$resultado2)
                              die("Error : no se pudo realizar la consulta");
-                
+                              $pais = 'No definido';
+
                         while($fila1 = mysql_fetch_assoc($resultado2))
                         {
 

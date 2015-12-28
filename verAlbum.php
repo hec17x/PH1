@@ -110,7 +110,8 @@
 	             $resultado2 = mysql_query($sentencia3, $iden);
 	             if(!$resultado2)
 	                 die("Error : no se pudo realizar la consulta");
-	    
+	            $pais = 'No definido';
+
 	            while($fila1 = mysql_fetch_assoc($resultado2))
 	            {
 

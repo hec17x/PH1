@@ -39,6 +39,8 @@
             {
                 $tituloAlbum=$fila["Titulo"];        
             }
+        echo "<br>";
+        echo "<br>";
 
         echo 'Éstas son las fotos del album: ' .$tituloAlbum;
         echo "<br>";
@@ -62,7 +64,8 @@
                
                if(!$resultado2)
                    die("Error : no se pudo realizar la consulta");
-      
+                            $pais = 'No definido';
+
               while($fila1 = mysql_fetch_assoc($resultado2))
               {
                 

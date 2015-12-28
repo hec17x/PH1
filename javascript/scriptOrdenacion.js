@@ -30,9 +30,9 @@ var imagen='';
 		<div id="galeria_index">\n\
 		<img src=' + imgArrayAlbum.datos[i].imagen.src + ' alt='+ imgArrayAlbum.datos[i].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
-				<p>FECHaaA: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
-				<p>PAIS: '+imgArrayAlbum.datos[i].pais+'</p>\n\
+				<p>Título: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
+				<p>Fecha Subida: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
+				<p>País: '+imgArrayAlbum.datos[i].pais+'</p>\n\
 				<button onclick="redireccionar('+imgArrayAlbum.datos[i].identificacion+')">Detalles</button>\n\
 				<button onclick="redireccionar2('+imgArrayAlbum.datos[i].identificacion+');">Borrar Foto</button>\n\
 			</div>\n\
@@ -45,9 +45,9 @@ var imagen='';
 		<div id="galeria_index" onclick="redireccionar('+imgArrayAlbum.datos[i].identificacion+')">\n\
 		<img src=' + imgArrayAlbum.datos[i].imagen.src + ' alt='+ imgArrayAlbum.datos[i].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
-				<p>FECHA: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
-				<p>PAIS: '+imgArrayAlbum.datos[i].pais+'</p>\n\
+				<p>Título: '+imgArrayAlbum.datos[i].titulo+' </p>\n\
+				<p>Fecha Subida: '+imgArrayAlbum.datos[i].fecha.toDateString()+'</p>\n\
+				<p>País: '+imgArrayAlbum.datos[i].pais+'</p>\n\
 			</div>\n\
 		</div>'
 		;	
@@ -89,9 +89,9 @@ var imagen='';
 		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[i].identificacion+')">\n\
 		<img src=' + imgArray.datos[i].imagen.src + ' alt='+ imgArray.datos[i].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArray.datos[i].titulo+' </p>\n\
-				<p>FECHA: '+imgArray.datos[i].fecha.toDateString()+'</p>\n\
-				<p>PAIS: '+imgArray.datos[i].pais+'</p>\n\
+				<p>Título: '+imgArray.datos[i].titulo+' </p>\n\
+				<p>Fecha Subida: '+imgArray.datos[i].fecha.toDateString()+'</p>\n\
+				<p>País: '+imgArray.datos[i].pais+'</p>\n\
 			</div>\n\
 		</div>'
 		;	
@@ -165,9 +165,9 @@ function ordenar()
 		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
-					<p>FECHA: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
-					<p>PAIS: '+imgArray.datos[aux].pais+'</p>\n\
+				<p>Título: '+imgArray.datos[aux].titulo+' </p>\n\
+					<p>Fecha Subida: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
+					<p>País: '+imgArray.datos[aux].pais+'</p>\n\
 				</div>\n\
 			</div>'
 			;	
@@ -201,9 +201,9 @@ function ordenar()
 		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
-					<p>FECHA: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
-					<p>PAIS: '+imgArray.datos[aux].pais+'</p>\n\
+				<p>Título: '+imgArray.datos[aux].titulo+' </p>\n\
+					<p>Fecha Subida: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
+					<p>País: '+imgArray.datos[aux].pais+'</p>\n\
 				</div>\n\
 			</div>';	
 			test=false;
@@ -235,9 +235,9 @@ function ordenar()
 		<div id="galeria_index" onclick="redireccionar('+imgArray.datos[aux].identificacion+')">\n\
 		<img src=' + 	imgArray.datos[aux].imagen.src  + ' alt='+imgArray.datos[aux].titulo+'>\n\
 			<div id="info">\n\
-				<p>TITULO: '+imgArray.datos[aux].titulo+' </p>\n\
-					<p>FECHA: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
-					<p>PAIS: '+imgArray.datos[aux].pais+'</p>\n\
+				<p>Título: '+imgArray.datos[aux].titulo+' </p>\n\
+					<p>Fecha Subida: '+imgArray.datos[aux].fecha.toDateString()+'</p>\n\
+					<p>País: '+imgArray.datos[aux].pais+'</p>\n\
 				</div>\n\
 			</div>'
 			;	
@@ -281,9 +281,9 @@ function cargar()
    var info='';
 			info+='\n\
 		<div id="dfoto" ">\n\
-				<p>TITULO: '+imgArray.datos[get[tmp[0]]].titulo+' </p>\n\
-					<p>FECHA: '+imgArray.datos[get[tmp[0]]].fecha.toDateString()+'</p>\n\
-					<p>PAIS: '+imgArray.datos[get[tmp[0]]].pais+'</p>\n\
+				<p>Título: '+imgArray.datos[get[tmp[0]]].titulo+' </p>\n\
+					<p>Fecha Subida: '+imgArray.datos[get[tmp[0]]].fecha.toDateString()+'</p>\n\
+					<p>País: '+imgArray.datos[get[tmp[0]]].pais+'</p>\n\
 					<p>ID: '+get[tmp[0]]+'</p>\n\
 					'
 		

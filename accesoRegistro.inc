@@ -13,7 +13,7 @@
 
 <h2> Registro:</h2> 
     <!--onsubmit="return validaRegistro(this)"-->
-	<form class="Registro" action="nuevoUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
+	<form class="Registro" onsubmit="return validaRegistro(this)" action="nuevoUsuario.php" method="post" enctype="multipart/form-data"  novalidate="true">
 
         <p>Rellene los siguientes campos:</p>
         <div id="formulario-registro">	

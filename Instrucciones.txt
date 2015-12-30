@@ -1,0 +1,13 @@
+Dentro del documento comprimido .zip que te enviamos, 
+se encuentra un archivo llamado "localhost.sql".
+
+Puesto que no tenemos ningún usuario configurado en la 
+base de datos ya que tuvimos problemas con el phpmyadmin
+y perdiamos la configuración del mismo, usamos el usuario
+"root" y sin contraseña(""), a pesar de saber que puede 
+ser una vulnerabilidad para el sistema.
+
+Desde phpmyadmin importamos el archivo sql anterior 
+"localhost.sql", y nos creará la base de datos con 
+paises, usuarios, albumes, fotos y comentarios que 
+hemos utilizado para la práctica. 
